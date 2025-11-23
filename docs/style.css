@@ -288,10 +288,165 @@ max-width: 80%;
   .scroll-arrow:hover img {
     transform: translateY(15px);
   }
+/* PAGE MENTIONS LEGALES */
+.mention_article {
+    background: rgb(245, 245, 245);
+    font-size: 14px;
+    z-index: 1;
+    margin: 15px 100px;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.header-offset{
+    height:92px;
+}
+.mention_article h2 {
+    font-size: 24px;
+    color: rgb(30, 30, 30);
+    text-align: center;
+    margin-bottom: 15px;
+    border-bottom: 2px solid rgb(200, 200, 200);
+    padding-bottom: 10px;
+}
+.mention_article h5 {
+    font-size: 18px;
+    color: rgb(50, 50, 50);
+    margin-top: 25px;
+    margin-bottom: 12px;
+    padding-left: 10px;
+    border-left: 4px solid rgb(0, 122, 204);
+}
+.mention_txt p {
+    font-size: 14px;
+    color: rgb(70, 70, 70);
+    line-height: 1.4;
+    margin: 6px 0;
+    text-align: justify;
+}
+.mention_txt strong {
+    color: rgb(0, 122, 204);
+}
+.mention_txt {
+    margin-top: 25px;
+}
+.mention_txt a {
+    color: rgb(0, 122, 204);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+.mention_txt a:hover {
+    color: rgb(0, 90, 170);
+    text-decoration: underline;
+}
+.mention_txt ul {
+    list-style-type: disc;
+    margin-left: 40px;
+    padding-left: 10px;
+}
+.mention_txt ul li {
+    font-size: 14px;
+    color: rgb(70, 70, 70);
+    line-height: 1.6;
+    margin-bottom: 8px;
+    padding-left: 5px;
+    position: relative;
+}
+.mention_txt .important-section {
+    font-size: 15px;
+    color: rgb(70, 70, 70);
+    text-decoration: underline;
+    margin-bottom: 15px;
+    margin-top: 10px;
+}
+.mention_txt .important-section + p {
+    margin-top: 8px;
+}
 
-
-
-
+/* PAGE CGV */
+.cgv_article {
+    background: rgb(245, 245, 245);
+    font-size: 14px;
+    z-index: 1;
+    margin: 15px 100px; 
+    padding: 20px; 
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.cgv_article h2 {
+    font-size: 24px;
+    color: rgb(30, 30, 30);
+    text-align: center;
+    margin-bottom: 15px;
+    border-bottom: 2px solid rgb(200, 200, 200);
+    padding-bottom: 10px;
+}
+.cgv_article h5 {
+    font-size: 18px;
+    color: rgb(50, 50, 50);
+    margin-top: 25px;
+    margin-bottom: 12px;
+    padding-left: 10px;
+    border-left: 4px solid rgb(0, 122, 204);
+}
+.cgv_txt p {
+    font-size: 14px;
+    color: rgb(70, 70, 70);
+    line-height: 1.4;
+    margin: 6px 0;
+    text-align: justify;
+}
+.cgv_txt strong {
+    color: rgb(0, 122, 204);
+}
+.cgv_txt {
+    margin-top: 25px;
+}
+.cgv_txt a {
+    color: rgb(0, 122, 204);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+.cgv_txt a:hover {
+    color: rgb(0, 90, 170);
+    text-decoration: underline;
+}
+.cgv_txt ul {
+    list-style-type: disc;
+    margin-left: 40px;
+    padding-left: 10px;
+}
+.cgv_txt ul li {
+    font-size: 14px;
+    color: rgb(70, 70, 70);
+    line-height: 1.6;
+    margin-bottom: 8px;
+    padding-left: 5px;
+}
+.cgv_txt .important-section {
+    font-size: 15px;
+    color: rgb(0, 0, 0);
+    text-decoration: underline;
+    margin-bottom: 15px;
+    margin-top: 10px;
+}
+.cgv_txt .important-section + p {
+    margin-top: 8px;
+}
+.cgv_article h6 {
+    font-size: 16px;
+    color: rgb(60, 60, 60);
+    margin-top: 20px;
+    margin-bottom: 10px;
+    padding-left: 20px;
+}
+.cgv_article h4 {
+    font-size: 15px;
+    color: rgb(60, 60, 60);
+    margin-top: 20px;
+    margin-bottom: 10px;
+    padding-left: 40px;
+}
 
   /* FOOTER */
   /* WAVE DIVIDER INDEX */
