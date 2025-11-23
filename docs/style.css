@@ -22,9 +22,8 @@ body {
 .header_accueil {
     z-index: 2;
     position: relative;
-    height: 100vh;
     background: 
-        linear-gradient(to bottom, rgba(0,0,0,0.85), rgba(20,20,20,0.75)),
+        linear-gradient(to bottom, rgba(0,0,0,0.75), rgba(20,20,20,0.55)),
         url("image/maroc_fond_4.jpg");
     background-size: cover;
     background-position: center;
@@ -33,6 +32,11 @@ body {
     font-family: "Poppins";
     font-weight: 600;
     overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;     
+    height: 100dvh;          
+    padding-top: 0;         
 }
 .banniere-defilante {
     width: 100%;
@@ -82,16 +86,11 @@ body {
     list-style: none;
     display: flex;
     justify-content: center; /* centre horizontalement */
-    width: 100%;
-    margin-top: 66px;
-    font-size: 15px;
-    flex-wrap: wrap;
-    position: relative; /* pour rester dans le flux normal */
-    z-index: 1000;
-    padding: 0; /* pas de padding pour centrer parfaitement */
+    gap: 40px;               /* espace entre chaque item du menu */
+    margin-top: 50px;        /* espace entre le haut du header et le menu */
     opacity: 0;
-    transform: translateY(-50px); /* départ en haut */
-    transition: opacity 0.8s ease-out, transform 0.8s ease-out; 
+    transform: translateY(-50px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
 .sommaire.show {
     opacity: 1;
@@ -120,7 +119,7 @@ body {
 }
 
 .sommaire li a:hover {
-    background: rgb(200, 70, 50);
+    background: rgb(184, 150, 70);
     color: black;
 }
 
@@ -156,16 +155,17 @@ body {
     z-index: 1010;
 }
 .header-container {
+    position: absolute;       /* permet de centrer sans impacter le menu/logo */
+    top: 50%;                 /* milieu vertical du header */
+    left: 50%;                /* milieu horizontal du header */
+    transform: translate(-50%, -50%); /* ajuste pour centrer exactement */
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    height: 100vh;
     text-align: center;
     width: 100%;
     z-index: 5;
     overflow: hidden;
-    max-height: 100vh;
 }
 .Bienvenue {
     color: #ffffff;
@@ -193,7 +193,7 @@ body {
 }
 .intro {
 color: #ffffff;
-font-size: clamp(12px, 3vw, 14px);
+font-size: clamp(14px, 3vw, 18px);
 font-style: normal;
 font-weight: 300;
 letter-spacing: 0.8px;
@@ -205,14 +205,14 @@ padding-bottom: 20px;
 max-width: 80%;
 } 
 .location-icon {
-    width: clamp(12px, 3vw, 14px);
+    width: clamp(14px, 3vw, 18px);
     height: auto;
     padding-top: 2px;
     flex-shrink: 0;
 }
 .location span {
     color: #ffffff;
-    font-size: clamp(12px, 4vw, 14px);
+    font-size: clamp(14px, 3vw, 18px);
     font-family: 'Ortica_300', sans-serif;
     font-weight: 200;
     letter-spacing: 1px;
@@ -293,8 +293,9 @@ max-width: 80%;
     top: 0;
     left: 0;
     width: 100%;
-    height: 92px;
+    height: 150px;
     background: #0F111E;
+    padding-top: 66px;
 }
 article p {
     color: rgba(0, 0, 0, 0.774);
@@ -346,7 +347,7 @@ article p {
     font-size: clamp(0.85rem, 1vw, 0.95rem);
 } 
 .contact-info a { 
-    color: rgb(200, 70, 50);
+    color: rgb(184, 150, 70);
     text-decoration: none; 
     font-weight: bold; 
 } 
@@ -365,7 +366,7 @@ article p {
 } 
 .contact-button { 
     display: inline-block; 
-    background: rgb(200, 70, 50); 
+    background: rgb(184, 150, 70); 
     color: white; 
     padding: 8px 16px; 
     border-radius: 8px; 
@@ -374,7 +375,7 @@ article p {
     transition: background 0.3s ease;
 } 
 .contact-button:hover { 
-    background-color: rgb(200, 70, 50);
+    background-color: rgb(184, 150, 70);
     transform: scale(1.05);
 } 
 /* PAGE MENTIONS LEGALES */
@@ -388,7 +389,7 @@ article p {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 .header-offset{
-    height: 92px;
+    height: 0px;
 }
 .mention_article h2 {
     font-size: 24px;
@@ -404,7 +405,7 @@ article p {
     margin-top: 25px;
     margin-bottom: 12px;
     padding-left: 10px;
-    border-left: 4px solid rgb(0, 122, 204);
+    border-left: 4px solid rgb(184, 150, 70);
 }
 .mention_txt p {
     font-size: 14px;
@@ -414,13 +415,13 @@ article p {
     text-align: justify;
 }
 .mention_txt strong {
-    color: rgb(0, 122, 204);
+    color: rgb(184, 150, 70);
 }
 .mention_txt {
     margin-top: 25px;
 }
 .mention_txt a {
-    color: rgb(0, 122, 204);
+    color: rgb(184, 150, 70);
     text-decoration: none;
     transition: color 0.3s;
 }
@@ -476,7 +477,7 @@ article p {
     margin-top: 25px;
     margin-bottom: 12px;
     padding-left: 10px;
-    border-left: 4px solid rgb(0, 122, 204);
+    border-left: 4px solid rgb(184, 150, 70);
 }
 .cgv_txt p {
     font-size: 14px;
@@ -486,13 +487,13 @@ article p {
     text-align: justify;
 }
 .cgv_txt strong {
-    color: rgb(0, 122, 204);
+    color: rgb(184, 150, 70);
 }
 .cgv_txt {
     margin-top: 25px;
 }
 .cgv_txt a {
-    color: rgb(0, 122, 204);
+    color: rgb(184, 150, 70);
     text-decoration: none;
     transition: color 0.3s;
 }
@@ -597,8 +598,8 @@ article p {
 .footer-section h4 {
     font-size: 1.2em;
     margin-bottom: 15px;
-    color: rgb(200, 70, 50);
-    border-bottom: 2px solid rgb(200, 70, 50);
+    color: rgb(184, 150, 70);
+    border-bottom: 2px solid rgb(184, 150, 70);
     display: inline-block;
     padding-bottom: 5px;
     text-align: center;
@@ -617,7 +618,7 @@ article p {
     transition: color 0.3s ease, transform 0.3s ease;
 }
 .footer-section ul li a:hover {
-    color: rgb(200, 70, 50);
+    color: rgb(184, 150, 70);
     transform: translateX(5px);
 }
 .footer-section a {
@@ -627,7 +628,7 @@ article p {
     transition: color 0.3s ease;
 }
 .footer-section a:hover {
-    color: rgb(200, 70, 50);
+    color: rgb(184, 150, 70);
 }
 .footer-bottom {
     text-align: center;
@@ -642,7 +643,7 @@ article p {
     font-size: clamp(0.65rem, 1vw, 0.7rem);
 }
 .footer-bottom a {
-    color: rgb(200, 70, 50);
+    color: rgb(184, 150, 70);
     text-decoration: none;
     margin: 0 10px;
     font-size: clamp(0.7rem, 1.1vw, 0.8rem);

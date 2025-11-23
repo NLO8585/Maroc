@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 /* === Scroll vers section suivante === */
 window.scrollToNextSection = () => {
-    const nextSection = document.querySelector(".section1");
+    const nextSection = document.querySelector("#contact-section");
     if (nextSection) {
         nextSection.scrollIntoView({ behavior: "smooth" });
     }
