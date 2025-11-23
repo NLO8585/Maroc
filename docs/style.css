@@ -239,7 +239,7 @@ max-width: 80%;
     cursor: pointer;
 }
 .logopetit img {
-    max-height: 20px;
+    max-height: 120px;
     display: block;
     height: auto;
 }
@@ -264,6 +264,7 @@ max-width: 80%;
     font-style: normal;
     font-display: swap;
 }
+
 /* ARROW FLECHE SCROLL ACCUEIL */
 .scroll-arrow {
     position: absolute;
@@ -288,6 +289,21 @@ max-width: 80%;
   .scroll-arrow:hover img {
     transform: translateY(15px);
   }
+  /* HEADER PAGE ANNEXES */
+.header {
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 92px;
+    background: #0F111E;
+}
+article p {
+    color: rgba(0, 0, 0, 0.774);
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-top: 0px;
+}
 /* CONTACT SECTION */
 #contact {
   position: relative;
@@ -374,7 +390,7 @@ max-width: 80%;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 .header-offset{
-    height:92px;
+    height: 92px;
 }
 .mention_article h2 {
     font-size: 24px;
