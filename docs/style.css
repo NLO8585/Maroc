@@ -288,6 +288,81 @@ max-width: 80%;
   .scroll-arrow:hover img {
     transform: translateY(15px);
   }
+/* CONTACT SECTION */
+#contact {
+  position: relative;
+  background-color: #0F111E;
+  color: white;
+  width: clamp(300px, 60vw, 500px);
+  height: clamp(300px, 60vw, 500px);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 30px;
+  box-sizing: border-box;
+  margin: auto;
+}
+#contact-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 20px;
+  background-color: #F5F5F5;
+  overflow: hidden;
+}
+.contact-container {
+  width: 100%;
+}
+
+.contact-text { 
+    font-size: clamp(0.85rem, 1vw, 1rem);
+    margin-bottom: 35px; 
+    margin-top: 15px;
+} 
+.contact-info { 
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    margin-bottom: 35px; 
+} 
+.contact-info p { 
+    margin: 5px 0; 
+    font-size: clamp(0.85rem, 1vw, 0.95rem);
+} 
+.contact-info a { 
+    color: rgb(200, 70, 50);
+    text-decoration: none; 
+    font-weight: bold; 
+} 
+.social-icons { 
+    display: flex; 
+    justify-content: center; 
+    gap: 25px; 
+    margin-bottom: 35px; 
+} 
+.social-icon img { 
+    width: clamp(28px, 4vw, 35px);
+    transition: transform 0.3s ease; 
+} 
+.social-icon img:hover { 
+    transform: scale(1.05); 
+} 
+.contact-button { 
+    display: inline-block; 
+    background: rgb(200, 70, 50); 
+    color: white; 
+    padding: 8px 16px; 
+    border-radius: 8px; 
+    text-decoration: none;
+    font-size: clamp(11px, 1vw, 13px);
+    transition: background 0.3s ease;
+} 
+.contact-button:hover { 
+    background-color: rgb(200, 70, 50);
+    transform: scale(1.05);
+} 
 /* PAGE MENTIONS LEGALES */
 .mention_article {
     background: rgb(245, 245, 245);
