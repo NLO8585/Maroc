@@ -22,7 +22,7 @@ body {
 .header_accueil {
     z-index: 2;
     position: relative;
-    height: 100dvh;
+    height: 100vh;
     background: 
         linear-gradient(to bottom, #000000c7, rgba(39, 38, 38, 0.456)),
         url("image/maroc_fond_2.jpg");
@@ -162,12 +162,12 @@ nav ul.sommaire {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100dvh;
+    height: 100vh;
     text-align: center;
     width: 100%;
     z-index: 5;
     overflow: hidden;
-    max-height: 100dvh;
+    max-height: 100vh;
 }
 .Bienvenue {
     color: #ffffff;
@@ -257,3 +257,10 @@ max-width: 80%;
     padding: 15px;
 }
 
+@font-face {
+    font-family: 'Ortica_300';
+    src: url('fonts/ORTICA/Ortica_300.woff2') format('woff2');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
