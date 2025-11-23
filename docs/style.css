@@ -4,7 +4,7 @@
     margin: 0;
     line-height: 1.4;
     letter-spacing: 0.2px;
-    font-family: "Montserrat", "Source Sans Pro", sans-serif;
+    font-family: "Ortica_300", Arial, sans-serif;
     box-sizing: border-box;
 }
 body {
@@ -13,7 +13,7 @@ body {
     width: 100%;
     max-width: 100%;
     overflow-x: hidden;
-    font-family: Arial, sans-serif;
+    font-family: "Ortica_300", Arial, sans-serif;
     background-color: #fff;
 }
 
@@ -264,3 +264,27 @@ max-width: 80%;
     font-style: normal;
     font-display: swap;
 }
+/* ARROW FLECHE SCROLL ACCUEIL */
+.scroll-arrow {
+    position: absolute;
+    bottom: 25px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: bounce 2s infinite;
+  }
+  .scroll-arrow img {
+    width: 25px;
+    height: auto;
+    transition: transform 0.3s ease-in-out;
+  }
+  @keyframes bounce {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+  .scroll-arrow:hover img {
+    transform: translateY(15px);
+  }
