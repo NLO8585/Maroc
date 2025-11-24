@@ -27,4 +27,194 @@
 </head>
 
 <body>
+    <header class="header">
+        <div class="hamburger" 
+            tabindex="0" 
+            role="button" 
+            aria-label="Ouvrir le menu principal">
+                <span></span>
+                <span></span>
+                <span></span>
+        </div>  
+        <nav>
+            <ul class="sommaire">
+                <li> <a href="index.html" title="Accueil" aria-label="Aller à la page d'accueil">Accueil</a> </li>
+                <li> <a href="A_propos.html" title="Qui suis-je ?" aria-label="En savoir plus sur moi">Qui suis-je ?</a> </li>
+                <li> <a href="Nos_services.html" title="Mes services" aria-label="Découvrir mes services">Mes Services</a> </li>
+                <li> <a href="Portfolio.html" title=" Portfolio" aria-label="Voir mon portfolio">Portfolio</a> </li>
+                <li class="active"> <a href="Contact_et_devis.html" title="Contact et Devis" aria-label="Accéder à la page de contact et devis">Contact & Devis</a></li>
+            </ul>
+        </nav>
+        <div class="header-container2">
+            <div class="logopetit">
+                <a href="index.html" aria-label="Retour à la page d'accueil">
+                    <img src="image/Logo_Depuis.png" alt="Logo Depuis le ciel" />
+                </a>
+            </div>
+        </div>
+    </header>
+    <section id="Contact">
+        <div class="container">
+            <div class="title">
+                <h6>Une question ? </h6>
+                <h3>Contactez nous !</h3>
+            </div>
+            <form action="send-email.php" method="post">
+                <!-- Statut -->
+                <div class="form-row">
+                    <label for="type">Vous êtes ? <span aria-hidden="true">*</span></label>
+                    <select name="type" id="type" required>
+                        <option value="" disabled selected aria-hidden="true">Choisissez une option</option>
+                        <option value="professionnel">Professionnel ou entreprise</option>
+                        <option value="association">Association</option>
+                        <option value="particulier">Particulier</option>
+                    </select>
+                </div>
+            
+                <!-- Besoin -->
+                <div class="form-row">
+                    <label for="besoin">Votre besoin ? <span aria-hidden="true">*</span></label>
+                    <select name="besoin" id="besoin" required>
+                        <option value="" disabled selected aria-hidden="true">Choisissez une option</option>
+                        <option value="prises-de-vues">Prises de vues aériennes par drone</option>
+                        <option value="production-audiovisuelle">Production Audiovisuelle</option>
+                        <option value="formation-pilotage">Formation au pilotage de drones</option>
+                    </select>
+                </div>
+            
+                <!-- Nom entreprise + Nom complet -->
+                <div class="form-row two-columns">
+                    <div>
+                        <label for="company">Entreprise</label>
+                        <input type="text" name="company" id="company">
+                    </div>
+                    <div>
+                        <label for="fullname">Votre nom et prénom <span aria-hidden="true">*</span></label>
+                        <input type="text" name="fullname" id="fullname" required>
+                    </div>
+                </div>
+            
+                <!-- Email + Téléphone -->
+                <div class="form-row two-columns">
+                    <div>
+                        <label for="email">Votre e-mail <span aria-hidden="true">*</span></label>
+                        <input type="email" name="email" id="email" required>
+                    </div>
+                    <div>
+                        <label for="tel">N° de téléphone <span aria-hidden="true">*</span></label>
+                        <input type="tel" name="tel" id="tel" required>
+                    </div>
+                </div>
+            
+                <!-- Objet de la demande -->
+                <div class="form-row">
+                    <label for="objet">Objet de la demande <span aria-hidden="true">*</span></label>
+                    <select name="objet" id="objet" required>
+                        <option value="" disabled selected aria-hidden="true">Choisissez une option</option>
+                        <option value="renseignement">Renseignement</option>
+                        <option value="devis">Devis</option>
+                        <option value="technique">Question technique</option>
+                        <option value="autre">Autre</option>
+                    </select>
+                </div>
+            
+                <!-- Message -->
+                <div class="form-row">
+                    <label for="message">Votre message <span aria-hidden="true">*</span></label>
+                    <textarea name="message" id="message" required></textarea>
+                </div>
+            
+                <!-- Consentement -->
+                <div class="form-row checkbox">
+                    <input type="checkbox" name="consent" id="consent" required>
+                    <label for="consent">
+                        En soumettant ce formulaire, vous acceptez que les données saisies soient utilisées par <strong>Depuis le ciel</strong> afin qu'elle puisse répondre directement et gérer la relation contractuelle.
+                    </label>
+                </div>
+            
+                <!-- Bouton -->
+                <div class="form-row">
+                    <button type="submit">Envoyer</button>
+                </div>
+            </form>
+        </div>
+        <div class="right-section">
+            <div class="title">
+                <h6>Coordonnées</h6>
+            </div>
+            <hr class="custom-line">
+            <p class="contact_gras"><a href="tel:0781541461">07.81.54.14.61</a></p>
+            <p class="contact_gras"><a href="mailto:dronie.contact@gmail.com">dronie.contact@gmail.com</a></p>
+            <p>N'hésitez pas à me contacter, je serai ravi de vous écouter et de vous conseiller.</p>
+            <p>Depuis le Ciel est basée à <strong>Bordeaux</strong>. Je me déplace sur l'ensemble de la région Nouvelle-Aquitaine, mais aussi dans toute la France.</p>
+        
+            <div class="title">
+                <h6>Renseignements et Devis</h6>
+            </div>
+            <hr class="custom-line">
+            <p>Pour toute demande de devis, renseignement ou question technique, merci d’utiliser le formulaire ci-contre en précisant le lieu de la prise de vue, le type d’image souhaitée (photo, vidéo, etc.) ainsi que la durée estimée de la prestation.</p>
+            <p>Je réponds généralement sous 24 à 48h avec une proposition adaptée à votre demande. Vous pouvez également me contacter directement via les coordonnées ci-dessus.</p>
+        </div>
+    </section>
+    <footer class="footer">
+        <div class="wave-divider-contact">
+            <svg viewBox="0 0 1200 100" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+                <path class="wave-path" d="M0,30 C300,90 900,-20 1200,30 V100 H0 Z"></path>
+            </svg>
+        </div>
+        <div class="footer-container">
+            <div class="footer-section">
+                <div class="logo2">
+                    <img src="image/Logo_Depuis.png" alt="Logo Depuis le ciel" loading="lazy">
+                </div>
+                <p>Depuis le ciel est une entreprise basée à Bordeaux en Gironde – Nouvelle-Aquitaine et opérant partout en France. Pilote de drone professionnel, reconnu et agréé par la DGAC (N° d’enregistrement : EDxxxx).</p>
+                <p>Prestations de prise de vue par drone, montage vidéo pour projets professionnels ou personnels.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Pages</h4>
+                <ul>
+                    <li><a href="index.html" aria-label="Aller à la page d'accueil">ACCUEIL</a></li>
+                    <li><a href="A_propos.html" aria-label="En savoir plus sur moi">QUI SUIS-JE ?</a></li>
+                    <li><a href="Nos_services.html" aria-label="Découvrir nos services">SERVICES</a></li>
+                    <li><a href="Portfolio.html" aria-label="Voir mon portfolio">PORTFOLIO</a></li>
+                    <li><a href="Contact_et_devis.html" aria-label="Accéder à la page de contact et devis">CONTACT | DEVIS</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Contact</h4>
+                <p>56 rue Colette<br>85 000 LA ROCHE-SUR-YON</p>
+                <p><a href="mailto:dronie.contact@gmail.com">dronie.contact@gmail.com</a></p>
+                <p><a href="tel:0781541461">07 81 54 14 61</a></p>
+            </div>
+            <div class="footer-section">
+                <h4>En savoir plus</h4>
+                <p>
+                  Venez découvrir mes réseaux sociaux pour voir en détail les différentes prestations que je réalise. Je partage régulièrement mon quotidien de pilote de drone !
+                </p>
+                <div class="social">
+                    <a href="http://www.youtube.com/@nathanloheac85" target="_blank" rel="noopener noreferrer" title="YouTube" loading="lazy" aria-label="Visitez ma chaîne YouTube">
+                        <img src="image/Youtube.png" alt="YouTube">
+                    </a>
+                    <a href="https://www.instagram.com/nathan_loheac/" target="_blank" rel="noopener noreferrer" title="Instagram" loading="lazy" aria-label="Visitez mon compte Instagram">
+                        <img src="image/Instagram.png" alt="Instagram">
+                    </a>
+                    <a href="https://www.linkedin.com/in/nathan-loheac/" target="_blank" rel="noopener noreferrer" title="LinkedIn" loading="lazy" aria-label="Visitez mon compte LinkedIn">
+                        <img src="image/Linkedin.png" alt="LinkedIn">
+                    </a>
+                    <a href="https://www.facebook.com/nath.loheac" target="_blank" rel="noopener noreferrer" title="Facebook" loading="lazy" aria-label="Visitez mon compte Facebook">
+                        <img src="image/Facebook.png" alt="Facebook">
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>
+                <a href="mention.html">Mentions légales</a> | 
+                <a href="CGV.html">Conditions Générales de Vente (CGV)</a>
+            </p>
+            <p>&copy;2025 Depuis le ciel. Tous droits réservés.</p>
+        </div>
+    </footer>
 </body>
+
+</html>
