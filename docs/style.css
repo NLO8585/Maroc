@@ -113,29 +113,51 @@ body {
 }
 
 .sommaire li {
-    margin: 0 40px; /* espace uniforme entre items */
+    margin: 0 15px; /* espace uniforme entre items */
 }
 
 .sommaire li a {
+    position: relative;                   /* nécessaire pour l’underline animé */
     text-decoration: none;
     color: #ffffff;
     padding: 6px 12px;
     text-transform: uppercase;
     border: 1px solid transparent;
     font-weight: 300;
-    transition: 0.6s ease;
+    transition: color 0.6s ease;
     cursor: pointer;
     border-radius: 4px;
 }
-
-.sommaire li a:hover {
+/* Barre sous le texte (invisible au départ) */
+.sommaire li a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -3px;                          /* distance sous le texte */
+    width: 0%;
+    height: 1.5px;
     background: rgb(184, 150, 70);
-    color: black;
+    transition: width 0.4s ease;
 }
 
+.sommaire li a:hover {
+    background: transparent;         /* plus de background */
+    color: rgb(184, 150, 70);        /* couleur demandée */
+}
+.sommaire li a:hover::after {
+    width: 100%;
+}
+
+
 .sommaire li.active a {
-    background: #fff;
-    color: #000;
+    background: transparent;         /* plus de background */
+    color: #fff;                     /* texte blanc */
+    font-weight: bold;               /* gras */
+}
+/* Pas de barre pour l'actif (si tu veux qu’il y en ait une, je peux l’ajouter) */
+.sommaire li.active a::after {
+    width: 0;
+    background: transparent;
 }
 
 .sommaire_annexes.show {
@@ -149,29 +171,50 @@ body {
 }
 
 .sommaire_annexes li {
-    margin: 0 40px;
+    margin: 0 15px;
 }
 
 .sommaire_annexes li a {
+    position: relative;                /* nécessaire pour la barre animée */
     text-decoration: none;
     color: #ffffff;
     padding: 6px 12px;
     text-transform: uppercase;
     border: 1px solid transparent;
     font-weight: 300;
-    transition: 0.6s ease;
+    transition: color 0.6s ease;
     cursor: pointer;
     border-radius: 4px;
 }
 
-.sommaire_annexes li a:hover {
+.sommaire_annexes li a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -3px;                          /* distance sous le texte */
+    width: 0%;
+    height: 1.5px;
     background: rgb(184, 150, 70);
-    color: black;
+    transition: width 0.4s ease;
+}
+
+.sommaire_annexes li a:hover {
+    background: transparent;
+    color: rgb(184, 150, 70);
+}
+.sommaire_annexes li a:hover::after {
+    width: 100%;
+}
+
+.sommaire_annexes li.active a::after {
+    width: 0;
+    background: transparent;
 }
 
 .sommaire_annexes li.active a {
-    background: #fff;
-    color: #000;
+    background: transparent;
+    color: #fff;
+    font-weight: bold;
 }
 /* MENU HAMBURGER */
 .hamburger {
@@ -657,7 +700,7 @@ article p {
     text-align: center;
 }
 .footer-section ul li {
-    margin: 15px 0;
+    margin: 8px 0;
 }
 .footer-section ul li a {
     text-decoration: none;
