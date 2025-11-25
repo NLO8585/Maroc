@@ -92,6 +92,16 @@ body {
     transform: translateY(-50px);
     transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
+.sommaire_annexes {
+    list-style: none;
+    display: flex;
+    justify-content: center; /* centre horizontalement */
+    gap: 40px;  
+    padding-top: 60px;             /* espace entre chaque item du menu */
+    opacity: 0;
+    transform: translateY(-50px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
 .sommaire.show {
     opacity: 1;
     transform: translateY(0);
@@ -128,6 +138,41 @@ body {
     color: #000;
 }
 
+.sommaire_annexes.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+.sommaire_annexes.static {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+    transition: none !important;
+}
+
+.sommaire_annexes li {
+    margin: 0 40px;
+}
+
+.sommaire_annexes li a {
+    text-decoration: none;
+    color: #ffffff;
+    padding: 6px 12px;
+    text-transform: uppercase;
+    border: 1px solid transparent;
+    font-weight: 300;
+    transition: 0.6s ease;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.sommaire_annexes li a:hover {
+    background: rgb(184, 150, 70);
+    color: black;
+}
+
+.sommaire_annexes li.active a {
+    background: #fff;
+    color: #000;
+}
 /* MENU HAMBURGER */
 .hamburger {
     display: none;
@@ -249,10 +294,9 @@ max-width: 80%;
 }
 
 .logo2 img {
-    max-width: 150px;
+    max-width: 110px;
     height: auto;
     border-radius: 8px;
-    padding: 15px;
 }
 
 @font-face {
@@ -295,7 +339,6 @@ max-width: 80%;
     width: 100%;
     height: 150px;
     background: #0F111E;
-    padding-top: 66px;
 }
 article p {
     color: rgba(0, 0, 0, 0.774);
@@ -324,7 +367,7 @@ article p {
   justify-content: center;
   align-items: center;
   padding: 20px 20px;
-  background-color: #F5F5F5;
+  background-color: rgb(248, 248, 248);
   overflow: hidden;
 }
 .contact-container {
@@ -553,6 +596,10 @@ article p {
     margin: 0;
     padding: 0;
 }
+.wave-path {
+    fill:#0F111E;
+    stroke: none;
+}
 /* PIED DE PAGE */
 .footer {
     background: #0F111E;
@@ -589,7 +636,7 @@ article p {
     font-size: 13px;
 }
 .footer-section:first-child p {
-    max-width: 80%;
+    max-width: 100%;
     font-size: 13px;
     text-align: left justify;
     text-align-last:auto;
@@ -610,7 +657,7 @@ article p {
     text-align: center;
 }
 .footer-section ul li {
-    margin: 8px 0;
+    margin: 15px 0;
 }
 .footer-section ul li a {
     text-decoration: none;
@@ -627,14 +674,17 @@ article p {
     font-weight: bold;
     transition: color 0.3s ease;
 }
+.footer-section:nth-child(3) p {
+    margin-bottom: 25px; /* ajuste la valeur selon l'espacement souhaité */
+}
 .footer-section a:hover {
     color: rgb(184, 150, 70);
 }
 .footer-bottom {
     text-align: center;
-    margin-top: 20px;
+    margin-top: 00px;
     border-top: 1px solid #333;
-    padding-top: 20px;
+    padding-top: 0px;
     font-size: clamp(0.7rem, 1.2vw, 0.9rem);
 }
 .footer-bottom p {
@@ -872,10 +922,10 @@ section#Contact .container form .form-row.two-columns > div label {
 .right-section .contact_gras a {
     color: inherit;      /* hérite la couleur du parent, souvent noir */
     text-decoration: none;
-    color: rgb(200, 70, 50);
+    color: rgb(184, 150, 70);
 }
 .right-section .contact_gras:hover {
-    color: rgb(200, 70, 50);
+    color: rgb(184, 150, 70);
     text-decoration: underline;
 }
 .right-section .contact_gras:nth-of-type(2) {

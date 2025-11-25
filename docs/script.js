@@ -1,22 +1,39 @@
-/* === Apparition du menu / sommaire === */
+/* ============================================================
+   === Apparition du menu / sommaire (Accueil + Annexes) ===
+   ============================================================ */
 document.addEventListener("DOMContentLoaded", () => {
-    const sommaire = document.querySelector(".sommaire");
-    if (!sommaire) return;
+    const sommaireHome = document.querySelector(".sommaire");
+    const sommaireAnnexes = document.querySelector(".sommaire_annexes");
 
-    // Animation pour la page d'accueil
-    if (window.location.pathname.endsWith("index.html") || window.location.pathname === "/") {
+    const isHome =
+        window.location.pathname.endsWith("index.html") ||
+        window.location.pathname === "/" ||
+        window.location.pathname === "";
+
+    // === PAGE D’ACCUEIL ===
+    if (sommaireHome && isHome) {
         setTimeout(() => {
-            sommaire.classList.add("show");
+            sommaireHome.classList.add("show");
         }, 300);
-    } else {
-        sommaire.classList.add("static");
     }
+
+    // === PAGES ANNEXES ===
+    if (sommaireAnnexes && !isHome) {
+        sommaireAnnexes.classList.add("static");
+}
 });
 
-/* === Menu hamburger === */
+
+/* ============================================================
+   === Menu hamburger (compatible accueil + annexes) ===
+   ============================================================ */
 document.addEventListener("DOMContentLoaded", () => {
     const hamburger = document.querySelector(".hamburger");
-    const menu = document.querySelector(".sommaire");
+    const menuHome = document.querySelector(".sommaire");
+    const menuAnnexes = document.querySelector(".sommaire_annexes");
+
+    // On choisit automatiquement lequel utiliser
+    const menu = menuHome || menuAnnexes;
     if (!hamburger || !menu) return;
 
     let isMenuOpen = false;
@@ -24,6 +41,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const toggleMenu = (e) => {
         e.preventDefault();
         isMenuOpen = !isMenuOpen;
+
         menu.classList.toggle("active", isMenuOpen);
         hamburger.classList.toggle("active", isMenuOpen);
     };
@@ -31,7 +49,10 @@ document.addEventListener("DOMContentLoaded", () => {
     hamburger.addEventListener("click", toggleMenu);
 });
 
-/* === Scroll vers section suivante === */
+
+/* ============================================================
+   === Scroll vers section suivante ===
+   ============================================================ */
 window.scrollToNextSection = () => {
     const nextSection = document.querySelector("#contact-section");
     if (nextSection) {
