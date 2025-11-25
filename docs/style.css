@@ -14,7 +14,8 @@ body {
     max-width: 100%;
     overflow-x: hidden;
     font-family: Arial, sans-serif;
-    background-color: #fff;
+    background-color: rgb(248, 248, 248);
+    
 }
 
 
@@ -1120,5 +1121,101 @@ section#Contact .container form .form-row.two-columns > div label {
 
     .blog-content {
         text-align: justify; /* Justification même sur mobile */
+    }
+}
+
+
+/* Page article détaillé (ne touche pas au CSS du blog) */
+.article-page {
+    max-width: 900px;
+    margin: 50px auto;
+    padding: 0 20px;
+    font-family: 'Arial', sans-serif;
+    line-height: 1.8;
+    color: #333;
+}
+
+.article-header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.article-subtitle {
+    font-size: 1rem;
+    color: #777;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.article-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    margin-bottom: 40px;
+    display: block;
+}
+
+.article-content p {
+    font-size: 1.1rem;
+    margin-bottom: 25px;
+    text-align: justify;
+}
+
+/* Bouton Retour au blog */
+.article-back-button {
+    display: inline-block;
+    padding: 12px 28px;
+    background: linear-gradient(135deg, #C49A6C, #B28554);
+    color: white;
+    text-decoration: none;
+    border-radius: 25px;
+    font-weight: 600;
+    font-size: 1rem;
+    letter-spacing: 0.5px;
+    transition: all 0.4s ease;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    display: block;
+    width: fit-content;
+    margin: 30px auto 0; /* centré */
+}
+
+.article-back-button::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: rgba(255,255,255,0.2);
+    transform: skewX(-20deg);
+    transition: all 0.5s ease;
+}
+
+.article-back-button:hover::after {
+    left: 200%;
+}
+
+.article-back-button:hover {
+    background: linear-gradient(135deg, #B28554, #C49A6C);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+    transform: translateY(-2px);
+}
+
+/* Responsive */
+@media (max-width: 800px) {
+    .article-page {
+        padding: 0 15px;
+    }
+
+    .article-header h1 {
+        font-size: 2rem;
+    }
+
+    .article-content p {
+        font-size: 1rem;
     }
 }
