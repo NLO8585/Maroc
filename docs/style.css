@@ -87,7 +87,7 @@ body {
     display: flex;
     justify-content: center; /* centre horizontalement */
     gap: 40px;               /* espace entre chaque item du menu */
-    margin-top: 50px;        /* espace entre le haut du header et le menu */
+    margin-top: 60px;        /* espace entre le haut du header et le menu */
     opacity: 0;
     transform: translateY(-50px);
     transition: opacity 0.8s ease-out, transform 0.8s ease-out;
@@ -141,7 +141,6 @@ body {
 }
 
 .sommaire li a:hover {
-    background: transparent;         /* plus de background */
     color: rgb(184, 150, 70);        /* couleur demandée */
 }
 .sommaire li a:hover::after {
@@ -150,14 +149,15 @@ body {
 
 
 .sommaire li.active a {
-    background: transparent;         /* plus de background */
-    color: #fff;                     /* texte blanc */
-    font-weight: bold;               /* gras */
-}
-/* Pas de barre pour l'actif (si tu veux qu’il y en ait une, je peux l’ajouter) */
-.sommaire li.active a::after {
-    width: 0;
     background: transparent;
+    color: #fff;          /* texte blanc */
+    font-weight: bold;    /* si tu veux garder le gras pour l'actif */
+}
+.sommaire li.active a:hover {
+    color: rgb(184, 150, 70);        /* couleur demandée */
+}
+.sommaire li.active a:hover::after {
+    width: 100%;
 }
 
 .sommaire_annexes.show {
@@ -206,15 +206,23 @@ body {
     width: 100%;
 }
 
-.sommaire_annexes li.active a::after {
-    width: 0;
-    background: transparent;
-}
 
 .sommaire_annexes li.active a {
     background: transparent;
     color: #fff;
     font-weight: bold;
+}
+
+.sommaire_annexes li.active a {
+    background: transparent;
+    color: #fff;          /* texte blanc */
+    font-weight: bold;    /* si tu veux garder le gras pour l'actif */
+}
+.sommaire_annexes li.active a:hover {
+    color: rgb(184, 150, 70);        /* couleur demandée */
+}
+.sommaire_annexes li.active a:hover::after {
+    width: 100%;
 }
 /* MENU HAMBURGER */
 .hamburger {
@@ -992,3 +1000,125 @@ section#Contact .container form .form-row.two-columns > div label {
     margin-top: 40px;
 }
 
+/* BLOG */
+
+.blog-container {
+    background-color: #f8f8f8;
+    padding: 40px 20px; /* pour créer un peu d'espace autour des articles */
+    border-radius: 12px; /* optionnel, pour un effet plus doux */
+}
+
+/* Structure d'un article */
+.blog-item {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    margin: 40px auto;
+    padding-bottom: 40px;
+    border-bottom: 1px solid #d8c3a5; /* Ligne séparatrice élégante */
+    max-width: 1400px; /* largeur totale de l'article */
+    justify-content: center; /* centre le bloc global */
+}
+
+/* Alternance des positions */
+.left-image .blog-image { order: 1; }
+.left-image .blog-content { order: 2; }
+.right-image .blog-image { order: 2; }
+.right-image .blog-content { order: 1; }
+
+/* Image */
+.blog-image {
+    flex: 0 0 35%; /* réduit la largeur à 35% du bloc mais garde les proportions */
+    max-width: 35%;
+}
+
+.blog-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+/* Contenu texte */
+.blog-content {
+    flex: 1;
+    max-width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start; /* texte et titre alignés à gauche */
+    padding: 10px 20px;
+    text-align: justify; /* 🎯 Texte justifié */
+}
+
+.blog-content h2 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+.blog-content p {
+    font-size: 1.1rem;
+    line-height: 1.9;
+    margin-bottom: 25px;
+    width: 100%;
+    text-align: justify; /* Sécurité : justification directe sur le paragraphe */
+    padding-left: 0px;
+}
+
+.blog-button {
+    display: inline-block;
+    padding: 12px 28px;           /* un peu plus large pour l’élégance */
+    background: linear-gradient(135deg, #C49A6C, #B28554); /* dégradé subtil */
+    color: white;
+    text-decoration: none;
+    border-radius: 25px;          /* coins arrondis plus doux */
+    font-weight: 600;
+    font-size: 1rem;
+    letter-spacing: 0.5px;        /* espace entre les lettres pour l’aération */
+    transition: all 0.4s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* léger relief */
+    align-self: center;           /* toujours centré sous le texte */
+    position: relative;
+    overflow: hidden;
+}
+
+.blog-button::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: rgba(255,255,255,0.2);
+    transform: skewX(-20deg);
+    transition: all 0.5s ease;
+}
+
+.blog-button:hover::after {
+    left: 200%;
+}
+
+.blog-button:hover {
+    background: linear-gradient(135deg, #B28554, #C49A6C); /* inversion du dégradé */
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+    transform: translateY(-2px);
+}
+
+/* Responsive */
+@media (max-width: 800px) {
+
+    .blog-item {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .blog-image,
+    .blog-content {
+        max-width: 100%;
+        order: unset !important;
+    }
+
+    .blog-content {
+        text-align: justify; /* Justification même sur mobile */
+    }
+}
