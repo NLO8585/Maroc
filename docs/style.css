@@ -87,7 +87,7 @@ body {
     list-style: none;
     display: flex;
     justify-content: center; /* centre horizontalement */
-    gap: 40px;               /* espace entre chaque item du menu */
+    gap: 15px;               /* espace entre chaque item du menu */
     margin-top: 60px;        /* espace entre le haut du header et le menu */
     opacity: 0;
     transform: translateY(-50px);
@@ -97,7 +97,7 @@ body {
     list-style: none;
     display: flex;
     justify-content: center; /* centre horizontalement */
-    gap: 40px;  
+    gap: 15px;  
     padding-top: 60px;             /* espace entre chaque item du menu */
     opacity: 0;
     transform: translateY(-50px);
@@ -121,10 +121,11 @@ body {
     position: relative;                   /* nécessaire pour l’underline animé */
     text-decoration: none;
     color: #ffffff;
-    padding: 6px 12px;
+    padding: 4px 8px;
     text-transform: uppercase;
     border: 1px solid transparent;
     font-weight: 300;
+    font-size: 0.85rem;
     transition: color 0.6s ease;
     cursor: pointer;
     border-radius: 4px;
@@ -179,10 +180,11 @@ body {
     position: relative;                /* nécessaire pour la barre animée */
     text-decoration: none;
     color: #ffffff;
-    padding: 6px 12px;
+    padding: 4px 8px;
     text-transform: uppercase;
     border: 1px solid transparent;
     font-weight: 300;
+    font-size: 0.85rem;
     transition: color 0.6s ease;
     cursor: pointer;
     border-radius: 4px;
@@ -1218,4 +1220,133 @@ section#Contact .container form .form-row.two-columns > div label {
     .article-content p {
         font-size: 1rem;
     }
+}
+
+
+
+/* Icône panier */
+.cart-icon {
+    position: fixed;
+    top: 55px;       /* moitié verticale de l'icône à 60px */
+    right: 40px;     /* écart du bord droit */
+    z-index: 1200;
+    cursor: pointer;
+}
+
+.cart-icon img {
+    width: 30px;     
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.cart-icon:hover img {
+    transform: scale(1.1);
+}
+
+/* Overlay */
+#cart-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.35);
+    z-index: 1400;
+    display: none;
+    transition: opacity 0.3s ease;
+}
+
+#cart-overlay.active {
+    display: block;
+}
+
+/* Fenêtre du panier */
+#cart-sidebar {
+    position: fixed;
+    top: 0;
+    right: -320px; /* cachée par défaut */
+    width: 320px;
+    height: 100%;
+    background: white;
+    box-shadow: -8px 0 20px rgba(0,0,0,0.25);
+    z-index: 1500;
+    transition: right 0.4s ease;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    font-family: 'Montserrat', sans-serif;
+}
+
+#cart-sidebar.active {
+    right: 0;
+}
+
+/* Header panier */
+.cart-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #C49A6C;
+    color: #fff;
+    font-weight: 600;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.cart-header h2 {
+    font-size: 1.4rem;
+    margin: 0;
+}
+
+#close-cart {
+    background: #B28554;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#close-cart:hover {
+    background: #C49A6C;
+    transform: scale(1.1);
+}
+
+/* Contenu panier */
+.cart-content {
+    padding: 20px;
+    overflow-y: auto;
+    flex: 1;
+}
+
+.cart-product {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+}
+
+.cart-product img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    margin-right: 10px;
+}
+
+.cart-product-details {
+    flex: 1;
+}
+
+.cart-product-details h4 {
+    font-size: 1rem;
+    margin-bottom: 5px;
+}
+
+.cart-product-details p {
+    font-size: 0.6rem;
+    color: #555;
+    margin: 0;
 }

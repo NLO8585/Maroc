@@ -59,3 +59,24 @@ window.scrollToNextSection = () => {
         nextSection.scrollIntoView({ behavior: "smooth" });
     }
 };
+
+/*PANIER*/
+const cartIcon = document.querySelector('.cart-icon');
+const cartSidebar = document.getElementById('cart-sidebar');
+const closeCart = document.getElementById('close-cart');
+const cartOverlay = document.getElementById('cart-overlay');
+
+cartIcon.addEventListener('click', () => {
+    cartSidebar.classList.add('active');
+    cartOverlay.classList.add('active');
+});
+
+closeCart.addEventListener('click', () => {
+    cartSidebar.classList.remove('active');
+    cartOverlay.classList.remove('active');
+});
+
+cartOverlay.addEventListener('click', () => {
+    cartSidebar.classList.remove('active');
+    cartOverlay.classList.remove('active');
+});
