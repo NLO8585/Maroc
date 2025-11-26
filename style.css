@@ -151,9 +151,10 @@ body {
 }
 
 /* Flèche à droite des titres avec sous-menu */
-.sommaire .arrow {
+.sommaire .arrow,
+.sommaire_annexes .arrow {
     font-size: 0.75rem;
-    margin-left: 6px;
+    margin-left: 3px;
     transition: transform 0.25s ease;
 }
 
