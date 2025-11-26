@@ -1,27 +1,4 @@
-/* ============================================================
-   === Apparition du menu / sommaire (Accueil + Annexes) ===
-   ============================================================ */
-document.addEventListener("DOMContentLoaded", () => {
-    const sommaireHome = document.querySelector(".sommaire");
-    const sommaireAnnexes = document.querySelector(".sommaire_annexes");
 
-    const isHome =
-        window.location.pathname.endsWith("index.html") ||
-        window.location.pathname === "/" ||
-        window.location.pathname === "";
-
-    // === PAGE D’ACCUEIL ===
-    if (sommaireHome && isHome) {
-        setTimeout(() => {
-            sommaireHome.classList.add("show");
-        }, 300);
-    }
-
-    // === PAGES ANNEXES ===
-    if (sommaireAnnexes && !isHome) {
-        sommaireAnnexes.classList.add("static");
-}
-});
 
 
 /* ============================================================

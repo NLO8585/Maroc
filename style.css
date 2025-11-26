@@ -89,8 +89,6 @@ body {
     justify-content: center; /* centre horizontalement */
     gap: 15px;               /* espace entre chaque item du menu */
     margin-top: 60px;        /* espace entre le haut du header et le menu */
-    opacity: 0;
-    transform: translateY(-50px);
     transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
 .sommaire_annexes {
@@ -99,19 +97,9 @@ body {
     justify-content: center; /* centre horizontalement */
     gap: 15px;  
     padding-top: 60px;             /* espace entre chaque item du menu */
-    opacity: 0;
-    transform: translateY(-50px);
     transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
-.sommaire.show {
-    opacity: 1;
-    transform: translateY(0);
-}
-.sommaire.static {
-    opacity: 1 !important;
-    transform: translateY(0) !important;
-    transition: none !important;
-}
+
 
 .sommaire li {
     margin: 0 15px; /* espace uniforme entre items */
