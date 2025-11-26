@@ -7,6 +7,7 @@
     font-family: "Montserrat", "Source Sans Pro", sans-serif;
     box-sizing: border-box;
 }
+
 body {
     margin: 0;
     padding: 0;
@@ -15,9 +16,7 @@ body {
     overflow-x: hidden;
     font-family: Arial, sans-serif;
     background-color: rgb(248, 248, 248);
-    
 }
-
 
 /* ENTETE PAGE D'ACCUEIL */
 .header_accueil {
@@ -39,74 +38,33 @@ body {
     height: 100dvh;          
     padding-top: 0;         
 }
-.banniere-defilante {
-    width: 100%;
-    height: 18px;
-    background-color: rgba(200, 70, 50);
-    color: white;
-    font-size: 12px;
-    display: flex;
-    align-items: center;
-    overflow: hidden;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 1000;
-    white-space: nowrap;
-    text-decoration: none;
-}
 
-.defilement {
-    display: flex;
-    width: max-content;
-    animation: defilement-infini 60s linear infinite;
-}
-
-.defilement .contenu {
-    display: flex;
-}
-
-.defilement span {
-    display: inline-block;
-}
-
-.separateur {
-    display: inline-block;
-    padding: 0 60px;
-}
-@keyframes defilement-infini {
-    0% {
-        transform: translateX(0);
-    }
-    100% {
-        transform: translateX(-50%);
-    }
-}
-/* SOMMAIRE - centré et animation verticale */
+/* SOMMAIRE PAGE PRINCIPALE */
 .sommaire {
     list-style: none;
     display: flex;
-    justify-content: center; /* centre horizontalement */
-    gap: 15px;               /* espace entre chaque item du menu */
-    margin-top: 60px;        /* espace entre le haut du header et le menu */
+    justify-content: center;
+    gap: 15px;
+    margin-top: 60px;
     transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
+
+/* SOMMAIRE PAGES ANNEXES*/
 .sommaire_annexes {
     list-style: none;
     display: flex;
-    justify-content: center; /* centre horizontalement */
+    justify-content: center;
     gap: 15px;  
-    padding-top: 60px;             /* espace entre chaque item du menu */
+    padding-top: 60px;
     transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
 
-
 .sommaire li {
-    margin: 0 15px; /* espace uniforme entre items */
+    margin: 0 15px;
 }
 
 .sommaire li a {
-    position: relative;                   /* nécessaire pour l’underline animé */
+    position: relative;
     text-decoration: none;
     color: #ffffff;
     padding: 4px 8px;
@@ -118,12 +76,13 @@ body {
     cursor: pointer;
     border-radius: 4px;
 }
+
 /* Barre sous le texte (invisible au départ) */
 .sommaire li a::after {
     content: "";
     position: absolute;
     left: 0;
-    bottom: -3px;                          /* distance sous le texte */
+    bottom: -3px;
     width: 0%;
     height: 1.5px;
     background: rgb(186, 151, 71);
@@ -131,31 +90,25 @@ body {
 }
 
 .sommaire li a:hover {
-    color: rgb(186, 151, 71);        /* couleur demandée */
+    color: rgb(186, 151, 71);
 }
+
 .sommaire li a:hover::after {
     width: 100%;
 }
 
-
 .sommaire li.active a {
     background: transparent;
-    color: #fff;          /* texte blanc */
-    font-weight: bold;    /* si tu veux garder le gras pour l'actif */
-}
-.sommaire li.active a:hover {
-    color: rgb(186, 151, 71);        /* couleur demandée */
-}
-.sommaire li.active a:hover::after {
-    width: 100%;
+    color: #fff;
+    font-weight: bold;
 }
 
-/* Flèche à droite des titres avec sous-menu */
-.sommaire .arrow,
-.sommaire_annexes .arrow {
-    font-size: 0.75rem;
-    margin-left: 3px;
-    transition: transform 0.25s ease;
+.sommaire li.active a:hover {
+    color: rgb(186, 151, 71);
+}
+
+.sommaire li.active a:hover::after {
+    width: 100%;
 }
 
 /* ========================================
@@ -185,6 +138,13 @@ body {
     transform: translateY(10px);
     transition: all 0.25s ease;
     z-index: 1000;
+}
+/* Flèche à droite des titres avec sous-menu */
+.sommaire .arrow,
+.sommaire_annexes .arrow {
+    font-size: 0.75rem;
+    margin-left: 3px;
+    transition: transform 0.25s ease;
 }
 
 /* Liens du sous-menu */
@@ -239,7 +199,7 @@ body {
 }
 
 .sommaire_annexes li a {
-    position: relative;                /* nécessaire pour la barre animée */
+    position: relative;
     text-decoration: none;
     color: #ffffff;
     padding: 4px 8px;
@@ -256,7 +216,7 @@ body {
     content: "";
     position: absolute;
     left: 0;
-    bottom: -3px;                          /* distance sous le texte */
+    bottom: -3px;
     width: 0%;
     height: 1.5px;
     background: rgb(186, 151, 71);
@@ -267,10 +227,10 @@ body {
     background: transparent;
     color: rgb(186, 151, 71);
 }
+
 .sommaire_annexes li a:hover::after {
     width: 100%;
 }
-
 
 .sommaire_annexes li.active a {
     background: transparent;
@@ -280,15 +240,16 @@ body {
 
 .sommaire_annexes li.active a {
     background: transparent;
-    color: #fff;          /* texte blanc */
-    font-weight: bold;    /* si tu veux garder le gras pour l'actif */
+    color: #fff;
+    font-weight: bold;
 }
 .sommaire_annexes li.active a:hover {
-    color: rgb(186, 151, 71);        /* couleur demandée */
+    color: rgb(186, 151, 71);
 }
 .sommaire_annexes li.active a:hover::after {
     width: 100%;
 }
+
 /* MENU HAMBURGER */
 .hamburger {
     display: none;
@@ -316,10 +277,10 @@ body {
     z-index: 1010;
 }
 .header-container {
-    position: absolute;       /* permet de centrer sans impacter le menu/logo */
-    top: 50%;                 /* milieu vertical du header */
-    left: 50%;                /* milieu horizontal du header */
-    transform: translate(-50%, -50%); /* ajuste pour centrer exactement */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -773,7 +734,7 @@ article p {
     transition: color 0.3s ease;
 }
 .footer-section:nth-child(3) p {
-    margin-bottom: 25px; /* ajuste la valeur selon l'espacement souhaité */
+    margin-bottom: 25px;
 }
 .footer-section a:hover {
     color: rgb(186, 151, 71);
@@ -817,9 +778,6 @@ article p {
     transform: scale(1.1);
     filter: grayscale(0%);
 }
-
-
-
 
 /* CONTACT ET DEVIS */
 section#Contact {
@@ -1014,11 +972,11 @@ section#Contact .container form .form-row.two-columns > div label {
     font-weight: bold;
     width: 100%;
     margin: 0.2rem 0;
-    color: inherit;      /* hérite la couleur du parent, souvent noir */
+    color: inherit;
     text-decoration: none; /
 }
 .right-section .contact_gras a {
-    color: inherit;      /* hérite la couleur du parent, souvent noir */
+    color: inherit;
     text-decoration: none;
     color: rgb(186, 151, 71);
 }
@@ -1051,8 +1009,8 @@ section#Contact .container form .form-row.two-columns > div label {
 
 .blog-container {
     background-color: #f8f8f8;
-    padding: 40px 20px; /* pour créer un peu d'espace autour des articles */
-    border-radius: 12px; /* optionnel, pour un effet plus doux */
+    padding: 40px 20px;
+    border-radius: 12px;
 }
 
 /* Structure d'un article */
@@ -1062,9 +1020,9 @@ section#Contact .container form .form-row.two-columns > div label {
     gap: 30px;
     margin: 40px auto;
     padding-bottom: 40px;
-    border-bottom: 1px solid #d8c3a5; /* Ligne séparatrice élégante */
-    max-width: 1400px; /* largeur totale de l'article */
-    justify-content: center; /* centre le bloc global */
+    border-bottom: 1px solid #d8c3a5;
+    max-width: 1400px;
+    justify-content: center;
 }
 
 /* Alternance des positions */
@@ -1075,7 +1033,7 @@ section#Contact .container form .form-row.two-columns > div label {
 
 /* Image */
 .blog-image {
-    flex: 0 0 35%; /* réduit la largeur à 35% du bloc mais garde les proportions */
+    flex: 0 0 35%; 
     max-width: 35%;
 }
 
@@ -1093,9 +1051,9 @@ section#Contact .container form .form-row.two-columns > div label {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: flex-start; /* texte et titre alignés à gauche */
+    align-items: flex-start;
     padding: 10px 20px;
-    text-align: justify; /* 🎯 Texte justifié */
+    text-align: justify;
 }
 
 .blog-content h2 {
@@ -1108,23 +1066,23 @@ section#Contact .container form .form-row.two-columns > div label {
     line-height: 1.9;
     margin-bottom: 25px;
     width: 100%;
-    text-align: justify; /* Sécurité : justification directe sur le paragraphe */
+    text-align: justify;
     padding-left: 0px;
 }
 
 .blog-button {
     display: inline-block;
-    padding: 10px 24px;           /* un peu plus large pour l’élégance */
-    background: linear-gradient(135deg, #C49A6C, #B28554); /* dégradé subtil */
+    padding: 10px 24px;          
+    background: linear-gradient(135deg, #C49A6C, #B28554);
     color: white;
     text-decoration: none;
-    border-radius: 25px;          /* coins arrondis plus doux */
+    border-radius: 25px;
     font-weight: 600;
     font-size: 1rem;
-    letter-spacing: 0.5px;        /* espace entre les lettres pour l’aération */
+    letter-spacing: 0.5px;
     transition: all 0.4s ease;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* léger relief */
-    align-self: center;           /* toujours centré sous le texte */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    align-self: center;
     position: relative;
     overflow: hidden;
 }
@@ -1146,7 +1104,7 @@ section#Contact .container form .form-row.two-columns > div label {
 }
 
 .blog-button:hover {
-    background: linear-gradient(135deg, #B28554, #C49A6C); /* inversion du dégradé */
+    background: linear-gradient(135deg, #B28554, #C49A6C);
     box-shadow: 0 6px 20px rgba(0,0,0,0.15);
     transform: translateY(-2px);
 }
@@ -1166,7 +1124,7 @@ section#Contact .container form .form-row.two-columns > div label {
     }
 
     .blog-content {
-        text-align: justify; /* Justification même sur mobile */
+        text-align: justify;
     }
 }
 
@@ -1182,7 +1140,7 @@ section#Contact .container form .form-row.two-columns > div label {
 }
 
 .article-header h1 {
-    font-size: 2.5rem;
+    font-size: 2rem;
     margin-bottom: 10px;
     text-align: center;
 }
@@ -1203,21 +1161,26 @@ section#Contact .container form .form-row.two-columns > div label {
 }
 
 .article-content p {
-    font-size: 1.1rem;
+    font-size: 0.9rem;
     margin-bottom: 25px;
+    text-align: justify;
+}
+.article-content h2 {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
     text-align: justify;
 }
 
 /* Bouton Retour au blog */
 .article-back-button {
     display: inline-block;
-    padding: 12px 28px;
+    padding: 10px 24px;
     background: linear-gradient(135deg, #C49A6C, #B28554);
     color: white;
     text-decoration: none;
     border-radius: 25px;
     font-weight: 600;
-    font-size: 1rem;
+    font-size: 0.9rem;
     letter-spacing: 0.5px;
     transition: all 0.4s ease;
     box-shadow: 0 4px 15px rgba(0,0,0,0.1);
@@ -1226,7 +1189,7 @@ section#Contact .container form .form-row.two-columns > div label {
     overflow: hidden;
     display: block;
     width: fit-content;
-    margin: 30px auto 0; /* centré */
+    margin: 30px auto 0;
 }
 
 .article-back-button::after {
@@ -1266,14 +1229,13 @@ section#Contact .container form .form-row.two-columns > div label {
     }
 }
 
-/*test changes*/
 /* Conteneur ICONES */
 .header-icons {
     position: fixed;
     top: 58px;
     right: 50px;
     display: flex;
-    gap: 20px; /* espace entre les icônes */
+    gap: 20px;
     z-index: 1500;
 }
 
@@ -1313,7 +1275,7 @@ section#Contact .container form .form-row.two-columns > div label {
 #cart-sidebar {
     position: fixed;
     top: 0;
-    right: -320px; /* cachée par défaut */
+    right: -320px;
     width: 320px;
     height: 100%;
     background: white;
