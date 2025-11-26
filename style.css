@@ -1223,24 +1223,29 @@ section#Contact .container form .form-row.two-columns > div label {
 }
 
 
-
-/* Icône panier */
-.cart-icon {
+/* Conteneur ICONES */
+.header-icons {
     position: fixed;
-    top: 55px;       /* moitié verticale de l'icône à 60px */
-    right: 40px;     /* écart du bord droit */
-    z-index: 1200;
-    cursor: pointer;
+    top: 58px;
+    right: 40px;
+    display: flex;
+    gap: 20px; /* espace entre les icônes */
+    z-index: 1500;
 }
 
-.cart-icon img {
-    width: 30px;     
+/* Style générique pour les icônes */
+.header-icons .icon-btn img {
+    width: 25px;
     height: auto;
+    cursor: pointer;
     transition: transform 0.3s ease;
 }
 
-.cart-icon:hover img {
-    transform: scale(1.1);
+.header-icons .icon-btn img:hover {
+    transform: scale(1.05);
+}
+.icon-btn:hover img {
+    filter: brightness(0) saturate(100%) invert(60%) sepia(30%) saturate(600%) hue-rotate(10deg);
 }
 
 /* Overlay */
@@ -1349,4 +1354,141 @@ section#Contact .container form .form-row.two-columns > div label {
     font-size: 0.6rem;
     color: #555;
     margin: 0;
+}
+
+
+/* ---------- PAGE AUTH (LOGIN + REGISTER) ---------- */
+
+.auth-wrapper {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+    background: linear-gradient(to bottom, #f7f3ee, #eee5d8);
+}
+
+/* Logo centré au-dessus du formulaire */
+.auth-logo img {
+    width: 140px;
+    margin-bottom: 25px;
+    display: block;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.15));
+}
+
+/* Bloc du formulaire */
+.auth-container {
+    width: 100%;
+    max-width: 380px;
+    padding: 40px 35px;
+    background: white;
+    border: none;
+    box-shadow: 0 4px 25px rgba(0,0,0,0.12);
+    text-align: center;
+}
+
+.auth-container h2 {
+    margin-bottom: 25px;
+    font-size: 1.9rem;
+    font-weight: 600;
+    color: #444;
+}
+
+/* Champs */
+.auth-container form input {
+    width: 100%;
+    padding: 13px;
+    margin-bottom: 18px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.auth-container form input:focus {
+    border-color: #C49A6C;
+}
+
+/* Bouton */
+.auth-container button {
+    width: 100%;
+    padding: 12px;
+    background: #C49A6C;
+    border: none;
+    color: white;
+    font-size: 1.15rem;
+    cursor: pointer;
+    transition: 0.3s ease;
+    letter-spacing: 0.3px;
+}
+
+.auth-container button:hover {
+    background: #b88a5c;
+}
+
+/* Lien inscription */
+.auth-link {
+    margin-top: 18px;
+    font-size: 0.95rem;
+}
+
+.auth-link a {
+    color: #C49A6C;
+    font-weight: 600;
+}
+
+.auth-link a:hover {
+    text-decoration: underline;
+}
+
+/* ---------- PAGE PROFIL ---------- */
+.profile-wrapper {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 60px 20px;
+    background: linear-gradient(to bottom, #f7f3ee, #eee5d8);
+}
+
+/* Conteneur du profil */
+.profile-container {
+    width: 100%;
+    max-width: 400px;
+    padding: 35px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 6px 25px rgba(0,0,0,0.12);
+    text-align: center;
+}
+
+.profile-container h2 {
+    margin-bottom: 15px;
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #444;
+}
+
+.profile-container p {
+    font-size: 1rem;
+    margin-bottom: 25px;
+    color: #555;
+}
+
+/* Bouton logout */
+.logout-btn {
+    width: 100%;
+    padding: 12px;
+    background: #C49A6C;
+    border: none;
+    color: white;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: 0.3s ease;
+    letter-spacing: 0.3px;
+}
+
+.logout-btn:hover {
+    background: #b88a5c;
 }

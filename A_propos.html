@@ -54,10 +54,21 @@
         </div>
         </div>
     </header>
+<!-- Conteneur des icônes -->
+<div class="header-icons">
+
+    <!-- Icône connexion -->
+    <a href="login.html" class="icon-btn" aria-label="Connexion">
+        <img src="image/login.svg" alt="Login">
+    </a>
     <!-- Icône panier -->
-<a href="javascript:void(0)" class="cart-icon" aria-label="Voir le panier">
-    <img src="image/panier.png" alt="Panier d'achat">
-</a>
+    <a href="javascript:void(0)" class="icon-btn cart-trigger" aria-label="Voir le panier">
+        <img src="image/panier.svg" alt="Panier d'achat">
+    </a>
+</div>
+
+<!-- Overlay -->
+<div id="cart-overlay"></div>
 
 <!-- Fenêtre du panier -->
 <div id="cart-sidebar">

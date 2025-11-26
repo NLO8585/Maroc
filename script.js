@@ -60,8 +60,8 @@ window.scrollToNextSection = () => {
     }
 };
 
-/*PANIER*/
-const cartIcon = document.querySelector('.cart-icon');
+/* PANIER */
+const cartIcon = document.querySelector('.cart-trigger'); // <-- nouvelle classe
 const cartSidebar = document.getElementById('cart-sidebar');
 const closeCart = document.getElementById('close-cart');
 const cartOverlay = document.getElementById('cart-overlay');
@@ -79,4 +79,68 @@ closeCart.addEventListener('click', () => {
 cartOverlay.addEventListener('click', () => {
     cartSidebar.classList.remove('active');
     cartOverlay.classList.remove('active');
+});
+
+
+
+/* ---------- INSCRIPTION ---------- */
+document.addEventListener("DOMContentLoaded", () => {
+
+    const registerForm = document.getElementById("register-form");
+
+    if (registerForm) {
+        registerForm.addEventListener("submit", function(e) {
+            e.preventDefault();
+
+            const name = document.getElementById("reg-name").value.trim();
+            const email = document.getElementById("reg-email").value.trim();
+            const password = document.getElementById("reg-password").value.trim();
+
+            const user = { name, email, password };
+
+            localStorage.setItem("user", JSON.stringify(user));
+            alert("Compte créé avec succès !");
+            window.location.href = "login.html";
+        });
+    }
+
+    /* ---------- CONNEXION ---------- */
+    const loginForm = document.getElementById("login-form");
+
+    if (loginForm) {
+        loginForm.addEventListener("submit", function(e) {
+            e.preventDefault();
+
+            const email = document.getElementById("login-email").value.trim();
+            const password = document.getElementById("login-password").value.trim();
+
+            const savedUser = JSON.parse(localStorage.getItem("user"));
+
+            if (!savedUser || savedUser.email !== email || savedUser.password !== password) {
+                alert("Email ou mot de passe incorrect.");
+                return;
+            }
+
+            localStorage.setItem("logged", "true");
+            window.location.href = "profil.html";
+        });
+    }
+
+    /* ---------- PAGE PROFIL ---------- */
+    if (window.location.pathname.includes("profil.html")) {
+        const savedUser = JSON.parse(localStorage.getItem("user"));
+        const logged = localStorage.getItem("logged");
+
+        if (!logged) {
+            window.location.href = "login.html";
+        }
+
+        document.getElementById("profile-name").textContent = savedUser.name;
+        document.getElementById("profile-email").textContent = savedUser.email;
+
+        document.getElementById("logout-btn").addEventListener("click", () => {
+            localStorage.removeItem("logged");
+            window.location.href = "login.html";
+        });
+    }
 });

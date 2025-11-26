@@ -54,21 +54,33 @@
             </div>
         </div>
     </header>
-    <!-- Icône panier -->
-    <a href="javascript:void(0)" class="cart-icon" aria-label="Voir le panier">
-        <img src="image/panier.png" alt="Panier d'achat">
+<!-- Conteneur des icônes -->
+<div class="header-icons">
+
+    <!-- Icône connexion -->
+    <a href="login.html" class="icon-btn" aria-label="Connexion">
+        <img src="image/login.svg" alt="Login">
     </a>
-    <!-- Fenêtre du panier -->
-    <div id="cart-sidebar">
-        <div class="cart-header">
-            <h2>Votre panier</h2>
-            <button id="close-cart">&times;</button>
-        </div>
-        <div class="cart-content">
+    <!-- Icône panier -->
+    <a href="javascript:void(0)" class="icon-btn cart-trigger" aria-label="Voir le panier">
+        <img src="image/panier.svg" alt="Panier d'achat">
+    </a>
+</div>
+
+<!-- Overlay -->
+<div id="cart-overlay"></div>
+
+<!-- Fenêtre du panier -->
+<div id="cart-sidebar">
+    <div class="cart-header">
+        <h2>Votre panier</h2>
+        <button id="close-cart">&times;</button>
+    </div>
+    <div class="cart-content">
         <p>Votre panier est vide pour le moment.</p>
         <!-- Ici tu peux ajouter dynamiquement les produits -->
-        </div>
     </div>
+</div>
 
 
     <head>
