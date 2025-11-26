@@ -1270,7 +1270,7 @@ section#Contact .container form .form-row.two-columns > div label {
 .header-icons {
     position: fixed;
     top: 58px;
-    right: 40px;
+    right: 50px;
     display: flex;
     gap: 20px; /* espace entre les icônes */
     z-index: 1500;
