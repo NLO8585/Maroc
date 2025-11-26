@@ -162,6 +162,79 @@ body {
     width: 100%;
 }
 
+/* Flèche à droite des titres avec sous-menu */
+.sommaire .arrow {
+    font-size: 0.75rem;
+    margin-left: 6px;
+    transition: transform 0.25s ease;
+}
+
+/* ========================================
+   Sous-menus pour .sommaire et .sommaire_annexes
+   ======================================== */
+
+/* Positionnement du sous-menu */
+.sommaire li.has-submenu,
+.sommaire_annexes li.has-submenu {
+    position: relative;
+}
+
+.sommaire .submenu,
+.sommaire_annexes .submenu {
+    position: absolute;
+    top: 32px;
+    left: 0;
+    background: white;
+    padding: 10px 0;
+    list-style: none;
+    min-width: 200px;
+    border-radius: 4px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(10px);
+    transition: all 0.25s ease;
+    z-index: 1000;
+}
+
+/* Liens du sous-menu */
+.sommaire .submenu li a,
+.sommaire_annexes .submenu li a {
+    color: #333 !important;
+    padding: 8px 15px;
+    display: block;
+    font-size: 0.7rem;
+    text-decoration: none;
+    background-clip: padding-box;
+}
+
+/* Hover des liens */
+.sommaire .submenu li a:hover,
+.sommaire_annexes .submenu li a:hover {
+    background: rgba(186, 151, 71, 0.1);
+    color: rgb(186, 151, 71) !important;
+}
+
+/* Affichage du sous-menu si le parent OU le sous-menu est hover */
+.sommaire li.has-submenu:hover .submenu,
+.sommaire li.has-submenu:focus-within .submenu,
+.sommaire_annexes li.has-submenu:hover .submenu,
+.sommaire_annexes li.has-submenu:focus-within .submenu {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+}
+
+/* Rotation de la flèche */
+.sommaire li.has-submenu:hover .arrow,
+.sommaire li.has-submenu:focus-within .arrow,
+.sommaire_annexes li.has-submenu:hover .arrow,
+.sommaire_annexes li.has-submenu:focus-within .arrow {
+    transform: rotate(180deg);
+    transition: transform 0.25s ease;
+}
+
 .sommaire_annexes.show {
     opacity: 1;
     transform: translateY(0);
@@ -290,25 +363,7 @@ body {
     max-width: 80%;
     margin: 0 auto;
 }
-.intro {
-color: #ffffff;
-font-size: clamp(14px, 3vw, 18px);
-font-style: normal;
-font-weight: 300;
-letter-spacing: 0.8px;
-font-family: 'Ortica_300', sans-serif;
-text-align: center;
-vertical-align: middle;
-padding-left: 0;
-padding-bottom: 20px;
-max-width: 80%;
-} 
-.location-icon {
-    width: clamp(14px, 3vw, 18px);
-    height: auto;
-    padding-top: 2px;
-    flex-shrink: 0;
-}
+
 .location span {
     color: #ffffff;
     font-size: clamp(14px, 3vw, 18px);
@@ -1055,12 +1110,12 @@ section#Contact .container form .form-row.two-columns > div label {
 }
 
 .blog-content h2 {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     margin-bottom: 15px;
 }
 
 .blog-content p {
-    font-size: 1.1rem;
+    font-size: 0.9rem;
     line-height: 1.9;
     margin-bottom: 25px;
     width: 100%;
@@ -1070,7 +1125,7 @@ section#Contact .container form .form-row.two-columns > div label {
 
 .blog-button {
     display: inline-block;
-    padding: 12px 28px;           /* un peu plus large pour l’élégance */
+    padding: 10px 24px;           /* un peu plus large pour l’élégance */
     background: linear-gradient(135deg, #C49A6C, #B28554); /* dégradé subtil */
     color: white;
     text-decoration: none;

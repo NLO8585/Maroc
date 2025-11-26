@@ -144,3 +144,35 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 });
+
+
+/* SOMMAIRE (Accueil + Annexes) */
+const menus = document.querySelectorAll('.sommaire li.has-submenu, .sommaire_annexes li.has-submenu');
+
+menus.forEach(menu => {
+    const submenu = menu.querySelector('.submenu');
+
+    // On ouvre le menu si la souris entre sur le parent ou le sous-menu
+    const openMenu = () => {
+        submenu.style.opacity = '1';
+        submenu.style.pointerEvents = 'auto';
+        submenu.style.transform = 'translateY(0)';
+    };
+
+    // On ferme le menu si la souris quitte le parent et le sous-menu
+    const closeMenu = (e) => {
+        // Vérifie si la souris est toujours dans le menu ou le parent
+        if (!menu.contains(e.relatedTarget)) {
+            submenu.style.opacity = '0';
+            submenu.style.pointerEvents = 'none';
+            submenu.style.transform = 'translateY(10px)';
+        }
+    };
+
+    menu.addEventListener('mouseenter', openMenu);
+    menu.addEventListener('mouseleave', closeMenu);
+
+    submenu.addEventListener('mouseenter', openMenu);
+    submenu.addEventListener('mouseleave', closeMenu);
+});
+
