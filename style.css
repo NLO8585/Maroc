@@ -45,7 +45,7 @@ body {
     display: flex;
     justify-content: center;
     gap: 15px;
-    margin-top: 60px;
+    margin-top: 50px;
     transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
 
@@ -55,7 +55,7 @@ body {
     display: flex;
     justify-content: center;
     gap: 15px;  
-    padding-top: 60px;
+    padding-top: 50px;
     transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
 
@@ -341,7 +341,7 @@ body {
     cursor: pointer;
 }
 .logopetit img {
-    max-height: 120px;
+    max-height: 100px;
     display: block;
     height: auto;
 }
@@ -396,7 +396,7 @@ body {
     top: 0;
     left: 0;
     width: 100%;
-    height: 150px;
+    height: 130px;
     background: #0F111E;
 }
 article p {
@@ -1232,7 +1232,7 @@ section#Contact .container form .form-row.two-columns > div label {
 /* Conteneur ICONES */
 .header-icons {
     position: fixed;
-    top: 58px;
+    top: 48px;
     right: 50px;
     display: flex;
     gap: 20px;
@@ -1503,20 +1503,21 @@ section#Contact .container form .form-row.two-columns > div label {
 /* BOUTIQUE*/
 
 /* --- Boutique Hero --- */
-/* --- Boutique Hero --- */
 .boutique-hero {
   background: #F8F8F8;
-  padding: 30px 20px; /* plus d'espace autour */
+  padding: 0px;
+  padding-top: 20px;
+  padding-bottom:0px;
   border-radius: 16px;
   display: flex;
   align-items: center;
   justify-content: center;
-  text-align: center; /* centrer le texte */
+  text-align: center;
   flex-direction: column;
 }
 
 .hero-text h1 {
-  font-size: 48px;
+  font-size: 40px;
   color: #c66a3f;
   margin-bottom: 16px;
   font-family: 'Ortica_300', sans-serif;
@@ -1524,18 +1525,18 @@ section#Contact .container form .form-row.two-columns > div label {
 }
 
 .hero-text p.lead {
-  font-size: 18px;
+  font-size: 15px;
   color: #555;
   line-height: 1.6;
   max-width: 1200px;
   font-family: 'Ortica_300', sans-serif;
-  margin: 0 auto; /* centrer le texte */
+  margin: 0 auto;
 }
 
 /* Top Controls amélioré */
 .top-controls {
   display: flex;
-  justify-content: space-between; /* compteur à gauche, tri à droite */
+  justify-content: space-between;
   align-items: center;
   margin-bottom: 25px;
   padding: 0 10px;
@@ -1547,33 +1548,30 @@ section#Contact .container form .form-row.two-columns > div label {
 .top-controls .count {
   font-weight: 600;
   color: #666;
-  font-size: 16px;
-  padding: 6px 12px; /* ajoute de l'espace autour du texte */
+  font-size: 14px;
+  padding: 6px 12px;
   border-radius: 8px;
+  font-family: 'Ortica_300', sans-serif;
   background: #F8F8F8;
 }
 
 /* Dropdown tri plus élégant */
 .filter-sort select {
-  background: #fff;
+  background: #F8F8F8;
   border: 1px solid #ddd;
   padding: 8px 14px;
   border-radius: 8px;
   cursor: pointer;
-  font-size: 14px;
+  font-size: 13px;
+  font-family: 'Ortica_300', sans-serif;
   transition: all 0.2s ease;
-}
-
-/* Hover pour dropdown */
-.filter-sort select:hover {
-  border-color: #c66a3f;
 }
 
 /* Ligne séparatrice centrée verticalement */
 .top-controls::after {
   content: '';
   position: absolute;
-  bottom: -10px; /* décale la ligne légèrement sous le contrôle */
+  bottom: -10px;
   left: 0;
   width: 100%;
   height: 1px;
@@ -1583,9 +1581,10 @@ section#Contact .container form .form-row.two-columns > div label {
 /* Product Grid */
 .products-grid{
   display: grid;
-  grid-template-columns: repeat(5, 1fr); /* reste 4 par ligne */
-  gap: 25px; /* un peu plus petit que précédemment si tu veux */
-  padding: 0 50px; /* espace sur les côtés */
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
+  padding: 0 170px; 
+  align-items: start;
 }
 
 /* Product Card */
@@ -1597,7 +1596,8 @@ section#Contact .container form .form-row.two-columns > div label {
   display: flex;
   flex-direction: column;
   transition: transform .2s ease, box-shadow .2s ease;
-  width: 250px;
+  width: 200px;
+  height: auto; 
 }
 .product-card:hover{
   transform:translateY(-6px);
@@ -1605,25 +1605,30 @@ section#Contact .container form .form-row.two-columns > div label {
 }
 .product-media{
   width: 100%;
-  aspect-ratio: 0.8/1; /* image verticale */
+  aspect-ratio: 0.8/1;
   object-fit: cover;
-  border-bottom: 1px solid #eee; /* optionnel pour séparer image du texte */
+  border-bottom: 1px solid #eee;
 }
 .product-body{
-  padding:14px;
+  padding-top:14px;
+  padding-left: 14px;
+  padding-bottom: 0px;
+  padding-right:14px;
   display:flex;
   flex-direction:column;
-  gap:8px;
+  justify-content: space-between;
+  padding: 14px;
+  gap: 4px;
   flex:1;
 }
 .product-title{
-  font-size:15px;
+  font-size:13px;
   font-weight:700;
   color:#111;
   margin:0;
 }
 .product-sub{
-  font-size:13px;
+  font-size:11px;
   color:#666;
 }
 .meta{
@@ -1634,7 +1639,7 @@ section#Contact .container form .form-row.two-columns > div label {
   display:flex;
   justify-content:space-between;
   align-items:center;
-  margin-top:auto;
+  margin-top: auto;
 }
 .price{
   font-weight:800;
@@ -1671,7 +1676,7 @@ section#Contact .container form .form-row.two-columns > div label {
 /* Pagination (centrée) */
 .pagination{
   display: flex;
-  justify-content: center; /* centre les boutons */
+  justify-content: center;
   align-items: center;
   gap: 10px;
   margin-top: 36px;
@@ -1694,10 +1699,10 @@ section#Contact .container form .form-row.two-columns > div label {
   color: #fff;
   border-color: #c66a3f;
 }
-/* Bouton grisé / non clickable */
+/* Bouton grisé  */
 .page-btn.disabled{
   opacity: 0.45;
-  pointer-events: none; /* non clickable */
+  pointer-events: none;
   cursor: default;
   background: #fff;
   color: #666;
