@@ -1498,3 +1498,242 @@ section#Contact .container form .form-row.two-columns > div label {
 .logout-btn:hover {
     background: #b88a5c;
 }
+
+
+/* BOUTIQUE*/
+
+/* --- Boutique Hero --- */
+/* --- Boutique Hero --- */
+.boutique-hero {
+  background: #F8F8F8;
+  padding: 30px 20px; /* plus d'espace autour */
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center; /* centrer le texte */
+  flex-direction: column;
+}
+
+.hero-text h1 {
+  font-size: 48px;
+  color: #c66a3f;
+  margin-bottom: 16px;
+  font-family: 'Ortica_300', sans-serif;
+  font-weight: 700;
+}
+
+.hero-text p.lead {
+  font-size: 18px;
+  color: #555;
+  line-height: 1.6;
+  max-width: 1200px;
+  font-family: 'Ortica_300', sans-serif;
+  margin: 0 auto; /* centrer le texte */
+}
+
+/* Top Controls amélioré */
+.top-controls {
+  display: flex;
+  justify-content: space-between; /* compteur à gauche, tri à droite */
+  align-items: center;
+  margin-bottom: 25px;
+  padding: 0 10px;
+  gap: 20px;
+  position: relative;
+}
+
+/* Compteur de produits plus aéré */
+.top-controls .count {
+  font-weight: 600;
+  color: #666;
+  font-size: 16px;
+  padding: 6px 12px; /* ajoute de l'espace autour du texte */
+  border-radius: 8px;
+  background: #F8F8F8;
+}
+
+/* Dropdown tri plus élégant */
+.filter-sort select {
+  background: #fff;
+  border: 1px solid #ddd;
+  padding: 8px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.2s ease;
+}
+
+/* Hover pour dropdown */
+.filter-sort select:hover {
+  border-color: #c66a3f;
+}
+
+/* Ligne séparatrice centrée verticalement */
+.top-controls::after {
+  content: '';
+  position: absolute;
+  bottom: -10px; /* décale la ligne légèrement sous le contrôle */
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: #eee;
+}
+
+/* Product Grid */
+.products-grid{
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); /* reste 4 par ligne */
+  gap: 25px; /* un peu plus petit que précédemment si tu veux */
+  padding: 0 50px; /* espace sur les côtés */
+}
+
+/* Product Card */
+.product-card{
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform .2s ease, box-shadow .2s ease;
+  width: 250px;
+}
+.product-card:hover{
+  transform:translateY(-6px);
+  box-shadow:0 18px 40px rgba(15,15,15,0.12);
+}
+.product-media{
+  width: 100%;
+  aspect-ratio: 0.8/1; /* image verticale */
+  object-fit: cover;
+  border-bottom: 1px solid #eee; /* optionnel pour séparer image du texte */
+}
+.product-body{
+  padding:14px;
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+  flex:1;
+}
+.product-title{
+  font-size:15px;
+  font-weight:700;
+  color:#111;
+  margin:0;
+}
+.product-sub{
+  font-size:13px;
+  color:#666;
+}
+.meta{
+  font-size:12px;
+  color:#999;
+}
+.price-row{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-top:auto;
+}
+.price{
+  font-weight:800;
+  font-size:15px;
+  color:#c66a3f;
+}
+.add-btn{
+  border:1px solid #c66a3f;
+  color:#c66a3f;
+  background:transparent;
+  padding:6px 8px;
+  border-radius:8px;
+  font-size: 13px;
+  cursor:pointer;
+  font-weight:600;
+}
+.add-btn:hover{
+  background:#c66a3f;
+  color:#fff;
+}
+
+/* Badge */
+.badge{
+  position:absolute;
+  top:12px;
+  left:12px;
+  background:#c66a3f;
+  color:#fff;
+  padding:6px 8px;
+  border-radius:8px;
+  font-size:12px;
+  font-weight:700;
+}
+/* Pagination (centrée) */
+.pagination{
+  display: flex;
+  justify-content: center; /* centre les boutons */
+  align-items: center;
+  gap: 10px;
+  margin-top: 36px;
+  padding: 12px 0;
+}
+/* Boutons de pagination */
+.page-btn{
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  background: #fff;
+  border-radius: 8px;
+  cursor: pointer;
+  min-width: 38px;
+  text-align: center;
+  transition: background .15s ease, color .15s ease, opacity .15s ease;
+}
+/* Bouton actif */
+.page-btn.active{
+  background: #c66a3f;
+  color: #fff;
+  border-color: #c66a3f;
+}
+/* Bouton grisé / non clickable */
+.page-btn.disabled{
+  opacity: 0.45;
+  pointer-events: none; /* non clickable */
+  cursor: default;
+  background: #fff;
+  color: #666;
+  border-color: #eee;
+}
+/* Précédent/Suivant (icônes / textes) */
+.page-btn.nav{
+  font-weight:600;
+}
+
+/* petit fix pour accessibilité : focus visible */
+.page-btn:focus{
+  outline: 3px solid rgba(198,106,63,0.18);
+  outline-offset: 2px;
+}
+.page-btn:hover{
+  background:#f5f5f5;
+}
+
+
+/* FOOTER spacing fix so footer doesn't overlap */
+footer.footer{
+  margin-top:60px;
+}
+
+/* For page-specific hero images */
+.hero-side{
+  width:260px;
+  height:120px;
+  border-radius:8px;
+  background:linear-gradient(135deg, rgba(198,106,63,0.12), rgba(0,0,0,0.02));
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:var(--accent);
+  font-weight:800;
+  letter-spacing:1px;
+  font-size:18px;
+}

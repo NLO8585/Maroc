@@ -44,23 +44,23 @@
                 <li class="has-submenu">
                 <a href="boutique_tapis.html">Tapis Berbères <span class="arrow">▾</span></a>
                     <ul class="submenu">
-                        <li><a href="#">Tapis Azilal</a></li>
-                        <li><a href="#">Tapis Béni Ouarain</a></li>
-                        <li><a href="#">Tapis Boujad</a></li>
-                        <li><a href="#">Tapis Boucherouite</a></li>
-                        <li><a href="#">Tapis Kilim</a></li>
-                        <li><a href="#">Tapis Mrirt</a></li>
+                        <li><a href="shop_tapis_azilal.html">Tapis Azilal</a></li>
+                        <li><a href="shop_tapis_beni_ouarain.html">Tapis Béni Ouarain</a></li>
+                        <li><a href="shop_tapis_boujad.html">Tapis Boujad</a></li>
+                        <li><a href="shop_tapis_boucherouite.html">Tapis Boucherouite</a></li>
+                        <li><a href="shop_tapis_kilim.html">Tapis Kilim</a></li>
+                        <li><a href="shop_tapis_mrirt.html">Tapis Mrirt</a></li>
                 </ul>
                 </li>
                 <!-- DÉCORATIONS -->
                 <li class="has-submenu">
                     <a href="boutique_deco.html">Décorations marocaines <span class="arrow">▾</span></a>
                     <ul class="submenu">
-                        <li><a href="#">Poufs</a></li>
-                        <li><a href="#">Coussins</a></li>
-                        <li><a href="#">Miroirs</a></li>
-                        <li><a href="#">Abat-jour</a></li>
-                        <li><a href="#">Lampes</a></li>
+                        <li><a href="shop_deco_poufs.html">Poufs</a></li>
+                        <li><a href="shop_deco_coussins.html">Coussins</a></li>
+                        <li><a href="shop_deco_miroirs.html">Miroirs</a></li>
+                        <li><a href="shop_deco_abat-jour.html">Abat-jour</a></li>
+                        <li><a href="shop_deco_lampes.html">Lampes</a></li>
                     </ul>
                 </li>
                 <li><a href="blog.html">Blog</a></li>
@@ -103,8 +103,185 @@
         <!-- Ici tu peux ajouter dynamiquement les produits -->
     </div>
 </div>
-<!-- AJOUT SECTION LONGUE BLANCHE VIDE  -->
-<section style="height: 1000px; background-color: rgb(248,248,248);"></section>
+<main class="main-boutique">
+    <div class="boutique-hero">
+      <div>
+        <h1>Décorations marocaines</h1>
+        <p class="lead">Poufs, coussins, miroirs, lampes et abat-jour — pièces artisanales pour une décoration chaleureuse et authentique.</p>
+      </div>
+      <div class="hero-side">DÉCO</div>
+    </div>
+
+    <div class="intro-box">
+      <strong>À propos :</strong>
+      <p>Nos décorations sont sélectionnées auprès d'artisans marocains : poufs en cuir, coussins brodés, miroirs travaillés, lampes et abat-jour en métal. Chaque pièce raconte une histoire et apporte une touche d'orient à vos intérieurs.</p>
+    </div>
+
+    <div class="top-controls">
+      <div class="count">Affichage : <strong>20 produits</strong></div>
+      <div class="fake-filter">
+        <select class="select" aria-label="Trier par">
+          <option>Trier par : Pertinence</option>
+          <option>Prix croissant</option>
+          <option>Prix décroissant</option>
+        </select>
+      </div>
+    </div>
+
+    <section class="products-grid" aria-live="polite">
+      <!-- 4 produits d'exemple -->
+      <article class="product-card" data-product="product_pouf_1.html">
+        <img src="image/products/pouf-1.jpg" alt="Pouf cuir" class="product-media">
+        <div class="product-body">
+          <h3 class="product-title">Pouf cuir - Naturel</h3>
+          <div class="product-sub">Ø 45 cm</div>
+          <div class="meta">Cuir · Fait main</div>
+          <div class="price-row">
+            <div class="price">€75</div>
+            <button class="add-btn add-to-cart" type="button">Ajouter</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-card" data-product="product_coussin_1.html">
+        <img src="image/products/coussin-1.jpg" alt="Coussin brodé" class="product-media">
+        <div class="product-body">
+          <h3 class="product-title">Coussin brodé - Bleu</h3>
+          <div class="product-sub">40x40 cm</div>
+          <div class="meta">Lin · Artisanat</div>
+          <div class="price-row">
+            <div class="price">€28</div>
+            <button class="add-btn add-to-cart" type="button">Ajouter</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-card" data-product="product_miroir_1.html">
+        <img src="image/products/miroir-1.jpg" alt="Miroir marocain" class="product-media">
+        <div class="product-body">
+          <h3 class="product-title">Miroir ciselé - Or</h3>
+          <div class="product-sub">50x70 cm</div>
+          <div class="meta">Métal · Finitions</div>
+          <div class="price-row">
+            <div class="price">€220</div>
+            <button class="add-btn add-to-cart" type="button">Ajouter</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-card" data-product="product_lampe_1.html">
+        <img src="image/products/lampe-1.jpg" alt="Lampe orientale" class="product-media">
+        <div class="product-body">
+          <h3 class="product-title">Lampe perforée - Grande</h3>
+          <div class="product-sub">H 60 cm</div>
+          <div class="meta">Éclairage doux</div>
+          <div class="price-row">
+            <div class="price">€150</div>
+            <button class="add-btn add-to-cart" type="button">Ajouter</button>
+          </div>
+        </div>
+      </article>
+
+          <section class="products-grid" aria-live="polite">
+      <!-- 4 produits d'exemple -->
+      <article class="product-card" data-product="product_pouf_1.html">
+        <img src="image/products/pouf-1.jpg" alt="Pouf cuir" class="product-media">
+        <div class="product-body">
+          <h3 class="product-title">Pouf cuir - Naturel</h3>
+          <div class="product-sub">Ø 45 cm</div>
+          <div class="meta">Cuir · Fait main</div>
+          <div class="price-row">
+            <div class="price">€75</div>
+            <button class="add-btn add-to-cart" type="button">Ajouter</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-card" data-product="product_coussin_1.html">
+        <img src="image/products/coussin-1.jpg" alt="Coussin brodé" class="product-media">
+        <div class="product-body">
+          <h3 class="product-title">Coussin brodé - Bleu</h3>
+          <div class="product-sub">40x40 cm</div>
+          <div class="meta">Lin · Artisanat</div>
+          <div class="price-row">
+            <div class="price">€28</div>
+            <button class="add-btn add-to-cart" type="button">Ajouter</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-card" data-product="product_miroir_1.html">
+        <img src="image/products/miroir-1.jpg" alt="Miroir marocain" class="product-media">
+        <div class="product-body">
+          <h3 class="product-title">Miroir ciselé - Or</h3>
+          <div class="product-sub">50x70 cm</div>
+          <div class="meta">Métal · Finitions</div>
+          <div class="price-row">
+            <div class="price">€220</div>
+            <button class="add-btn add-to-cart" type="button">Ajouter</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-card" data-product="product_lampe_1.html">
+        <img src="image/products/lampe-1.jpg" alt="Lampe orientale" class="product-media">
+        <div class="product-body">
+          <h3 class="product-title">Lampe perforée - Grande</h3>
+          <div class="product-sub">H 60 cm</div>
+          <div class="meta">Éclairage doux</div>
+          <div class="price-row">
+            <div class="price">€150</div>
+            <button class="add-btn add-to-cart" type="button">Ajouter</button>
+          </div>
+        </div>
+      </article>
+            <article class="product-card" data-product="product_coussin_1.html">
+        <img src="image/products/coussin-1.jpg" alt="Coussin brodé" class="product-media">
+        <div class="product-body">
+          <h3 class="product-title">Coussin brodé - Bleu</h3>
+          <div class="product-sub">40x40 cm</div>
+          <div class="meta">Lin · Artisanat</div>
+          <div class="price-row">
+            <div class="price">€28</div>
+            <button class="add-btn add-to-cart" type="button">Ajouter</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-card" data-product="product_miroir_1.html">
+        <img src="image/products/miroir-1.jpg" alt="Miroir marocain" class="product-media">
+        <div class="product-body">
+          <h3 class="product-title">Miroir ciselé - Or</h3>
+          <div class="product-sub">50x70 cm</div>
+          <div class="meta">Métal · Finitions</div>
+          <div class="price-row">
+            <div class="price">€220</div>
+            <button class="add-btn add-to-cart" type="button">Ajouter</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-card" data-product="product_lampe_1.html">
+        <img src="image/products/lampe-1.jpg" alt="Lampe orientale" class="product-media">
+        <div class="product-body">
+          <h3 class="product-title">Lampe perforée - Grande</h3>
+          <div class="product-sub">H 60 cm</div>
+          <div class="meta">Éclairage doux</div>
+          <div class="price-row">
+            <div class="price">€150</div>
+            <button class="add-btn add-to-cart" type="button">Ajouter</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- ... autres produits ... -->
+    </section>
+
+    <div class="pagination" role="navigation" aria-label="Pagination">
+      <button class="page-btn">1</button>
+      <button class="page-btn">2</button>
+    </div>
+  </main>
 
 
 

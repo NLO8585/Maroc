@@ -44,23 +44,23 @@
                 <li class="has-submenu">
                 <a href="boutique_tapis.html">Tapis Berbères <span class="arrow">▾</span></a>
                     <ul class="submenu">
-                        <li><a href="#">Tapis Azilal</a></li>
-                        <li><a href="#">Tapis Béni Ouarain</a></li>
-                        <li><a href="#">Tapis Boujad</a></li>
-                        <li><a href="#">Tapis Boucherouite</a></li>
-                        <li><a href="#">Tapis Kilim</a></li>
-                        <li><a href="#">Tapis Mrirt</a></li>
+                        <li><a href="shop_tapis_azilal.html">Tapis Azilal</a></li>
+                        <li><a href="shop_tapis_beni_ouarain.html">Tapis Béni Ouarain</a></li>
+                        <li><a href="shop_tapis_boujad.html">Tapis Boujad</a></li>
+                        <li><a href="shop_tapis_boucherouite.html">Tapis Boucherouite</a></li>
+                        <li><a href="shop_tapis_kilim.html">Tapis Kilim</a></li>
+                        <li><a href="shop_tapis_mrirt.html">Tapis Mrirt</a></li>
                 </ul>
                 </li>
                 <!-- DÉCORATIONS -->
                 <li class="has-submenu">
                     <a href="boutique_deco.html">Décorations marocaines <span class="arrow">▾</span></a>
                     <ul class="submenu">
-                        <li><a href="#">Poufs</a></li>
-                        <li><a href="#">Coussins</a></li>
-                        <li><a href="#">Miroirs</a></li>
-                        <li><a href="#">Abat-jour</a></li>
-                        <li><a href="#">Lampes</a></li>
+                        <li><a href="shop_deco_poufs.html">Poufs</a></li>
+                        <li><a href="shop_deco_coussins.html">Coussins</a></li>
+                        <li><a href="shop_deco_miroirs.html">Miroirs</a></li>
+                        <li><a href="shop_deco_abat-jour.html">Abat-jour</a></li>
+                        <li><a href="shop_deco_lampes.html">Lampes</a></li>
                     </ul>
                 </li>
                 <li><a href="blog.html">Blog</a></li>
@@ -103,8 +103,183 @@
         <!-- Ici tu peux ajouter dynamiquement les produits -->
     </div>
 </div>
-<!-- AJOUT SECTION LONGUE BLANCHE VIDE  -->
-<section style="height: 1000px; background-color: rgb(248,248,248);"></section>
+<main>
+  <!-- Hero Banner simplifié et plus élégant -->
+  <div class="boutique-hero">
+    <div class="hero-text">
+      <h1>Tapis berbères</h1>
+<p class="lead">
+  Explorez notre collection de tapis berbères authentiques, faits main au Maroc. Chaque pièce raconte une histoire unique à travers ses motifs, ses couleurs et son tissage traditionnel.
+</p>
+
+    </div>
+  </div>
+
+  <!-- Filter / Sort -->
+  <div class="top-controls">
+    <div class="count">Produits : <strong id="product-count">24</strong></div>
+    <div class="filter-sort">
+      <select class="select" id="sort-select" aria-label="Trier par">
+        <option value="default">Trier par : Pertinence</option>
+        <option value="price-asc">Prix croissant</option>
+        <option value="price-desc">Prix décroissant</option>
+      </select>
+    </div>
+  </div>
+
+  <!-- Product Grid -->
+  <section class="products-grid" id="products-grid" aria-live="polite">
+    <article class="product-card" data-price="420" data-product="product_page_1.html">
+      <div style="position:relative;">
+        <img src="image/azilal_2.webp" alt="Tapis Azilal 1" class="product-media">
+        <div class="badge">Nouveau</div>
+      </div>
+      <div class="product-body">
+        <h3 class="product-title">Tapis Azilal - N°01</h3>
+        <div class="product-sub">Laine naturelle - 180x120 cm</div>
+        <div class="meta">Fait main · Maroc</div>
+        <div class="price-row">
+          <div class="price">€420</div>
+          <button class="add-btn add-to-cart" type="button">Ajouter</button>
+        </div>
+      </div>
+    </article>
+
+    <article class="product-card" data-price="980" data-product="product_page_2.html">
+      <img src="image/azilal_2.webp" alt="Tapis Azilal 1" class="product-media">
+      <div class="product-body">
+        <h3 class="product-title">Tapis Béni Ouarain - N°05</h3>
+        <div class="product-sub">Laine épaisse - 200x150 cm</div>
+        <div class="meta">Fait main · Maroc</div>
+        <div class="price-row">
+          <div class="price">€980</div>
+          <button class="add-btn add-to-cart" type="button">Ajouter</button>
+        </div>
+      </div>
+    </article>
+
+    <article class="product-card" data-price="360" data-product="product_page_3.html">
+      <img src="image/azilal_2.webp" alt="Tapis Azilal 1" class="product-media">
+      <div class="product-body">
+        <h3 class="product-title">Tapis Boujad - Coloré</h3>
+        <div class="product-sub">Motifs géométriques - 160x110 cm</div>
+        <div class="meta">Fait main · Maroc</div>
+        <div class="price-row">
+          <div class="price">€360</div>
+          <button class="add-btn add-to-cart" type="button">Ajouter</button>
+        </div>
+      </div>
+    </article>
+
+    <article class="product-card" data-price="95" data-product="product_page_4.html">
+      <img src="image/azilal_2.webp" alt="Tapis Azilal 1" class="product-media">
+      <div class="product-body">
+        <h3 class="product-title">Tapis Boucherouite - Patch</h3>
+        <div class="product-sub">Recyclé · 140x90 cm</div>
+        <div class="meta">Fait main · Maroc</div>
+        <div class="price-row">
+          <div class="price">€95</div>
+          <button class="add-btn add-to-cart" type="button">Ajouter</button>
+        </div>
+      </div>
+    </article>
+
+    <article class="product-card" data-price="120" data-product="product_page_5.html">
+      <img src="image/azilal_2.webp" alt="Tapis Azilal 1" class="product-media">
+      <div class="product-body">
+        <h3 class="product-title">Tapis Boucherouite - Patch</h3>
+        <div class="product-sub">Recyclé · 140x90 cm</div>
+        <div class="meta">Fait main · Maroc</div>
+        <div class="price-row">
+          <div class="price">€120</div>
+          <button class="add-btn add-to-cart" type="button">Ajouter</button>
+        </div>
+      </div>
+    </article>
+
+    <article class="product-card" data-price="300" data-product="product_page_6.html">
+      <img src="image/azilal_2.webp" alt="Tapis Azilal 1" class="product-media">
+      <div class="product-body">
+        <h3 class="product-title">Tapis Boujad - N°6</h3>
+        <div class="product-sub">Recyclé · 140x90 cm</div>
+        <div class="meta">Fait main · Maroc</div>
+        <div class="price-row">
+          <div class="price">€300</div>
+          <button class="add-btn add-to-cart" type="button">Ajouter</button>
+        </div>
+      </div>
+    </article>
+
+        <article class="product-card" data-price="980" data-product="product_page_2.html">
+      <img src="image/azilal_2.webp" alt="Tapis Azilal 1" class="product-media">
+      <div class="product-body">
+        <h3 class="product-title">Tapis Béni Ouarain - N°05</h3>
+        <div class="product-sub">Laine épaisse - 200x150 cm</div>
+        <div class="meta">Fait main · Maroc</div>
+        <div class="price-row">
+          <div class="price">€980</div>
+          <button class="add-btn add-to-cart" type="button">Ajouter</button>
+        </div>
+      </div>
+    </article>
+
+    <article class="product-card" data-price="360" data-product="product_page_3.html">
+      <img src="image/azilal_2.webp" alt="Tapis Azilal 1" class="product-media">
+      <div class="product-body">
+        <h3 class="product-title">Tapis Boujad - Coloré</h3>
+        <div class="product-sub">Motifs géométriques - 160x110 cm</div>
+        <div class="meta">Fait main · Maroc</div>
+        <div class="price-row">
+          <div class="price">€360</div>
+          <button class="add-btn add-to-cart" type="button">Ajouter</button>
+        </div>
+      </div>
+    </article>
+
+    <article class="product-card" data-price="95" data-product="product_page_4.html">
+      <img src="image/azilal_2.webp" alt="Tapis Azilal 1" class="product-media">
+      <div class="product-body">
+        <h3 class="product-title">Tapis Boucherouite - Patch</h3>
+        <div class="product-sub">Recyclé · 140x90 cm</div>
+        <div class="meta">Fait main · Maroc</div>
+        <div class="price-row">
+          <div class="price">€95</div>
+          <button class="add-btn add-to-cart" type="button">Ajouter</button>
+        </div>
+      </div>
+    </article>
+
+    <article class="product-card" data-price="120" data-product="product_page_5.html">
+      <img src="image/azilal_2.webp" alt="Tapis Azilal 1" class="product-media">
+      <div class="product-body">
+        <h3 class="product-title">Tapis Boucherouite - Patch</h3>
+        <div class="product-sub">Recyclé · 140x90 cm</div>
+        <div class="meta">Fait main · Maroc</div>
+        <div class="price-row">
+          <div class="price">€120</div>
+          <button class="add-btn add-to-cart" type="button">Ajouter</button>
+        </div>
+      </div>
+    </article>
+
+    <article class="product-card" data-price="300" data-product="product_page_6.html">
+      <img src="image/azilal_2.webp" alt="Tapis Azilal 1" class="product-media">
+      <div class="product-body">
+        <h3 class="product-title">Tapis Boujad - N°6</h3>
+        <div class="product-sub">Recyclé · 140x90 cm</div>
+        <div class="meta">Fait main · Maroc</div>
+        <div class="price-row">
+          <div class="price">€300</div>
+          <button class="add-btn add-to-cart" type="button">Ajouter</button>
+        </div>
+      </div>
+    </article>
+    <!-- Répéter ou ajouter d’autres produits -->
+  </section>
+
+  <!-- Pagination -->
+<div class="pagination" id="pagination" aria-label="Pagination produits"></div>
+</main>
 
 
 
