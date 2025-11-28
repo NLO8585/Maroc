@@ -1598,6 +1598,7 @@ section#Contact .container form .form-row.two-columns > div label {
   transition: transform .2s ease, box-shadow .2s ease;
   width: 200px;
   height: auto; 
+  cursor: pointer;
 }
 .product-card:hover{
   transform:translateY(-6px);

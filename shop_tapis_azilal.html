@@ -104,53 +104,117 @@
     </div>
 </div>
 
-  <main class="main-boutique">
-    <div class="boutique-hero">
-      <div>
-        <h1>[Tapis Azilal]</h1>
-        <p class="lead">Résumé court sur l'origine et les spécificités des Tapis Azilal (ex : motifs abstraits, laine locale, symboles tribaux).</p>
+  <main>
+  <!-- Hero Banner simplifié et plus élégant -->
+  <div class="boutique-hero">
+    <div class="hero-text">
+      <h1>Tapis Azilal</h1>
+<p class="lead">Les tapis Azilal tiennent leur nom de la région d’Azilal au Maroc où ils sont confectionnés à la main sur des métiers à tisser traditionnel en bois.</p>
+<p class="lead">Les tisseuses expriment leurs humeurs au travers de dessins abstraits et de symboles berbères représentés sur le tapis.</p>
+    </div>
+  </div>
+
+  <!-- Filter / Sort -->
+  <div class="top-controls">
+    <div class="count">Produits : <strong id="product-count">24</strong></div>
+    <div class="filter-sort">
+      <select class="select" id="sort-select" aria-label="Trier par">
+        <option value="default">Trier par : Pertinence</option>
+        <option value="price-asc">Prix croissant</option>
+        <option value="price-desc">Prix décroissant</option>
+      </select>
+    </div>
+  </div>
+
+  <!-- Product Grid -->
+  <section class="products-grid" id="products-grid" aria-live="polite">
+    <article class="product-card" data-price="210" data-product="product_page_1.html">
+      <div style="position:relative;">
+        <img src="image/azilal_2.webp" alt="Tapis Azilal 1" class="product-media">
+        <div class="badge">Nouveau</div>
       </div>
-      <div class="hero-side">AZILAL</div>
-    </div>
-
-    <div class="intro-box">
-      <p>Ici tu écris un paragraphe explicatif (origine, techniques, couleurs, conseils d'entretien).</p>
-    </div>
-
-    <div class="top-controls">
-      <div class="count">Affichage : <strong>8 produits</strong></div>
-      <div class="fake-filter">
-        <select class="select" aria-label="Trier par">
-          <option>Trier par : Pertinence</option>
-          <option>Prix croissant</option>
-          <option>Prix décroissant</option>
-        </select>
-      </div>
-    </div>
-
-    <section class="products-grid" aria-live="polite">
-      <!-- Exemples : copier/adapter -->
-      <article class="product-card" data-product="product_azilal_1.html">
-        <img src="image/products/azilal-1.jpg" alt="Azilal 1" class="product-media">
-        <div class="product-body">
-          <h3 class="product-title">Azilal - N°1</h3>
-          <div class="product-sub">Laine fine · 170x120 cm</div>
-          <div class="meta">Artisan : Fatima</div>
-          <div class="price-row">
-            <div class="price">€480</div>
-            <button class="add-btn add-to-cart" type="button">Ajouter</button>
-          </div>
+      <div class="product-body">
+        <h3 class="product-title">Tapis Azilal - N°01</h3>
+        <div class="product-sub">180 cm x 120 cm</div>
+        <div class="meta">Fait main · Maroc</div>
+        <div class="price-row">
+          <div class="price">210 €</div>
+          <button class="add-btn add-to-cart" type="button">Ajouter</button>
         </div>
-      </article>
+      </div>
+    </article>
 
-      <!-- ... autres produits ... -->
-    </section>
+    <article class="product-card" data-price="400" data-product="product_page_2.html">
+      <img src="image/azilal_2.webp" alt="Tapis Azilal 2" class="product-media">
+      <div class="product-body">
+        <h3 class="product-title">Tapis Azilal - N°02</h3>
+        <div class="product-sub">200 cm x 150 cm</div>
+        <div class="meta">Fait main · Maroc</div>
+        <div class="price-row">
+          <div class="price">400 €</div>
+          <button class="add-btn add-to-cart" type="button">Ajouter</button>
+        </div>
+      </div>
+    </article>
 
-    <div class="pagination" role="navigation" aria-label="Pagination">
-      <button class="page-btn">1</button>
-    </div>
-  </main>
+    <article class="product-card" data-price="140" data-product="product_page_3.html">
+      <img src="image/azilal_2.webp" alt="Tapis Azilal 3" class="product-media">
+      <div class="product-body">
+        <h3 class="product-title">Tapis Azilal - N°03</h3>
+        <div class="product-sub">160 cm x 110 cm</div>
+        <div class="meta">Fait main · Maroc</div>
+        <div class="price-row">
+          <div class="price">140 €</div>
+          <button class="add-btn add-to-cart" type="button">Ajouter</button>
+        </div>
+      </div>
+    </article>
 
+    <article class="product-card" data-price="120" data-product="product_page_4.html">
+      <img src="image/azilal_2.webp" alt="Tapis Azilal 4" class="product-media">
+      <div class="product-body">
+        <h3 class="product-title">Tapis Azilal - N°04</h3>
+        <div class="product-sub">140 cm x 90 cm</div>
+        <div class="meta">Fait main · Maroc</div>
+        <div class="price-row">
+          <div class="price">120 €</div>
+          <button class="add-btn add-to-cart" type="button">Ajouter</button>
+        </div>
+      </div>
+    </article>
+
+    <article class="product-card" data-price="100" data-product="product_page_5.html">
+      <img src="image/azilal_2.webp" alt="Tapis Azilal 5" class="product-media">
+      <div class="product-body">
+        <h3 class="product-title">Tapis Azilal - N°05</h3>
+        <div class="product-sub">140 cm x 90 cm</div>
+        <div class="meta">Fait main · Maroc</div>
+        <div class="price-row">
+          <div class="price">100 €</div>
+          <button class="add-btn add-to-cart" type="button">Ajouter</button>
+        </div>
+      </div>
+    </article>
+
+    <article class="product-card" data-price="120" data-product="product_page_5.html">
+      <img src="image/azilal_2.webp" alt="Tapis Azilal 6" class="product-media">
+      <div class="product-body">
+        <h3 class="product-title">Tapis Azilal - N°06</h3>
+        <div class="product-sub">140 cm x 90 cm</div>
+        <div class="meta">Fait main · Maroc</div>
+        <div class="price-row">
+          <div class="price">120 €</div>
+          <button class="add-btn add-to-cart" type="button">Ajouter</button>
+        </div>
+      </div>
+    </article>
+
+    <!-- Répéter ou ajouter d’autres produits -->
+  </section>
+
+  <!-- Pagination -->
+<div class="pagination" id="pagination" aria-label="Pagination produits"></div>
+</main>
 
 
 <footer class="footer">
