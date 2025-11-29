@@ -190,18 +190,31 @@ document.addEventListener('DOMContentLoaded', function(){
   });
 
   /* --- Sorting --- */
-  const sortSelect = document.getElementById('sort-select');
-  const grid = document.getElementById('products-grid');
-  sortSelect.addEventListener('change', function(){
-    const items = Array.from(grid.children);
-    const value = this.value;
-    if(value === 'price-asc'){
-      items.sort((a,b)=>parseFloat(a.dataset.price)-parseFloat(b.dataset.price));
-    } else if(value === 'price-desc'){
-      items.sort((a,b)=>parseFloat(b.dataset.price)-parseFloat(a.dataset.price));
-    }
-    items.forEach(item=>grid.appendChild(item));
-  });
+/* --- Sorting --- */
+const sortSelect = document.getElementById('sort-select');
+const grid = document.getElementById('products-grid');
+
+sortSelect.addEventListener('change', function() {
+  const items = Array.from(grid.children);
+  const value = this.value;
+
+  if (value === 'price-asc') {
+    items.sort((a, b) => parseFloat(a.dataset.price) - parseFloat(b.dataset.price));
+  } 
+  else if (value === 'price-desc') {
+    items.sort((a, b) => parseFloat(b.dataset.price) - parseFloat(a.dataset.price));
+  }
+  else if (value === 'size-asc') {
+    items.sort((a, b) => parseFloat(a.dataset.size) - parseFloat(b.dataset.size));
+  }
+  else if (value === 'size-desc') {
+    items.sort((a, b) => parseFloat(b.dataset.size) - parseFloat(a.dataset.size));
+  }
+
+  items.forEach(item => grid.appendChild(item));
+});
+
+
 
   /* --- Product count --- */
   const productCount = document.getElementById('product-count');

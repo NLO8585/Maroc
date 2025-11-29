@@ -21,7 +21,7 @@
 
     <link rel="stylesheet" href="./style.css">
 
-    <title>Les Mains du Maroc | Boutique Décorations marocaines</title>
+    <title>Les Mains du Maroc | Boutique décorations marocaines</title>
 
     <script src="./script.js" defer></script>
 </head>
@@ -103,185 +103,258 @@
         <!-- Ici tu peux ajouter dynamiquement les produits -->
     </div>
 </div>
-<main class="main-boutique">
-    <div class="boutique-hero">
-      <div>
-        <h1>Décorations marocaines</h1>
-        <p class="lead">Poufs, coussins, miroirs, lampes et abat-jour — pièces artisanales pour une décoration chaleureuse et authentique.</p>
+<main>
+  <!-- Hero Banner simplifié et plus élégant -->
+  <div class="boutique-hero">
+    <div class="hero-text">
+      <h1>Décorations marocaines</h1>
+<p class="lead">Explorez notre collection de décorations marocaines authentiques, faites main au Maroc.</p>
+<p class="lead">Chaque pièce raconte une histoire unique à travers ses motifs, ses couleurs et son artisanat traditionnel.</p>
+    </div>
+  </div>
+
+  <!-- Filter / Sort -->
+  <div class="top-controls">
+    <div class="count">Produits : <strong id="product-count">24</strong></div>
+    <div class="filter-sort">
+      <select class="select" id="sort-select" aria-label="Trier par">
+        <option value="default">Trier par : Pertinence</option>
+        <option value="price-asc">Prix croissant</option>
+        <option value="price-desc">Prix décroissant</option>
+        <option value="size-asc">Taille (longueur croissante)</option>
+        <option value="size-desc">Taille (longueur décroissante)</option>
+      </select>
+    </div>
+  </div>
+
+  <!-- Product Grid -->
+  <section class="products-grid" id="products-grid" aria-live="polite">
+    <article class="product-card" data-price="800" data-size="350" data-product="product_page_1.html">
+      <div style="position:relative;">
+        <img src="image/azilal_2.webp" alt="Tapis Azilal 1" class="product-media">
+        <div class="badge">Nouveau</div>
       </div>
-      <div class="hero-side">DÉCO</div>
-    </div>
-
-    <div class="intro-box">
-      <strong>À propos :</strong>
-      <p>Nos décorations sont sélectionnées auprès d'artisans marocains : poufs en cuir, coussins brodés, miroirs travaillés, lampes et abat-jour en métal. Chaque pièce raconte une histoire et apporte une touche d'orient à vos intérieurs.</p>
-    </div>
-
-    <div class="top-controls">
-      <div class="count">Affichage : <strong>20 produits</strong></div>
-      <div class="fake-filter">
-        <select class="select" aria-label="Trier par">
-          <option>Trier par : Pertinence</option>
-          <option>Prix croissant</option>
-          <option>Prix décroissant</option>
-        </select>
+      <div class="product-body">
+        <h3 class="product-title">Tapis Azilal - N°01</h3>
+        <div class="product-sub">350 cm x 250 cm</div>
+        <div class="meta">Fait main · Maroc</div>
+        <div class="price-row">
+          <div class="price">800 €</div>
+          <button class="add-btn add-to-cart" type="button">Ajouter</button>
+        </div>
       </div>
-    </div>
+    </article>
 
-    <section class="products-grid" aria-live="polite">
-      <!-- 4 produits d'exemple -->
-      <article class="product-card" data-product="product_pouf_1.html">
-        <img src="image/products/pouf-1.jpg" alt="Pouf cuir" class="product-media">
-        <div class="product-body">
-          <h3 class="product-title">Pouf cuir - Naturel</h3>
-          <div class="product-sub">Ø 45 cm</div>
-          <div class="meta">Cuir · Fait main</div>
-          <div class="price-row">
-            <div class="price">€75</div>
-            <button class="add-btn add-to-cart" type="button">Ajouter</button>
-          </div>
+    <article class="product-card" data-price="500" data-size="198" data-product="product_page_2.html">
+      <img src="image/beni_ouarain_2.webp" alt="Tapis Béni Ouarain 1" class="product-media">
+      <div class="product-body">
+        <h3 class="product-title">Tapis Béni Ouarain - N°05</h3>
+        <div class="product-sub">198 cm x 124 cm</div>
+        <div class="meta">Fait main · Maroc</div>
+        <div class="price-row">
+          <div class="price">500 €</div>
+          <button class="add-btn add-to-cart" type="button">Ajouter</button>
         </div>
-      </article>
+      </div>
+    </article>
 
-      <article class="product-card" data-product="product_coussin_1.html">
-        <img src="image/products/coussin-1.jpg" alt="Coussin brodé" class="product-media">
-        <div class="product-body">
-          <h3 class="product-title">Coussin brodé - Bleu</h3>
-          <div class="product-sub">40x40 cm</div>
-          <div class="meta">Lin · Artisanat</div>
-          <div class="price-row">
-            <div class="price">€28</div>
-            <button class="add-btn add-to-cart" type="button">Ajouter</button>
-          </div>
+    <article class="product-card" data-price="350" data-size="160" data-product="product_page_3.html">
+      <img src="image/kilim_2.jpg" alt="Tapis Kilim 1" class="product-media">
+      <div class="product-body">
+        <h3 class="product-title">Tapis Kilim</h3>
+        <div class="product-sub">160 cm x 110 cm</div>
+        <div class="meta">Fait main · Maroc</div>
+        <div class="price-row">
+          <div class="price">350 €</div>
+          <button class="add-btn add-to-cart" type="button">Ajouter</button>
         </div>
-      </article>
+      </div>
+    </article>
 
-      <article class="product-card" data-product="product_miroir_1.html">
-        <img src="image/products/miroir-1.jpg" alt="Miroir marocain" class="product-media">
-        <div class="product-body">
-          <h3 class="product-title">Miroir ciselé - Or</h3>
-          <div class="product-sub">50x70 cm</div>
-          <div class="meta">Métal · Finitions</div>
-          <div class="price-row">
-            <div class="price">€220</div>
-            <button class="add-btn add-to-cart" type="button">Ajouter</button>
-          </div>
+    <article class="product-card" data-price="100" data-size="152" data-product="product_page_4.html">
+      <img src="image/boucherouite_2.webp" alt="Tapis Boucherouite 1" class="product-media">
+      <div class="product-body">
+        <h3 class="product-title">Tapis Boucherouite</h3>
+        <div class="product-sub">152 cm x 90 cm</div>
+        <div class="meta">Fait main · Maroc</div>
+        <div class="price-row">
+          <div class="price">100 €</div>
+          <button class="add-btn add-to-cart" type="button">Ajouter</button>
         </div>
-      </article>
+      </div>
+    </article>
 
-      <article class="product-card" data-product="product_lampe_1.html">
-        <img src="image/products/lampe-1.jpg" alt="Lampe orientale" class="product-media">
-        <div class="product-body">
-          <h3 class="product-title">Lampe perforée - Grande</h3>
-          <div class="product-sub">H 60 cm</div>
-          <div class="meta">Éclairage doux</div>
-          <div class="price-row">
-            <div class="price">€150</div>
-            <button class="add-btn add-to-cart" type="button">Ajouter</button>
-          </div>
+      <article class="product-card" data-price="800" data-size="210" data-product="product_page_5.html">
+      <img src="image/mrirt_2.webp" alt="Tapis Mrirt 1" class="product-media">
+      <div class="product-body">
+        <h3 class="product-title">Tapis Mrirt - N°01</h3>
+        <div class="product-sub">210 cm x 140 cm</div>
+        <div class="meta">Fait main · Maroc</div>
+        <div class="price-row">
+          <div class="price">800 €</div>
+          <button class="add-btn add-to-cart" type="button">Ajouter</button>
         </div>
-      </article>
+      </div>
+    </article>
 
-          <section class="products-grid" aria-live="polite">
-      <!-- 4 produits d'exemple -->
-      <article class="product-card" data-product="product_pouf_1.html">
-        <img src="image/products/pouf-1.jpg" alt="Pouf cuir" class="product-media">
-        <div class="product-body">
-          <h3 class="product-title">Pouf cuir - Naturel</h3>
-          <div class="product-sub">Ø 45 cm</div>
-          <div class="meta">Cuir · Fait main</div>
-          <div class="price-row">
-            <div class="price">€75</div>
-            <button class="add-btn add-to-cart" type="button">Ajouter</button>
-          </div>
+    <article class="product-card" data-price="120" data-size="130" data-product="product_page_6.html">
+      <img src="image/beni_ouarain_2.webp" alt="Tapis Béni Ouarain 1" class="product-media">
+      <div class="product-body">
+        <h3 class="product-title">Tapis Béni Ouarain</h3>
+        <div class="product-sub">130 cm x 90 cm</div>
+        <div class="meta">Fait main · Maroc</div>
+        <div class="price-row">
+          <div class="price">120 €</div>
+          <button class="add-btn add-to-cart" type="button">Ajouter</button>
         </div>
-      </article>
+      </div>
+    </article>
 
-      <article class="product-card" data-product="product_coussin_1.html">
-        <img src="image/products/coussin-1.jpg" alt="Coussin brodé" class="product-media">
-        <div class="product-body">
-          <h3 class="product-title">Coussin brodé - Bleu</h3>
-          <div class="product-sub">40x40 cm</div>
-          <div class="meta">Lin · Artisanat</div>
-          <div class="price-row">
-            <div class="price">€28</div>
-            <button class="add-btn add-to-cart" type="button">Ajouter</button>
-          </div>
+    <article class="product-card" data-price="300" data-size="142" data-product="product_page_7.html">
+      <img src="image/boujad_2.webp" alt="Tapis Boujad 1" class="product-media">
+      <div class="product-body">
+        <h3 class="product-title">Tapis Boujad - N°6</h3>
+        <div class="product-sub">142 cm x 90 cm</div>
+        <div class="meta">Fait main · Maroc</div>
+        <div class="price-row">
+          <div class="price">300 €</div>
+          <button class="add-btn add-to-cart" type="button">Ajouter</button>
         </div>
-      </article>
-
-      <article class="product-card" data-product="product_miroir_1.html">
-        <img src="image/products/miroir-1.jpg" alt="Miroir marocain" class="product-media">
-        <div class="product-body">
-          <h3 class="product-title">Miroir ciselé - Or</h3>
-          <div class="product-sub">50x70 cm</div>
-          <div class="meta">Métal · Finitions</div>
-          <div class="price-row">
-            <div class="price">€220</div>
-            <button class="add-btn add-to-cart" type="button">Ajouter</button>
-          </div>
+      </div>
+    </article>
+        <article class="product-card" data-price="220" data-size="174" data-product="product_page_8.html">
+      <img src="image/boucherouite_2.webp" alt="Tapis Boucherouite 2" class="product-media">
+      <div class="product-body">
+        <h3 class="product-title">Tapis Boucherouite</h3>
+        <div class="product-sub">174 cm x 130 cm</div>
+        <div class="meta">Fait main · Maroc</div>
+        <div class="price-row">
+          <div class="price">220 €</div>
+          <button class="add-btn add-to-cart" type="button">Ajouter</button>
         </div>
-      </article>
-
-      <article class="product-card" data-product="product_lampe_1.html">
-        <img src="image/products/lampe-1.jpg" alt="Lampe orientale" class="product-media">
-        <div class="product-body">
-          <h3 class="product-title">Lampe perforée - Grande</h3>
-          <div class="product-sub">H 60 cm</div>
-          <div class="meta">Éclairage doux</div>
-          <div class="price-row">
-            <div class="price">€150</div>
-            <button class="add-btn add-to-cart" type="button">Ajouter</button>
-          </div>
+      </div>
+    </article>
+    <article class="product-card" data-price="120" data-size="160" data-product="product_page_9.html">
+      <img src="image/kilim_2.jpg" alt="Tapis Kilim 3" class="product-media">
+      <div class="product-body">
+        <h3 class="product-title">Tapis Kilim</h3>
+        <div class="product-sub">160 cm x 90 cm</div>
+        <div class="meta">Fait main · Maroc</div>
+        <div class="price-row">
+          <div class="price">120 €</div>
+          <button class="add-btn add-to-cart" type="button">Ajouter</button>
         </div>
-      </article>
-            <article class="product-card" data-product="product_coussin_1.html">
-        <img src="image/products/coussin-1.jpg" alt="Coussin brodé" class="product-media">
-        <div class="product-body">
-          <h3 class="product-title">Coussin brodé - Bleu</h3>
-          <div class="product-sub">40x40 cm</div>
-          <div class="meta">Lin · Artisanat</div>
-          <div class="price-row">
-            <div class="price">€28</div>
-            <button class="add-btn add-to-cart" type="button">Ajouter</button>
-          </div>
+      </div>
+    </article>
+    <article class="product-card" data-price="420" data-size="200" data-product="product_page_10.html">
+      <img src="image/azilal_2.webp" alt="Tapis Azilal 2" class="product-media">
+      <div class="product-body">
+        <h3 class="product-title">Tapis Azilal - N°02</h3>
+        <div class="product-sub">200 cm x 140 cm</div>
+        <div class="meta">Fait main · Maroc</div>
+        <div class="price-row">
+          <div class="price">420 €</div>
+          <button class="add-btn add-to-cart" type="button">Ajouter</button>
         </div>
-      </article>
+      </div>
+    </article>
 
-      <article class="product-card" data-product="product_miroir_1.html">
-        <img src="image/products/miroir-1.jpg" alt="Miroir marocain" class="product-media">
-        <div class="product-body">
-          <h3 class="product-title">Miroir ciselé - Or</h3>
-          <div class="product-sub">50x70 cm</div>
-          <div class="meta">Métal · Finitions</div>
-          <div class="price-row">
-            <div class="price">€220</div>
-            <button class="add-btn add-to-cart" type="button">Ajouter</button>
-          </div>
+    <article class="product-card" data-price="190" data-size="100" data-product="product_page_11.html">
+      <img src="image/boujad_2.webp" alt="Tapis Boujad 1" class="product-media">
+      <div class="product-body">
+        <h3 class="product-title">Tapis Boujad - N°6</h3>
+        <div class="product-sub">100 cm x 70 cm</div>
+        <div class="meta">Fait main · Maroc</div>
+        <div class="price-row">
+          <div class="price">190 €</div>
+          <button class="add-btn add-to-cart" type="button">Ajouter</button>
         </div>
-      </article>
+      </div>
+    </article>
 
-      <article class="product-card" data-product="product_lampe_1.html">
-        <img src="image/products/lampe-1.jpg" alt="Lampe orientale" class="product-media">
-        <div class="product-body">
-          <h3 class="product-title">Lampe perforée - Grande</h3>
-          <div class="product-sub">H 60 cm</div>
-          <div class="meta">Éclairage doux</div>
-          <div class="price-row">
-            <div class="price">€150</div>
-            <button class="add-btn add-to-cart" type="button">Ajouter</button>
-          </div>
+        <article class="product-card" data-price="910" data-size="290" data-product="product_page_12.html">
+      <img src="image/beni_ouarain_2.webp" alt="Tapis Béni Ouarain 1" class="product-media">
+      <div class="product-body">
+        <h3 class="product-title">Tapis Béni Ouarain - N°05</h3>
+        <div class="product-sub">290 cm x 160 cm</div>
+        <div class="meta">Fait main · Maroc</div>
+        <div class="price-row">
+          <div class="price">910 €</div>
+          <button class="add-btn add-to-cart" type="button">Ajouter</button>
         </div>
-      </article>
+      </div>
+    </article>
 
-      <!-- ... autres produits ... -->
-    </section>
+    <article class="product-card" data-price="360" data-size="160" data-product="product_page_13.html">
+      <img src="image/boujad_2.webp" alt="Tapis Boujad 1" class="product-media">
+      <div class="product-body">
+        <h3 class="product-title">Tapis Boujad - Coloré</h3>
+        <div class="product-sub">160 cm x 110 cm</div>
+        <div class="meta">Fait main · Maroc</div>
+        <div class="price-row">
+          <div class="price">360 €</div>
+          <button class="add-btn add-to-cart" type="button">Ajouter</button>
+        </div>
+      </div>
+    </article>
 
-    <div class="pagination" role="navigation" aria-label="Pagination">
-      <button class="page-btn">1</button>
-      <button class="page-btn">2</button>
-    </div>
-  </main>
+      <article class="product-card" data-price="750" data-size="200" data-product="product_page_14.html">
+      <img src="image/mrirt_2.webp" alt="Tapis Mrirt 1" class="product-media">
+      <div class="product-body">
+        <h3 class="product-title">Tapis Mrirt - N°01</h3>
+        <div class="product-sub">200 cm x 150 cm</div>
+        <div class="meta">Fait main · Maroc</div>
+        <div class="price-row">
+          <div class="price">750 €</div>
+          <button class="add-btn add-to-cart" type="button">Ajouter</button>
+        </div>
+      </div>
+    </article>
+
+    <article class="product-card" data-price="110" data-size="140" data-product="product_page_15.html">
+      <img src="image/boucherouite_2.webp" alt="Tapis Boucherouite 2" class="product-media">
+      <div class="product-body">
+        <h3 class="product-title">Tapis Boucherouite</h3>
+        <div class="product-sub">140 cm x 90 cm</div>
+        <div class="meta">Fait main · Maroc</div>
+        <div class="price-row">
+          <div class="price">110 €</div>
+          <button class="add-btn add-to-cart" type="button">Ajouter</button>
+        </div>
+      </div>
+    </article>
+
+    <article class="product-card" data-price="120" data-size="100" data-product="product_page_16.html">
+      <img src="image/kilim_2.jpg" alt="Tapis Kilim 3" class="product-media">
+      <div class="product-body">
+        <h3 class="product-title">Tapis Kilim</h3>
+        <div class="product-sub">100 cm x 70 cm</div>
+        <div class="meta">Fait main · Maroc</div>
+        <div class="price-row">
+          <div class="price">100 €</div>
+          <button class="add-btn add-to-cart" type="button">Ajouter</button>
+        </div>
+      </div>
+    </article>
+
+    <article class="product-card" data-price="500" data-size="300" data-product="product_page_17.html">
+      <img src="image/boujad_2.webp" alt="Tapis Boujad 1" class="product-media">
+      <div class="product-body">
+        <h3 class="product-title">Tapis Boujad - N°6</h3>
+        <div class="product-sub">300 cm x 200 cm</div>
+        <div class="meta">Fait main · Maroc</div>
+        <div class="price-row">
+          <div class="price">500 €</div>
+          <button class="add-btn add-to-cart" type="button">Ajouter</button>
+        </div>
+      </div>
+    </article>
+    <!-- Répéter ou ajouter d’autres produits -->
+  </section>
+
+  <!-- Pagination -->
+<div class="pagination" id="pagination" aria-label="Pagination produits"></div>
+</main>
 
 
 
