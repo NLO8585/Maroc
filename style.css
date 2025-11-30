@@ -1757,3 +1757,137 @@ footer.footer{
   letter-spacing:1px;
   font-size:18px;
 }
+
+
+
+/* === PRODUCT PAGE === */
+
+.product-page-body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    font-family: Arial, sans-serif;
+    background-color: rgb(248, 248, 248);
+}
+
+.product-page-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* moins d'espace entre gauche/droite */
+    padding: 20px 80px; /* padding réduit */
+    margin: 10px auto;
+}
+
+.product-left {
+    flex: 1 1 400px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.product-left img {
+    width: 100%;
+    margin-top: 50px;
+    max-width: 450px;
+    border-radius: 12px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.product-left img:hover {
+    transform: scale(1.03);
+}
+
+.product-right {
+    flex: 1 1 450px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* espace réduit */
+}
+
+.product-page-body .product-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #111;
+    line-height: 1.2;
+    padding-top: 30px;
+}
+
+.product-meta p {
+    font-size: 0.95rem;
+    color: #666;
+    margin-bottom: 3px;
+}
+
+.product-page-body .product-price {
+    font-size: 1.6rem;
+    color: #C66A3F;
+    font-weight: 700;
+    margin: 8px 0;
+}
+
+/* Bouton ajouter au panier plus petit */
+.large-btn {
+    padding: 8px 16px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #fff;
+    background: #C66A3F;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    width: fit-content; /* largeur adaptée au texte */
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.large-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(198, 106, 63, 0.4);
+}
+
+.large-btn:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+    box-shadow: none;
+}
+
+.out-of-stock {
+    color: #e53935;
+    font-weight: 700;
+}
+
+/* Sommaire sous le prix */
+.product-sommaire {
+    font-size: 0.85rem;
+    color: #444;
+    margin: 5px 0 10px 0;
+    line-height: 1.5;
+    text-align: justify;
+}
+
+/* Sections Description détaillée, Livraison, Entretien - simplifiées */
+.product-detail,
+.product-livraison,
+.product-entretien {
+    background-color: rgb(248, 248, 248); /* même fond que la page, plus léger */
+    padding: 0px 0; /* moins d'espace */
+}
+
+.product-detail h3,
+.product-livraison h3,
+.product-entretien h3 {
+    font-size: 0.95rem;
+    font-weight: 700;
+    margin-bottom: 5px;
+    color: #111;
+}
+
+.product-detail p,
+.product-livraison p,
+.product-entretien p {
+    font-size: 0.85rem;
+    line-height: 1.5;
+    color: #555;
+    margin-bottom: 0px;
+    text-align: justify; /* JUSTIFIER les paragraphes */
+}

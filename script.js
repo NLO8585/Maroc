@@ -1,5 +1,32 @@
 /* script.js — version nettoyée et prête à l'emploi */
 
+
+
+/* ------------------- FUNCTIONS GLOBALES ------------------- */
+
+// Fonction CSV globale
+function loadProductsFromCSV(callback) {
+    if (typeof Papa === 'undefined') {
+        console.error('PapaParse non trouvé : assure-toi d\'inclure la lib avant script.js');
+        return callback([]);
+    }
+    Papa.parse('BDD.csv', {
+        header: true,
+        download: true,
+        dynamicTyping: true,
+        skipEmptyLines: true,
+        complete: function(results) { callback(results.data || []); },
+        error: function(err){ console.error('Erreur lecture CSV:', err); callback([]); }
+    });
+}
+
+// Filtre les produits selon ID prefix
+function filterProducts(products, prefix) {
+    return products.filter(p => {
+        const id = p['ID unique'] || '';
+        return id.startsWith(prefix);
+    });
+}
 /* ============================================================
    === Tout dans un seul DOMContentLoaded pour éviter les collisions
    ============================================================ */
@@ -264,28 +291,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   /* ------------ CSV loading + rendering products ------------ */
 
-  function loadProductsFromCSV(callback) {
-    if (typeof Papa === 'undefined') {
-      console.error('PapaParse non trouvé : assure-toi d\'inclure la lib avant script.js');
-      return callback([]);
-    }
-    Papa.parse('BDD.csv', {
-        header: true,
-        download: true,
-        dynamicTyping: true,
-        skipEmptyLines: true,
-        complete: function(results) { callback(results.data || []); },
-        error: function(err){ console.error('Erreur lecture CSV:', err); callback([]); }
-    });
-  }
-
-  function filterProducts(products, prefix) {
-    return products.filter(p => {
-        const id = p['ID unique'] || '';
-        return id.startsWith(prefix);
-    });
-}
-
   function generateProductCard(product) {
     const title = product['Nom'] || 'Produit';
     const price = product['Prix'] || 0;
@@ -294,7 +299,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const dimensions = product['Dimensions'] || ((longueur || largeur) ? `${longueur} x ${largeur}` : '');
     const img = product['Image'] || 'image/photo_a_venir.png';
     const idUnique = product['ID unique'] || product['ID'] || '';
-    const productPage = product['Référence fournisseur'] ? String(product['Référence fournisseur']) : `product_page_${idUnique}.html`;
+    const productPage = `product.html?id=${idUnique}`;
     const stock = (product['Stock'] !== undefined && product['Stock'] !== null) ? product['Stock'] : 0;
 
     const card = document.createElement('article');
@@ -431,3 +436,99 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
 });
+
+function renderSingleProduct(product) {
+    const container = document.getElementById("product-container");
+    const heroTitle = document.getElementById("product-hero-title");
+    const heroDesc = document.getElementById("product-hero-description");
+
+    if (!container) return; // On est sur une autre page
+
+    if (!product) {
+        container.innerHTML = "<p>Produit introuvable.</p>";
+        if(heroTitle) heroTitle.textContent = "Produit introuvable";
+        if(heroDesc) heroDesc.textContent = "";
+        return;
+    }
+
+    const title = product['Nom'] || 'Produit';
+    const price = product['Prix'] || 0;
+    const img = product['Image'] || 'image/photo_a_venir.png';
+    const longueur = product['Longueur'] || '';
+    const largeur = product['Largeur'] || '';
+    const dimensions = product['Dimensions'] || ((longueur || largeur) ? `${longueur} x ${largeur}` : '');
+    const materiau = product['Materiau'] || '';
+    const stock = product['Stock'] ?? 0;
+    const descrSommaire = product['Descr_sommaire'] || '';
+    const descrDetail = product['Descr_detail'] || '';
+    const livraison = product['Livraison'] || '';
+    const entretien = product['Entretien'] || '';
+
+    const disabled = stock <= 0 ? "disabled" : "";
+
+    // --- Mettre à jour le hero ---
+    if(heroTitle) heroTitle.textContent = title;
+    if(heroDesc) heroDesc.textContent = descrSommaire || `Découvrez notre produit ${title}`;
+
+    // --- Contenu principal ---
+    container.innerHTML = `
+        <div class="product-page-wrapper">
+
+            <div class="product-left">
+                <img src="${img}" alt="${title}" class="product-large-image"
+                     onerror="this.onerror=null; this.src='image/photo_a_venir.png';">
+            </div>
+
+            <div class="product-right">
+                <h1 class="product-title">${title}</h1>
+
+                <div class="product-meta">
+                    ${materiau ? `<p>Matériau : ${materiau}</p>` : ""}
+                    ${dimensions ? `<p>Dimensions : ${dimensions}</p>` : ""}
+                    <p>Origine : Maroc</p>
+                    ${stock <= 0 ? `<p class="out-of-stock">Rupture de stock</p>` : `<p>Stock : ${stock}</p>`}
+                </div>
+
+                <div class="product-price">${price}</div>
+
+                ${descrSommaire ? `<p class="product-sommaire">${descrSommaire}</p>` : ''}
+
+                <button class="add-to-cart large-btn" ${disabled}>Ajouter au panier</button>
+
+                ${descrDetail ? `<div class="product-detail"><h3>Description</h3><p>${descrDetail}</p></div>` : ''}
+
+                ${livraison ? `<div class="product-livraison"><h3>Livraison & Retour</h3><p>${livraison}</p></div>` : ''}
+
+                ${entretien ? `<div class="product-entretien"><h3>Entretien</h3><p>${entretien}</p></div>` : ''}
+            </div>
+
+        </div>
+    `;
+
+    // Réactiver le bouton "Ajouter au panier" sur cette page
+    initProductEvents();
+}
+// =========================
+// CHARGEMENT D'UNE PAGE PRODUIT
+// =========================
+document.addEventListener("DOMContentLoaded", () => {
+
+    // On vérifie si on est sur product.html
+    if (!window.location.pathname.includes("product.html")) return;
+
+    const urlParams = new URLSearchParams(window.location.search);
+    const productId = urlParams.get("id");
+
+    // Si pas d'ID → erreur
+    if (!productId) {
+        renderSingleProduct(null);
+        return;
+    }
+
+    // Charger CSV puis afficher ce produit uniquement
+    loadProductsFromCSV(function(allProducts) {
+        const product = allProducts.find(p => String(p["ID unique"]) === String(productId));
+        renderSingleProduct(product);
+    });
+});
+

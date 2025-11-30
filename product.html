@@ -15,19 +15,19 @@
     <meta property="og:type" content="website">
     <meta property="og:locale" content="fr_FR">
 
-    <link rel="icon" href="image/icon.png">
+    <link rel="icon" href="/image/icon.png">
 
     <link rel="preload" href="fonts/ORTICA/Ortica_300.woff2" as="font" type="font/woff2" crossorigin>
 
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="style.css">
 
-    <title>Les Mains du Maroc | Accueil</title>
-
-    <script src="./script.js" defer></script>
+    <title>Les Mains du Maroc | Page produit</title>
+    <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
+    <script src="script.js" defer></script>
 </head>
 
-<body>
-    <header class="header_accueil">
+<body class="product-page-body">
+    <header class="header">
         <div class="hamburger" 
             tabindex="0" 
             role="button" 
@@ -35,9 +35,9 @@
                 <span></span>
                 <span></span>
                 <span></span>
-        </div>       
+        </div>
         <nav>
-            <ul class="sommaire">
+            <ul class="sommaire_annexes">
                 <li><a href="index.html">Accueil</a></li>
                 <li><a href="A_propos.html">Notre histoire</a></li>
                 <!-- TAPIS BERBERES -->
@@ -69,27 +69,13 @@
 
             </ul>
         </nav>
-
-        <div class="logopetit">
-            <a href="index.html" aria-label="Aller à l'accueil">
-                <img src="image/logo_rond.png" alt="Logo Les Mains du Maroc" />
-            </a>
-        </div>
-        <div class="header-container">
-            <h1 class="Bienvenue">VENTE DE TAPIS BERBÈRES & DE DÉCORATIONS MAROCAINES</h1>
-            <div class="location">
-                <span>Faites entrer l’artisanat marocain dans votre intérieur</span>
+        <div class="header-container2">
+            <div class="logopetit">
+                <a href="index.html" aria-label="Retour à la page d'accueil">
+                    <img src="image/logo_rond.png" alt="Logo Les Mains du Maroc" />
+                </a>
             </div>
         </div>
-        <div 
-        class="scroll-arrow" 
-        onclick="scrollToNextSection()" 
-        onkeydown="if(event.key === 'Enter' || event.key === ' ') scrollToNextSection()" 
-        aria-label="Faire défiler vers la section suivante" 
-        tabindex="0" 
-        role="button">
-          <img src="image/arrow_bas.png" alt="" />
-      </div>
     </header>
 <!-- Conteneur des icônes -->
 <div class="header-icons">
@@ -119,12 +105,13 @@
     </div>
 </div>
 
+<main class="product-page">
+    <!-- Contenu du produit -->
+    <section id="product-container" class="product-page">
+        <!-- Le JS insère tout ici -->
+    </section>
 
-<!-- AJOUT SECTION LONGUE BLANCHE VIDE  -->
-<section class="section_blanche" style="height: 1000px; background-color: rgb(248,248,248);"></section>
-
-
-
+</main>
 <footer class="footer">
     <!-- Vague décorative -->
     <div class="wave-divider-index">
@@ -191,7 +178,5 @@
         <p>&copy;2025 Les Mains du Maroc. Tous droits réservés.</p>
     </div>
 </footer>
-
-<script src="script.js" defer></script>
 </body>
 </html>
