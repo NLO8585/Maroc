@@ -292,7 +292,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const longueur = product['Longueur'] || '';
     const largeur = product['Largeur'] || '';
     const dimensions = product['Dimensions'] || ((longueur || largeur) ? `${longueur} x ${largeur}` : '');
-    const img = product['Nom Image'] || 'image/photo_a_venir.png';
+    const img = product['Image'] || 'image/photo_a_venir.png';
     const idUnique = product['ID unique'] || product['ID'] || '';
     const productPage = product['Référence fournisseur'] ? String(product['Référence fournisseur']) : `product_page_${idUnique}.html`;
     const stock = (product['Stock'] !== undefined && product['Stock'] !== null) ? product['Stock'] : 0;
