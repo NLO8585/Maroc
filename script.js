@@ -382,19 +382,15 @@ document.addEventListener('DOMContentLoaded', () => {
         if (url.includes("boutique_tapis.html")) {
             filtered = filterProducts(allProducts, "TAP");
         }
-
         else if (url.includes("boutique_deco.html")) {
             filtered = filterProducts(allProducts, "DEC");
         }
-
         else if (url.includes("shop_tapis_azilal.html")) {
             filtered = filterProducts(allProducts, "TAP-AZI");
         }
-
         else if (url.includes("shop_tapis_beni_ouarain.html")) {
             filtered = filterProducts(allProducts, "TAP-BEN");
         }
-
         else if (url.includes("shop_tapis_boujad.html")) {
             filtered = filterProducts(allProducts, "TAP-BOUJ");
         }
@@ -410,9 +406,6 @@ document.addEventListener('DOMContentLoaded', () => {
         else if (url.includes("shop_deco_abatjour.html")) {
             filtered = filterProducts(allProducts, "DEC-ABA");
         }
-        else if (url.includes("shop_deco_abatjour.html")) {
-            filtered = filterProducts(allProducts, "DEC-ABA");
-        }
         else if (url.includes("shop_deco_coussins.html")) {
             filtered = filterProducts(allProducts, "DEC-COU");
         }
@@ -422,7 +415,7 @@ document.addEventListener('DOMContentLoaded', () => {
         else if (url.includes("shop_deco_miroirs.html")) {
             filtered = filterProducts(allProducts, "DEC-MIR");
         }
-        else if (url.includes("shop_deco_plaids.html")) {
+        else if (url.includes("shop_deco_plaid.html")) {
             filtered = filterProducts(allProducts, "DEC-PLA");
         }
         else if (url.includes("shop_deco_poufs.html")) {
