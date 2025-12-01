@@ -1,279 +1,413 @@
 <!DOCTYPE html>
 <html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta
+      name="description"
+      content="Les Mains du Maroc – Artisanat marocain authentique : tapis berbères, miroirs, lampes et objets décoratifs, importés directement du Maroc."
+    />
+    <meta
+      name="keywords"
+      content="artisanat marocain, tapis berbères, miroirs marocains, lampes orientales, décoration marocaine, Les Mains du Maroc"
+    />
+    <meta name="author" content="Les Mains du Maroc" />
 
-    <meta name="description" content="Les Mains du Maroc – Artisanat marocain authentique : tapis berbères, miroirs, lampes et objets décoratifs, importés directement du Maroc.">
-    <meta name="keywords" content="artisanat marocain, tapis berbères, miroirs marocains, lampes orientales, décoration marocaine, Les Mains du Maroc">
-    <meta name="author" content="Les Mains du Maroc">
+    <meta
+      property="og:title"
+      content="Les Mains du Maroc | Artisanat Marocain Authentique"
+    />
+    <meta
+      property="og:description"
+      content="Découvrez des pièces uniques : tapis berbères, miroirs, luminaires et décoration artisanale marocaine."
+    />
+    <meta property="og:image" content="image/og-image.jpg" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="fr_FR" />
 
-    <meta property="og:title" content="Les Mains du Maroc | Artisanat Marocain Authentique">
-    <meta property="og:description" content="Découvrez des pièces uniques : tapis berbères, miroirs, luminaires et décoration artisanale marocaine.">
-    <meta property="og:image" content="image/og-image.jpg">
-    <meta property="og:type" content="website">
-    <meta property="og:locale" content="fr_FR">
+    <link rel="icon" href="image/icon.png" />
 
-    <link rel="icon" href="image/icon.png">
+    <link
+      rel="preload"
+      href="fonts/ORTICA/Ortica_300.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
 
-    <link rel="preload" href="fonts/ORTICA/Ortica_300.woff2" as="font" type="font/woff2" crossorigin>
-
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./style.css" />
 
     <title>Les Mains du Maroc | Artisanat Marocain Authentique</title>
 
     <script src="./script.js" defer></script>
-</head>
+  </head>
 
-<body>
+  <body>
     <header class="header">
-        <div class="hamburger" 
-            tabindex="0" 
-            role="button" 
-            aria-label="Ouvrir le menu principal">
-                <span></span>
-                <span></span>
-                <span></span>
-        </div>
-        <nav>
-            <ul class="sommaire_annexes">
-                <li><a href="index.html">Accueil</a></li>
-                <li><a href="A_propos.html">Notre histoire</a></li>
-                <!-- TAPIS BERBERES -->
-                <li class="has-submenu">
-                <a href="boutique_tapis.html">Tapis Berbères <span class="arrow">▾</span></a>
-                    <ul class="submenu">
-                        <li><a href="shop_tapis_azilal.html">Tapis Azilal</a></li>
-                        <li><a href="shop_tapis_beni_ouarain.html">Tapis Béni Ouarain</a></li>
-                        <li><a href="shop_tapis_boujad.html">Tapis Boujad</a></li>
-                        <li><a href="shop_tapis_boucherouite.html">Tapis Boucherouite</a></li>
-                        <li><a href="shop_tapis_kilim.html">Tapis Kilim</a></li>
-                        <li><a href="shop_tapis_mrirt.html">Tapis Mrirt</a></li>
-                </ul>
-                </li>
-                <!-- DÉCORATIONS -->
-                <li class="has-submenu">
-                    <a href="boutique_deco.html">Décorations marocaines <span class="arrow">▾</span></a>
-                    <ul class="submenu">
-                        <li><a href="shop_deco_plaid.html">Plaids Berbères</a></li>
-                        <li><a href="shop_deco_poufs.html">Poufs</a></li>
-                        <li><a href="shop_deco_coussins.html">Coussins</a></li>
-                        <li><a href="shop_deco_miroirs.html">Miroirs</a></li>
-                        <li><a href="shop_deco_abatjour.html">Abat-jour</a></li>
-                        <li><a href="shop_deco_lampes.html">Lampes</a></li>
-                    </ul>
-                </li>
-                <li><a href="blog.html">Blog</a></li>
-                <li><a href="contact.html">Contact</a></li>
-
+      <div
+        class="hamburger"
+        tabindex="0"
+        role="button"
+        aria-label="Ouvrir le menu principal"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <nav>
+        <ul class="sommaire_annexes">
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="A_propos.html">Notre histoire</a></li>
+          <!-- TAPIS BERBERES -->
+          <li class="has-submenu">
+            <a href="boutique_tapis.html"
+              >Tapis Berbères <span class="arrow">▾</span></a
+            >
+            <ul class="submenu">
+              <li><a href="shop_tapis_azilal.html">Tapis Azilal</a></li>
+              <li>
+                <a href="shop_tapis_beni_ouarain.html">Tapis Béni Ouarain</a>
+              </li>
+              <li><a href="shop_tapis_boujad.html">Tapis Boujad</a></li>
+              <li>
+                <a href="shop_tapis_boucherouite.html">Tapis Boucherouite</a>
+              </li>
+              <li><a href="shop_tapis_kilim.html">Tapis Kilim</a></li>
+              <li><a href="shop_tapis_mrirt.html">Tapis Mrirt</a></li>
             </ul>
-        </nav>
-        <div class="header-container2">
-            <div class="logopetit">
-                <a href="index.html" aria-label="Retour à la page d'accueil">
-                    <img src="image/logo_rond.png" alt="Logo Les Mains du Maroc" />
-                </a>
-            </div>
+          </li>
+          <!-- DÉCORATIONS -->
+          <li class="has-submenu">
+            <a href="boutique_deco.html"
+              >Décorations marocaines <span class="arrow">▾</span></a
+            >
+            <ul class="submenu">
+              <li><a href="shop_deco_plaid.html">Plaids Berbères</a></li>
+              <li><a href="shop_deco_poufs.html">Poufs</a></li>
+              <li><a href="shop_deco_coussins.html">Coussins</a></li>
+              <li><a href="shop_deco_miroirs.html">Miroirs</a></li>
+              <li><a href="shop_deco_abatjour.html">Abat-jour</a></li>
+              <li><a href="shop_deco_lampes.html">Lampes</a></li>
+            </ul>
+          </li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="header-container2">
+        <div class="logopetit">
+          <a href="index.html" aria-label="Retour à la page d'accueil">
+            <img src="image/logo_rond.png" alt="Logo Les Mains du Maroc" />
+          </a>
         </div>
+      </div>
     </header>
-<!-- Conteneur des icônes -->
-<div class="header-icons">
-
-    <!-- Icône connexion -->
-    <a href="login.html" class="icon-btn" aria-label="Connexion">
-        <img src="image/login.svg" alt="Login">
-    </a>
-    <!-- Icône panier -->
-    <a href="javascript:void(0)" class="icon-btn cart-trigger" aria-label="Voir le panier">
-        <img src="image/panier.svg" alt="Panier d'achat">
+    <!-- Conteneur des icônes -->
+    <div class="header-icons">
+      <!-- Icône connexion -->
+      <a href="login.html" class="icon-btn" aria-label="Connexion">
+        <img src="image/login.svg" alt="Login" />
+      </a>
+      <!-- Icône panier -->
+      <a
+        href="javascript:void(0)"
+        class="icon-btn cart-trigger"
+        aria-label="Voir le panier"
+      >
+        <img src="image/panier.svg" alt="Panier d'achat" />
         <span id="cart-count" class="cart-count">0</span>
-    </a>
-</div>
+      </a>
+    </div>
 
-<!-- Overlay -->
-<div id="cart-overlay"></div>
+    <!-- Overlay -->
+    <div id="cart-overlay"></div>
 
-<!-- Fenêtre du panier -->
-<div id="cart-sidebar">
-    <div class="cart-header">
+    <!-- Fenêtre du panier -->
+    <div id="cart-sidebar">
+      <div class="cart-header">
         <h2>Votre panier</h2>
         <button id="close-cart">&times;</button>
-    </div>
-    <div class="cart-content">
+      </div>
+      <div class="cart-content">
         <p>Votre panier est vide pour le moment.</p>
         <!-- Ici tu peux ajouter dynamiquement les produits -->
+      </div>
     </div>
-</div>
-<div class="header-offset"></div>
-<article class="cgv_article">
-    <h2>Conditions Générales de Vente</h2>
-    <div class="cgv_txt">
+    <div class="header-offset"></div>
+    <article class="cgv_article">
+      <h2>Conditions Générales de Vente</h2>
+      <div class="cgv_txt">
         <!-- Article 1 -->
         <h5>1. Objet</h5>
         <p>
-            Les présentes Conditions Générales de Vente (CGV) régissent les relations contractuelles entre <strong>Les Mains du Maroc</strong>, entreprise spécialisée dans l’exportation et la vente en ligne de produits artisanaux marocains, et ses clients pour toute commande effectuée sur le site internet de la société.
+          Les présentes Conditions Générales de Vente (CGV) régissent les
+          relations contractuelles entre <strong>Les Mains du Maroc</strong>,
+          entreprise spécialisée dans l’exportation et la vente en ligne de
+          produits artisanaux marocains, et ses clients pour toute commande
+          effectuée sur le site internet de la société.
         </p>
 
         <!-- Article 2 -->
         <h5>2. Champ d'application</h5>
         <p>
-            Les présentes CGV s’appliquent à toutes les ventes de produits commercialisés par <strong>Les Mains du Maroc</strong>, sans préjudice de conditions particulières éventuellement convenues par écrit avec le client. Toute commande implique l’adhésion entière et sans réserve du client aux présentes CGV.
+          Les présentes CGV s’appliquent à toutes les ventes de produits
+          commercialisés par <strong>Les Mains du Maroc</strong>, sans préjudice
+          de conditions particulières éventuellement convenues par écrit avec le
+          client. Toute commande implique l’adhésion entière et sans réserve du
+          client aux présentes CGV.
         </p>
 
         <!-- Article 3 -->
         <h5>3. Définitions</h5>
         <ul>
-            <li><strong>CLIENT</strong> : Toute personne physique ou morale passant commande sur le site.</li>
-            <li><strong>PRODUIT</strong> : Tout bien commercialisé par <strong>Les Mains du Maroc</strong>, incluant tapis, décoration, accessoires ou tout autre article disponible à la vente.</li>
-            <li><strong>SITE</strong> : Plateforme de vente en ligne de <strong>Les Mains du Maroc</strong>.</li>
-            <li><strong>COMMANDE</strong> : Demande d’achat effectuée par le client sur le site.</li>
-            <li><strong>PRIX</strong> : Montant indiqué pour chaque produit sur le site, incluant toutes taxes applicables.</li>
+          <li>
+            <strong>CLIENT</strong> : Toute personne physique ou morale passant
+            commande sur le site.
+          </li>
+          <li>
+            <strong>PRODUIT</strong> : Tout bien commercialisé par
+            <strong>Les Mains du Maroc</strong>, incluant tapis, décoration,
+            accessoires ou tout autre article disponible à la vente.
+          </li>
+          <li>
+            <strong>SITE</strong> : Plateforme de vente en ligne de
+            <strong>Les Mains du Maroc</strong>.
+          </li>
+          <li>
+            <strong>COMMANDE</strong> : Demande d’achat effectuée par le client
+            sur le site.
+          </li>
+          <li>
+            <strong>PRIX</strong> : Montant indiqué pour chaque produit sur le
+            site, incluant toutes taxes applicables.
+          </li>
         </ul>
 
         <!-- Article 4 -->
         <h5>4. Commandes</h5>
         <p>
-            Les commandes sont passées directement via le site internet. Le client est tenu de vérifier la disponibilité et la conformité des produits avant la validation finale. <strong>Les Mains du Maroc</strong> se réserve le droit de refuser toute commande pour des motifs légitimes, notamment en cas de produit épuisé ou d’erreur de prix.
+          Les commandes sont passées directement via le site internet. Le client
+          est tenu de vérifier la disponibilité et la conformité des produits
+          avant la validation finale. <strong>Les Mains du Maroc</strong> se
+          réserve le droit de refuser toute commande pour des motifs légitimes,
+          notamment en cas de produit épuisé ou d’erreur de prix.
         </p>
 
         <!-- Article 5 -->
         <h5>5. Prix et modalités de paiement</h5>
         <p>
-            Les prix indiqués sur le site sont exprimés en euros, toutes taxes comprises (TTC), et incluent les frais de transport lorsque mentionné. 
+          Les prix indiqués sur le site sont exprimés en euros, toutes taxes
+          comprises (TTC), et incluent les frais de transport lorsque mentionné.
         </p>
         <p>
-            Le paiement s’effectue en ligne via les moyens proposés sur le site (carte bancaire, virement, ou autres solutions sécurisées). La commande est considérée comme validée uniquement après réception du paiement complet.
+          Le paiement s’effectue en ligne via les moyens proposés sur le site
+          (carte bancaire, virement, ou autres solutions sécurisées). La
+          commande est considérée comme validée uniquement après réception du
+          paiement complet.
         </p>
         <p>
-            Tout retard de paiement autorise <strong>Les Mains du Maroc</strong> à suspendre la commande ou à appliquer des pénalités légales.
+          Tout retard de paiement autorise <strong>Les Mains du Maroc</strong> à
+          suspendre la commande ou à appliquer des pénalités légales.
         </p>
 
         <!-- Article 6 -->
         <h5>6. Livraison</h5>
         <p>
-            Les produits sont expédiés à l’adresse indiquée par le client lors de la commande. <strong>Les Mains du Maroc</strong> met tout en œuvre pour respecter les délais annoncés, mais ne peut être tenu responsable des retards dus à des causes indépendantes de sa volonté (transporteur, douane, intempéries, grève, etc.).
+          Les produits sont expédiés à l’adresse indiquée par le client lors de
+          la commande. <strong>Les Mains du Maroc</strong> met tout en œuvre
+          pour respecter les délais annoncés, mais ne peut être tenu responsable
+          des retards dus à des causes indépendantes de sa volonté
+          (transporteur, douane, intempéries, grève, etc.).
         </p>
         <p>
-            Les frais et délais de livraison sont indiqués lors de la commande et peuvent varier selon la destination.
+          Les frais et délais de livraison sont indiqués lors de la commande et
+          peuvent varier selon la destination.
         </p>
 
         <!-- Article 7 -->
         <h5>7. Retours et rétractation</h5>
         <p>
-            Conformément à la législation en vigueur, le client dispose d’un délai de 14 jours à compter de la réception du produit pour exercer son droit de rétractation sans justification. Les frais de retour sont à la charge du client sauf accord contraire.
+          Conformément à la législation en vigueur, le client dispose d’un délai
+          de 14 jours à compter de la réception du produit pour exercer son
+          droit de rétractation sans justification. Les frais de retour sont à
+          la charge du client sauf accord contraire.
         </p>
         <p>
-            Le produit retourné doit être intact, dans son emballage d’origine et accompagné de la facture. <strong>Les Mains du Maroc</strong> procédera au remboursement du montant du produit, hors frais de livraison, dans un délai de 14 jours à compter de la réception du retour.
+          Le produit retourné doit être intact, dans son emballage d’origine et
+          accompagné de la facture.
+          <strong>Les Mains du Maroc</strong> procédera au remboursement du
+          montant du produit, hors frais de livraison, dans un délai de 14 jours
+          à compter de la réception du retour.
         </p>
         <p>
-            Les produits personnalisés ou sur mesure ne sont pas remboursables, sauf en cas de défaut ou erreur de livraison.
+          Les produits personnalisés ou sur mesure ne sont pas remboursables,
+          sauf en cas de défaut ou erreur de livraison.
         </p>
 
         <!-- Article 8 -->
         <h5>8. Garanties et responsabilités</h5>
         <p>
-            Les produits vendus bénéficient de la garantie légale de conformité et de la garantie contre les vices cachés prévues par le Code civil français. Tout défaut constaté doit être signalé dans les plus brefs délais.
+          Les produits vendus bénéficient de la garantie légale de conformité et
+          de la garantie contre les vices cachés prévues par le Code civil
+          français. Tout défaut constaté doit être signalé dans les plus brefs
+          délais.
         </p>
         <p>
-            La responsabilité de <strong>Les Mains du Maroc</strong> ne saurait être engagée en cas de mauvaise utilisation, d’usure normale ou de dommages causés par un transporteur tiers.
+          La responsabilité de <strong>Les Mains du Maroc</strong> ne saurait
+          être engagée en cas de mauvaise utilisation, d’usure normale ou de
+          dommages causés par un transporteur tiers.
         </p>
 
         <!-- Article 9 -->
         <h5>9. Propriété intellectuelle</h5>
         <p>
-            Tous les éléments du site (textes, images, logos, vidéos) sont la propriété exclusive de <strong>Les Mains du Maroc</strong> et protégés par le droit de la propriété intellectuelle. Toute reproduction ou exploitation sans autorisation est interdite.
+          Tous les éléments du site (textes, images, logos, vidéos) sont la
+          propriété exclusive de <strong>Les Mains du Maroc</strong> et protégés
+          par le droit de la propriété intellectuelle. Toute reproduction ou
+          exploitation sans autorisation est interdite.
         </p>
 
         <!-- Article 10 -->
         <h5>10. Données personnelles</h5>
         <p>
-            Les informations collectées lors des commandes sont nécessaires au traitement de celles-ci et à la livraison. Elles sont utilisées conformément à notre politique de confidentialité et ne sont jamais communiquées à des tiers à des fins commerciales.
+          Les informations collectées lors des commandes sont nécessaires au
+          traitement de celles-ci et à la livraison. Elles sont utilisées
+          conformément à notre politique de confidentialité et ne sont jamais
+          communiquées à des tiers à des fins commerciales.
         </p>
 
         <!-- Article 11 -->
         <h5>11. Force majeure</h5>
         <p>
-            Aucun manquement ou retard dans l’exécution des obligations du vendeur ne pourra engager sa responsabilité en cas de force majeure, telle que définie par la jurisprudence française.
+          Aucun manquement ou retard dans l’exécution des obligations du vendeur
+          ne pourra engager sa responsabilité en cas de force majeure, telle que
+          définie par la jurisprudence française.
         </p>
 
         <!-- Article 12 -->
         <h5>12. Loi applicable et litiges</h5>
         <p>
-            Les présentes CGV sont régies par le droit français. En cas de litige, les parties s’efforceront de trouver une solution amiable avant tout recours judiciaire. À défaut, les tribunaux compétents seront ceux de La Roche-sur-Yon.
+          Les présentes CGV sont régies par le droit français. En cas de litige,
+          les parties s’efforceront de trouver une solution amiable avant tout
+          recours judiciaire. À défaut, les tribunaux compétents seront ceux de
+          La Roche-sur-Yon.
         </p>
 
-        <br>
+        <br />
         <p><em>Dernière mise à jour : 26/11/2025</em></p>
-    </div>
-</article>
-    
-<footer class="footer">
-    <!-- Vague décorative -->
-    <div class="wave-divider-index">
-        <svg viewBox="0 0 1200 100" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
-            <path class="wave-path" d="M0,30 C300,90 900,-20 1200,30 V100 H0 Z"></path>
-        </svg>
-    </div>
+      </div>
+    </article>
 
-    <div class="footer-container">
+    <footer class="footer">
+      <!-- Vague décorative -->
+      <div class="wave-divider-index">
+        <svg
+          viewBox="0 0 1200 100"
+          xmlns="http://www.w3.org/2000/svg"
+          preserveAspectRatio="none"
+        >
+          <path
+            class="wave-path"
+            d="M0,30 C300,90 900,-20 1200,30 V100 H0 Z"
+          ></path>
+        </svg>
+      </div>
+
+      <div class="footer-container">
         <!-- Section logo et description -->
         <div class="footer-section">
-            <div class="logo2">
-                <img src="image/logo_rond.png" alt="Logo Les Mains du Maroc" loading="lazy">
-            </div>
-            <p>Les Mains du Maroc est spécialisé dans l'importation et la vente d'artisanat marocain authentique, incluant tapis berbères, miroirs, lampes et objets décoratifs. Nous proposons des produits uniques directement importés du Maroc.</p>
-            <p>Nous livrons partout en France et garantissons l'authenticité et la qualité de chaque pièce.</p>
+          <div class="logo2">
+            <img
+              src="image/logo_rond.png"
+              alt="Logo Les Mains du Maroc"
+              loading="lazy"
+            />
+          </div>
+          <p>
+            Les Mains du Maroc est spécialisé dans l'importation et la vente
+            d'artisanat marocain authentique, incluant tapis berbères, miroirs,
+            lampes et objets décoratifs. Nous proposons des produits uniques
+            directement importés du Maroc.
+          </p>
+          <p>
+            Nous livrons partout en France et garantissons l'authenticité et la
+            qualité de chaque pièce.
+          </p>
         </div>
 
         <!-- Section pages du site -->
         <div class="footer-section">
-            <h4>Pages</h4>
-            <ul>
-                <li><a href="index.html">ACCUEIL</a></li>
-                <li><a href="A_propos.html">NOTRE HISTOIRE</a></li>
-                <li><a href="boutique_tapis.html">TAPIS BERBERES</a></li>
-                <li><a href="boutique_deco.html">DECORATION MAROCAINES</a></li>
-                <li><a href="blog.html">BLOG</a></li>
-                <li><a href="contact.html">CONTACT</a></li>
-            </ul>
+          <h4>Pages</h4>
+          <ul>
+            <li><a href="index.html">ACCUEIL</a></li>
+            <li><a href="A_propos.html">NOTRE HISTOIRE</a></li>
+            <li><a href="boutique_tapis.html">TAPIS BERBERES</a></li>
+            <li><a href="boutique_deco.html">DECORATION MAROCAINES</a></li>
+            <li><a href="blog.html">BLOG</a></li>
+            <li><a href="contact.html">CONTACT</a></li>
+          </ul>
         </div>
 
         <!-- Section contact -->
         <div class="footer-section">
-            <h4>Contact</h4>
-            <p>56 Rue Colette<br>85000 La Roche-sur-Yon, France</p>
-            <p><a href="mailto:contact@lesmainsdumaroc.fr">contact@lesmainsdumaroc.fr</a></p>
-            <p><a href="tel:+33781541461">07 81 54 14 61</a></p>
+          <h4>Contact</h4>
+          <p>56 Rue Colette<br />85000 La Roche-sur-Yon, France</p>
+          <p>
+            <a href="mailto:contact@lesmainsdumaroc.fr"
+              >contact@lesmainsdumaroc.fr</a
+            >
+          </p>
+          <p><a href="tel:+33781541461">07 81 54 14 61</a></p>
         </div>
 
         <!-- Section réseaux sociaux -->
         <div class="footer-section">
-            <h4>Suivez-nous</h4>
-            <p>Découvrez nos dernières pièces et inspirations marocaines sur nos réseaux sociaux.</p>
-            <div class="social">
-                <a href="https://www.instagram.com/lesmainsdumaroc" target="_blank" rel="noopener noreferrer" title="Instagram" loading="lazy">
-                    <img src="image/Instagram.png" alt="Instagram">
-                </a>
-                <a href="https://www.facebook.com/lesmainsdumaroc" target="_blank" rel="noopener noreferrer" title="Facebook" loading="lazy">
-                    <img src="image/Facebook.png" alt="Facebook">
-                </a>
-                <a href="https://www.pinterest.fr/lesmainsdumaroc/" target="_blank" rel="noopener noreferrer" title="Pinterest" loading="lazy">
-                    <img src="image/Linkedin.png" alt="Pinterest">
-                </a>
-            </div>
+          <h4>Suivez-nous</h4>
+          <p>
+            Découvrez nos dernières pièces et inspirations marocaines sur nos
+            réseaux sociaux.
+          </p>
+          <div class="social">
+            <a
+              href="https://www.instagram.com/lesmainsdumaroc"
+              target="_blank"
+              rel="noopener noreferrer"
+              title="Instagram"
+              loading="lazy"
+            >
+              <img src="image/Instagram.png" alt="Instagram" />
+            </a>
+            <a
+              href="https://www.facebook.com/lesmainsdumaroc"
+              target="_blank"
+              rel="noopener noreferrer"
+              title="Facebook"
+              loading="lazy"
+            >
+              <img src="image/Facebook.png" alt="Facebook" />
+            </a>
+            <a
+              href="https://www.pinterest.fr/lesmainsdumaroc/"
+              target="_blank"
+              rel="noopener noreferrer"
+              title="Pinterest"
+              loading="lazy"
+            >
+              <img src="image/Linkedin.png" alt="Pinterest" />
+            </a>
+          </div>
         </div>
-    </div>
+      </div>
 
-    <!-- Mentions légales et copyright -->
-    <div class="footer-bottom">
+      <!-- Mentions légales et copyright -->
+      <div class="footer-bottom">
         <p>
-            <a href="mention.html">Mentions légales</a> | 
-            <a href="CGV.html">Conditions Générales de Vente (CGV)</a>
+          <a href="mention.html">Mentions légales</a> |
+          <a href="CGV.html">Conditions Générales de Vente (CGV)</a>
         </p>
         <p>&copy;2025 Les Mains du Maroc. Tous droits réservés.</p>
-    </div>
-</footer>
-</body>
-
+      </div>
+    </footer>
+  </body>
 </html>

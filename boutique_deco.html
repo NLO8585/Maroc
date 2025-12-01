@@ -1,213 +1,295 @@
 <!DOCTYPE html>
 <html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta
+      name="description"
+      content="Les Mains du Maroc – Artisanat marocain authentique : tapis berbères, miroirs, lampes et objets décoratifs, importés directement du Maroc."
+    />
+    <meta
+      name="keywords"
+      content="artisanat marocain, tapis berbères, miroirs marocains, lampes orientales, décoration marocaine, Les Mains du Maroc"
+    />
+    <meta name="author" content="Les Mains du Maroc" />
 
-    <meta name="description" content="Les Mains du Maroc – Artisanat marocain authentique : tapis berbères, miroirs, lampes et objets décoratifs, importés directement du Maroc.">
-    <meta name="keywords" content="artisanat marocain, tapis berbères, miroirs marocains, lampes orientales, décoration marocaine, Les Mains du Maroc">
-    <meta name="author" content="Les Mains du Maroc">
+    <meta
+      property="og:title"
+      content="Les Mains du Maroc | Artisanat Marocain Authentique"
+    />
+    <meta
+      property="og:description"
+      content="Découvrez des pièces uniques : tapis berbères, miroirs, luminaires et décoration artisanale marocaine."
+    />
+    <meta property="og:image" content="image/og-image.jpg" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="fr_FR" />
 
-    <meta property="og:title" content="Les Mains du Maroc | Artisanat Marocain Authentique">
-    <meta property="og:description" content="Découvrez des pièces uniques : tapis berbères, miroirs, luminaires et décoration artisanale marocaine.">
-    <meta property="og:image" content="image/og-image.jpg">
-    <meta property="og:type" content="website">
-    <meta property="og:locale" content="fr_FR">
+    <link rel="icon" href="image/icon.png" />
 
-    <link rel="icon" href="image/icon.png">
+    <link
+      rel="preload"
+      href="fonts/ORTICA/Ortica_300.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
 
-    <link rel="preload" href="fonts/ORTICA/Ortica_300.woff2" as="font" type="font/woff2" crossorigin>
-
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./style.css" />
 
     <title>Les Mains du Maroc | Boutique décorations marocaines</title>
     <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
     <script src="./script.js" defer></script>
-</head>
+  </head>
 
-<body>
+  <body>
     <header class="header">
-        <div class="hamburger" 
-            tabindex="0" 
-            role="button" 
-            aria-label="Ouvrir le menu principal">
-                <span></span>
-                <span></span>
-                <span></span>
-        </div>
-        <nav>
-            <ul class="sommaire_annexes">
-                <li><a href="index.html">Accueil</a></li>
-                <li><a href="A_propos.html">Notre histoire</a></li>
-                <!-- TAPIS BERBERES -->
-                <li class="has-submenu">
-                <a href="boutique_tapis.html">Tapis Berbères <span class="arrow">▾</span></a>
-                    <ul class="submenu">
-                        <li><a href="shop_tapis_azilal.html">Tapis Azilal</a></li>
-                        <li><a href="shop_tapis_beni_ouarain.html">Tapis Béni Ouarain</a></li>
-                        <li><a href="shop_tapis_boujad.html">Tapis Boujad</a></li>
-                        <li><a href="shop_tapis_boucherouite.html">Tapis Boucherouite</a></li>
-                        <li><a href="shop_tapis_kilim.html">Tapis Kilim</a></li>
-                        <li><a href="shop_tapis_mrirt.html">Tapis Mrirt</a></li>
-                </ul>
-                </li>
-                <!-- DÉCORATIONS -->
-                <li class="has-submenu">
-                    <a href="boutique_deco.html">Décorations marocaines <span class="arrow">▾</span></a>
-                    <ul class="submenu">
-                        <li><a href="shop_deco_plaid.html">Plaids Berbères</a></li>
-                        <li><a href="shop_deco_poufs.html">Poufs</a></li>
-                        <li><a href="shop_deco_coussins.html">Coussins</a></li>
-                        <li><a href="shop_deco_miroirs.html">Miroirs</a></li>
-                        <li><a href="shop_deco_abatjour.html">Abat-jour</a></li>
-                        <li><a href="shop_deco_lampes.html">Lampes</a></li>
-                    </ul>
-                </li>
-                <li><a href="blog.html">Blog</a></li>
-                <li><a href="contact.html">Contact</a></li>
-
+      <div
+        class="hamburger"
+        tabindex="0"
+        role="button"
+        aria-label="Ouvrir le menu principal"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <nav>
+        <ul class="sommaire_annexes">
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="A_propos.html">Notre histoire</a></li>
+          <!-- TAPIS BERBERES -->
+          <li class="has-submenu">
+            <a href="boutique_tapis.html"
+              >Tapis Berbères <span class="arrow">▾</span></a
+            >
+            <ul class="submenu">
+              <li><a href="shop_tapis_azilal.html">Tapis Azilal</a></li>
+              <li>
+                <a href="shop_tapis_beni_ouarain.html">Tapis Béni Ouarain</a>
+              </li>
+              <li><a href="shop_tapis_boujad.html">Tapis Boujad</a></li>
+              <li>
+                <a href="shop_tapis_boucherouite.html">Tapis Boucherouite</a>
+              </li>
+              <li><a href="shop_tapis_kilim.html">Tapis Kilim</a></li>
+              <li><a href="shop_tapis_mrirt.html">Tapis Mrirt</a></li>
             </ul>
-        </nav>
-        <div class="header-container2">
-            <div class="logopetit">
-                <a href="index.html" aria-label="Retour à la page d'accueil">
-                    <img src="image/logo_rond.png" alt="Logo Les Mains du Maroc" />
-                </a>
-            </div>
+          </li>
+          <!-- DÉCORATIONS -->
+          <li class="has-submenu">
+            <a href="boutique_deco.html"
+              >Décorations marocaines <span class="arrow">▾</span></a
+            >
+            <ul class="submenu">
+              <li><a href="shop_deco_plaid.html">Plaids Berbères</a></li>
+              <li><a href="shop_deco_poufs.html">Poufs</a></li>
+              <li><a href="shop_deco_coussins.html">Coussins</a></li>
+              <li><a href="shop_deco_miroirs.html">Miroirs</a></li>
+              <li><a href="shop_deco_abatjour.html">Abat-jour</a></li>
+              <li><a href="shop_deco_lampes.html">Lampes</a></li>
+            </ul>
+          </li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="header-container2">
+        <div class="logopetit">
+          <a href="index.html" aria-label="Retour à la page d'accueil">
+            <img src="image/logo_rond.png" alt="Logo Les Mains du Maroc" />
+          </a>
         </div>
+      </div>
     </header>
-<!-- Conteneur des icônes -->
-<div class="header-icons">
-
-    <!-- Icône connexion -->
-    <a href="login.html" class="icon-btn" aria-label="Connexion">
-        <img src="image/login.svg" alt="Login">
-    </a>
-    <!-- Icône panier -->
-    <a href="javascript:void(0)" class="icon-btn cart-trigger" aria-label="Voir le panier">
-        <img src="image/panier.svg" alt="Panier d'achat">
+    <!-- Conteneur des icônes -->
+    <div class="header-icons">
+      <!-- Icône connexion -->
+      <a href="login.html" class="icon-btn" aria-label="Connexion">
+        <img src="image/login.svg" alt="Login" />
+      </a>
+      <!-- Icône panier -->
+      <a
+        href="javascript:void(0)"
+        class="icon-btn cart-trigger"
+        aria-label="Voir le panier"
+      >
+        <img src="image/panier.svg" alt="Panier d'achat" />
         <span id="cart-count" class="cart-count">0</span>
-    </a>
-</div>
+      </a>
+    </div>
 
-<!-- Overlay -->
-<div id="cart-overlay"></div>
+    <!-- Overlay -->
+    <div id="cart-overlay"></div>
 
-<!-- Fenêtre du panier -->
-<div id="cart-sidebar">
-    <div class="cart-header">
+    <!-- Fenêtre du panier -->
+    <div id="cart-sidebar">
+      <div class="cart-header">
         <h2>Votre panier</h2>
         <button id="close-cart">&times;</button>
-    </div>
-    <div class="cart-content">
+      </div>
+      <div class="cart-content">
         <p>Votre panier est vide pour le moment.</p>
         <!-- Ici tu peux ajouter dynamiquement les produits -->
+      </div>
     </div>
-</div>
-<main>
-  <!-- Hero Banner simplifié et plus élégant -->
-  <div class="boutique-hero">
-    <div class="hero-text">
-      <h1>Décorations marocaines</h1>
-<p class="lead">Explorez notre collection de décorations marocaines authentiques, faites main au Maroc.</p>
-<p class="lead">Chaque pièce raconte une histoire unique à travers ses motifs, ses couleurs et son artisanat traditionnel.</p>
-    </div>
-  </div>
+    <main>
+      <!-- Hero Banner simplifié et plus élégant -->
+      <div class="boutique-hero">
+        <div class="hero-text">
+          <h1>Décorations marocaines</h1>
+          <p class="lead">
+            Explorez notre collection de décorations marocaines authentiques,
+            faites main au Maroc.
+          </p>
+          <p class="lead">
+            Chaque pièce raconte une histoire unique à travers ses motifs, ses
+            couleurs et son artisanat traditionnel.
+          </p>
+        </div>
+      </div>
 
-  <!-- Filter / Sort -->
-  <div class="top-controls">
-    <div class="count">Produits : <strong id="product-count">24</strong></div>
-    <div class="filter-sort">
-      <select class="select" id="sort-select" aria-label="Trier par">
-        <option value="default">Trier par : Pertinence</option>
-        <option value="price-asc">Prix croissant</option>
-        <option value="price-desc">Prix décroissant</option>
-        <option value="size-asc">Taille (longueur croissante)</option>
-        <option value="size-desc">Taille (longueur décroissante)</option>
-      </select>
-    </div>
-  </div>
+      <!-- Filter / Sort -->
+      <div class="top-controls">
+        <div class="count">
+          Produits : <strong id="product-count">24</strong>
+        </div>
+        <div class="filter-sort">
+          <select class="select" id="sort-select" aria-label="Trier par">
+            <option value="default">Trier par : Pertinence</option>
+            <option value="price-asc">Prix croissant</option>
+            <option value="price-desc">Prix décroissant</option>
+            <option value="size-asc">Taille (longueur croissante)</option>
+            <option value="size-desc">Taille (longueur décroissante)</option>
+          </select>
+        </div>
+      </div>
 
+      <!-- Product Grid -->
+      <section class="products-grid" id="products-grid" aria-live="polite">
+        <!-- Les produits seront générés ici par JS -->
+      </section>
 
-    <!-- Product Grid -->
-<section class="products-grid" id="products-grid" aria-live="polite">
-  <!-- Les produits seront générés ici par JS -->
-</section>
-  
-  <!-- Pagination -->
-<div class="pagination" id="pagination" aria-label="Pagination produits"></div>
-</main>
+      <!-- Pagination -->
+      <div
+        class="pagination"
+        id="pagination"
+        aria-label="Pagination produits"
+      ></div>
+    </main>
 
-
-
-<footer class="footer">
-    <!-- Vague décorative -->
-    <div class="wave-divider-index">
-        <svg viewBox="0 0 1200 100" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
-            <path class="wave-path" d="M0,30 C300,90 900,-20 1200,30 V100 H0 Z"></path>
+    <footer class="footer">
+      <!-- Vague décorative -->
+      <div class="wave-divider-index">
+        <svg
+          viewBox="0 0 1200 100"
+          xmlns="http://www.w3.org/2000/svg"
+          preserveAspectRatio="none"
+        >
+          <path
+            class="wave-path"
+            d="M0,30 C300,90 900,-20 1200,30 V100 H0 Z"
+          ></path>
         </svg>
-    </div>
+      </div>
 
-    <div class="footer-container">
+      <div class="footer-container">
         <!-- Section logo et description -->
         <div class="footer-section">
-            <div class="logo2">
-                <img src="image/logo_rond.png" alt="Logo Les Mains du Maroc" loading="lazy">
-            </div>
-            <p>Les Mains du Maroc est spécialisé dans l'importation et la vente d'artisanat marocain authentique, incluant tapis berbères, miroirs, lampes et objets décoratifs. Nous proposons des produits uniques directement importés du Maroc.</p>
-            <p>Nous livrons partout en France et garantissons l'authenticité et la qualité de chaque pièce.</p>
+          <div class="logo2">
+            <img
+              src="image/logo_rond.png"
+              alt="Logo Les Mains du Maroc"
+              loading="lazy"
+            />
+          </div>
+          <p>
+            Les Mains du Maroc est spécialisé dans l'importation et la vente
+            d'artisanat marocain authentique, incluant tapis berbères, miroirs,
+            lampes et objets décoratifs. Nous proposons des produits uniques
+            directement importés du Maroc.
+          </p>
+          <p>
+            Nous livrons partout en France et garantissons l'authenticité et la
+            qualité de chaque pièce.
+          </p>
         </div>
 
         <!-- Section pages du site -->
         <div class="footer-section">
-            <h4>Pages</h4>
-            <ul>
-                <li><a href="index.html">ACCUEIL</a></li>
-                <li><a href="A_propos.html">NOTRE HISTOIRE</a></li>
-                <li><a href="boutique_tapis.html">TAPIS BERBERES</a></li>
-                <li><a href="boutique_deco.html">DECORATION MAROCAINES</a></li>
-                <li><a href="blog.html">BLOG</a></li>
-                <li><a href="contact.html">CONTACT</a></li>
-            </ul>
+          <h4>Pages</h4>
+          <ul>
+            <li><a href="index.html">ACCUEIL</a></li>
+            <li><a href="A_propos.html">NOTRE HISTOIRE</a></li>
+            <li><a href="boutique_tapis.html">TAPIS BERBERES</a></li>
+            <li><a href="boutique_deco.html">DECORATION MAROCAINES</a></li>
+            <li><a href="blog.html">BLOG</a></li>
+            <li><a href="contact.html">CONTACT</a></li>
+          </ul>
         </div>
 
         <!-- Section contact -->
         <div class="footer-section">
-            <h4>Contact</h4>
-            <p>56 Rue Colette<br>85000 La Roche-sur-Yon, France</p>
-            <p><a href="mailto:contact@lesmainsdumaroc.fr">contact@lesmainsdumaroc.fr</a></p>
-            <p><a href="tel:+33781541461">07 81 54 14 61</a></p>
+          <h4>Contact</h4>
+          <p>56 Rue Colette<br />85000 La Roche-sur-Yon, France</p>
+          <p>
+            <a href="mailto:contact@lesmainsdumaroc.fr"
+              >contact@lesmainsdumaroc.fr</a
+            >
+          </p>
+          <p><a href="tel:+33781541461">07 81 54 14 61</a></p>
         </div>
 
         <!-- Section réseaux sociaux -->
         <div class="footer-section">
-            <h4>Suivez-nous</h4>
-            <p>Découvrez nos dernières pièces et inspirations marocaines sur nos réseaux sociaux.</p>
-            <div class="social">
-                <a href="https://www.instagram.com/lesmainsdumaroc" target="_blank" rel="noopener noreferrer" title="Instagram" loading="lazy">
-                    <img src="image/Instagram.png" alt="Instagram">
-                </a>
-                <a href="https://www.facebook.com/lesmainsdumaroc" target="_blank" rel="noopener noreferrer" title="Facebook" loading="lazy">
-                    <img src="image/Facebook.png" alt="Facebook">
-                </a>
-                <a href="https://www.pinterest.fr/lesmainsdumaroc/" target="_blank" rel="noopener noreferrer" title="Pinterest" loading="lazy">
-                    <img src="image/Linkedin.png" alt="Pinterest">
-                </a>
-            </div>
+          <h4>Suivez-nous</h4>
+          <p>
+            Découvrez nos dernières pièces et inspirations marocaines sur nos
+            réseaux sociaux.
+          </p>
+          <div class="social">
+            <a
+              href="https://www.instagram.com/lesmainsdumaroc"
+              target="_blank"
+              rel="noopener noreferrer"
+              title="Instagram"
+              loading="lazy"
+            >
+              <img src="image/Instagram.png" alt="Instagram" />
+            </a>
+            <a
+              href="https://www.facebook.com/lesmainsdumaroc"
+              target="_blank"
+              rel="noopener noreferrer"
+              title="Facebook"
+              loading="lazy"
+            >
+              <img src="image/Facebook.png" alt="Facebook" />
+            </a>
+            <a
+              href="https://www.pinterest.fr/lesmainsdumaroc/"
+              target="_blank"
+              rel="noopener noreferrer"
+              title="Pinterest"
+              loading="lazy"
+            >
+              <img src="image/Linkedin.png" alt="Pinterest" />
+            </a>
+          </div>
         </div>
-    </div>
+      </div>
 
-    <!-- Mentions légales et copyright -->
-    <div class="footer-bottom">
+      <!-- Mentions légales et copyright -->
+      <div class="footer-bottom">
         <p>
-            <a href="mention.html">Mentions légales</a> | 
-            <a href="CGV.html">Conditions Générales de Vente (CGV)</a>
+          <a href="mention.html">Mentions légales</a> |
+          <a href="CGV.html">Conditions Générales de Vente (CGV)</a>
         </p>
         <p>&copy;2025 Les Mains du Maroc. Tous droits réservés.</p>
-    </div>
-</footer>
+      </div>
+    </footer>
 
-<script src="script.js" defer></script>
-</body>
+    <script src="script.js" defer></script>
+  </body>
 </html>
