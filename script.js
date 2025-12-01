@@ -3,6 +3,62 @@
 
 
 /* ------------------- FUNCTIONS GLOBALES ------------------- */
+// Panier sessionStorage
+function getCart() {
+    return JSON.parse(sessionStorage.getItem('cart')) || [];
+}
+
+function saveCart(cart) {
+    sessionStorage.setItem('cart', JSON.stringify(cart));
+}
+
+function addToCartItem(item) {
+    const cart = getCart();
+    const existing = cart.find(p => p.id === item.id);
+    if(existing) {
+        existing.quantity += item.quantity;
+    } else {
+        cart.push(item);
+    }
+    saveCart(cart);
+    renderCart();
+    updateCartCount(); // ✅ ajoute ça
+}
+
+function updateCartCount() {
+    const cart = getCart(); // récupère le panier depuis sessionStorage
+    const countEl = document.getElementById('cart-count');
+    if (!countEl) return;
+
+    // Somme toutes les quantités
+    const totalItems = cart.reduce((sum, item) => sum + (item.quantity || 0), 0);
+    countEl.textContent = totalItems;
+}
+
+function renderCart() {
+    const cartContent = document.querySelector('#cart-sidebar .cart-content');
+    if(!cartContent) return;
+
+    const cart = getCart();
+    if(cart.length === 0) {
+        cartContent.innerHTML = "<p>Votre panier est vide pour le moment.</p>";
+        return;
+    }
+
+    cartContent.innerHTML = '';
+    cart.forEach(p => {
+        const itemEl = document.createElement('div');
+        itemEl.className = 'mini-item';
+        itemEl.style.padding = '10px 0';
+        itemEl.style.borderBottom = '1px solid #eee';
+        itemEl.innerHTML = `
+            <strong>${p.title}</strong>
+            <div style="color:#666;margin-top:6px">Prix unitaire : ${p.price}</div>
+            <div style="margin-top:4px;">Quantité : ${p.quantity}</div>
+        `;
+        cartContent.appendChild(itemEl);
+    });
+}
 
 // Fonction CSV globale
 function loadProductsFromCSV(callback) {
@@ -32,6 +88,7 @@ function filterProducts(products, prefix) {
    ============================================================ */
 document.addEventListener('DOMContentLoaded', () => {
 
+  updateCartCount(); // pour afficher le nombre correct au démarrage
   /* ------------------- Menu hamburger ------------------- */
   (function initHamburger(){
     const hamburger = document.querySelector(".hamburger");
@@ -332,27 +389,27 @@ document.addEventListener('DOMContentLoaded', () => {
     const addButtons = document.querySelectorAll('.add-to-cart');
     const cartContent = document.querySelector('#cart-sidebar .cart-content');
 
-    addButtons.forEach(btn=>{
-      btn.addEventListener('click', function(e){
-        e.stopPropagation();
-        const card = e.currentTarget.closest('.product-card');
-        const title = card.querySelector('.product-title').textContent;
-        const price = card.querySelector('.price').textContent;
-        const item = document.createElement('div');
-        item.className = 'mini-item';
-        item.style.padding = '10px 0';
-        item.style.borderBottom = '1px solid #eee';
-        item.innerHTML = `<strong>${title}</strong><div style="color:#666;margin-top:6px">${price}</div>`;
-        if(cartContent){
-          cartContent.innerHTML = '';
-          cartContent.appendChild(item);
-          // optionally open cart
-          const cartSidebar = document.getElementById('cart-sidebar');
-          const cartOverlay = document.getElementById('cart-overlay');
-          if(cartSidebar && cartOverlay){ cartSidebar.classList.add('active'); cartOverlay.classList.add('active'); }
-        }
-      });
-    });
+addButtons.forEach(btn=>{
+  btn.addEventListener('click', function(e){
+    e.stopPropagation();
+    const card = e.currentTarget.closest('.product-card');
+    const title = card.querySelector('.product-title').textContent;
+    const price = card.querySelector('.price').textContent;
+    const quantity = parseInt(card.querySelector(".qty-input")?.value) || 1;
+
+    const productId = card.dataset.id || title; // ou un vrai ID unique depuis le CSV
+
+    addToCartItem({ id: productId, title, price, quantity });
+
+    // Ouvre le panier
+    const cartSidebar = document.getElementById('cart-sidebar');
+    const cartOverlay = document.getElementById('cart-overlay');
+    if(cartSidebar && cartOverlay){ 
+      cartSidebar.classList.add('active'); 
+      cartOverlay.classList.add('active'); 
+    }
+  });
+});
 
     // product click -> go to product page
     const cards = document.querySelectorAll('.product-card');
@@ -486,28 +543,135 @@ function renderSingleProduct(product) {
                     ${materiau ? `<p>Matériau : ${materiau}</p>` : ""}
                     ${dimensions ? `<p>Dimensions : ${dimensions}</p>` : ""}
                     <p>Origine : Maroc</p>
-                    ${stock <= 0 ? `<p class="out-of-stock">Rupture de stock</p>` : `<p>Stock : ${stock}</p>`}
                 </div>
 
                 <div class="product-price">${price}</div>
 
                 ${descrSommaire ? `<p class="product-sommaire">${descrSommaire}</p>` : ''}
 
+                <!-- Sélecteur de quantité -->
+                <div class="quantity-selector">
+                    <button class="qty-btn minus">−</button>
+                    <input type="number" class="qty-input" value="1" min="1" max="${stock}">
+                    <button class="qty-btn plus">+</button>
+                </div>
+
                 <button class="add-to-cart large-btn" ${disabled}>Ajouter au panier</button>
 
-                ${descrDetail ? `<div class="product-detail"><h3>Description</h3><p>${descrDetail}</p></div>` : ''}
 
-                ${livraison ? `<div class="product-livraison"><h3>Livraison & Retour</h3><p>${livraison}</p></div>` : ''}
+${descrDetail ? `
+<div class="accordion">
+    <div class="accordion-header">
+        <h3>Description</h3>
+        <span class="arrow">▸</span>
+    </div>
+    <div class="accordion-content">
+        <p>${descrDetail}</p>
+    </div>
+</div>` : ''}
 
-                ${entretien ? `<div class="product-entretien"><h3>Entretien</h3><p>${entretien}</p></div>` : ''}
+${livraison ? `
+<div class="accordion">
+    <div class="accordion-header">
+        <h3>Livraison & Retour</h3>
+        <span class="arrow">▸</span>
+    </div>
+    <div class="accordion-content">
+        <p>${livraison}</p>
+    </div>
+</div>` : ''}
+
+${entretien ? `
+<div class="accordion">
+    <div class="accordion-header">
+        <h3>Entretien</h3>
+        <span class="arrow">▸</span>
+    </div>
+    <div class="accordion-content">
+        <p>${entretien}</p>
+    </div>
+</div>` : ''}
+
             </div>
 
         </div>
     `;
+    // === Gestion quantité ===
+const minusBtn = container.querySelector(".qty-btn.minus");
+const plusBtn = container.querySelector(".qty-btn.plus");
+const qtyInput = container.querySelector(".qty-input");
 
-    // Réactiver le bouton "Ajouter au panier" sur cette page
-    initProductEvents();
+if (minusBtn && plusBtn && qtyInput) {
+
+    const maxStock = stock ?? 1;
+
+    minusBtn.addEventListener("click", () => {
+        let v = parseInt(qtyInput.value);
+        if (v > 1) qtyInput.value = v - 1;
+    });
+
+    plusBtn.addEventListener("click", () => {
+        let v = parseInt(qtyInput.value);
+        if (v < maxStock) qtyInput.value = v + 1;
+    });
+
+    qtyInput.addEventListener("change", () => {
+        let v = parseInt(qtyInput.value);
+        if (v < 1) v = 1;
+        if (v > maxStock) v = maxStock;
+        qtyInput.value = v;
+    });
 }
+
+    /* -------------------------
+       INITIALISATION ACCORDÉONS
+       ------------------------- */
+const accordions = container.querySelectorAll(".accordion");
+
+accordions.forEach(acc => {
+    const header = acc.querySelector(".accordion-header");
+    const content = acc.querySelector(".accordion-content");
+
+    header.addEventListener("click", () => {
+
+        const isOpen = acc.classList.contains("open");
+
+        if (isOpen) {
+            // Si ouvert → le fermer
+            acc.classList.remove("open");
+            content.style.maxHeight = null;
+        } else {
+            // Si fermé → ouvrir
+            acc.classList.add("open");
+            content.style.maxHeight = content.scrollHeight + "px";
+        }
+    });
+});
+
+const addBtn = container.querySelector(".add-to-cart");
+if(addBtn){
+    addBtn.addEventListener("click", function(e){
+        const title = container.querySelector('.product-title').textContent;
+        const price = container.querySelector('.product-price').textContent;
+        const quantity = parseInt(container.querySelector('.qty-input').value) || 1;
+
+        // Récupérer l'ID unique du produit (assurez-vous que product["ID unique"] existe)
+        const productId = product["ID unique"] || title; // fallback si jamais
+
+        // Ajoute le produit au sessionStorage
+        addToCartItem({ id: productId, title, price, quantity });
+
+        // Ouvre le panier
+        const cartSidebar = document.getElementById('cart-sidebar');
+        const cartOverlay = document.getElementById('cart-overlay');
+        if(cartSidebar && cartOverlay){ 
+            cartSidebar.classList.add('active'); 
+            cartOverlay.classList.add('active'); 
+        }
+    });
+}
+}
+
 // =========================
 // CHARGEMENT D'UNE PAGE PRODUIT
 // =========================
