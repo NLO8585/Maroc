@@ -86,12 +86,12 @@ body {
     bottom: -3px;
     width: 0%;
     height: 1.5px;
-    background: rgb(186, 151, 71);
+    background: #e88932;
     transition: width 0.4s ease;
 }
 
 .sommaire li a:hover {
-    color: rgb(186, 151, 71);
+    color: #e88932;
 }
 
 .sommaire li a:hover::after {
@@ -105,7 +105,7 @@ body {
 }
 
 .sommaire li.active a:hover {
-    color: rgb(186, 151, 71);
+    color: #e88932;
 }
 
 .sommaire li.active a:hover::after {
@@ -177,7 +177,7 @@ body {
 .sommaire .submenu li a:hover,
 .sommaire_annexes .submenu li a:hover {
     background: rgba(186, 151, 71, 0.1);
-    color: rgb(186, 151, 71) !important;
+    color: #e88932 !important;
 }
 
 /* Affichage du sous-menu si le parent OU le sous-menu est hover */
@@ -234,13 +234,13 @@ body {
     bottom: -3px;
     width: 0%;
     height: 1.5px;
-    background: rgb(186, 151, 71);
+    background: #e88932;
     transition: width 0.4s ease;
 }
 
 .sommaire_annexes li a:hover {
     background: transparent;
-    color: rgb(186, 151, 71);
+    color: #e88932;
 }
 
 .sommaire_annexes li a:hover::after {
@@ -259,7 +259,7 @@ body {
     font-weight: bold;
 }
 .sommaire_annexes li.active a:hover {
-    color: rgb(186, 151, 71);
+    color: #e88932;
 }
 .sommaire_annexes li.active a:hover::after {
     width: 100%;
@@ -283,11 +283,10 @@ body {
 }
 
 .header-icons .icon-btn img:hover {
-    transform: scale(1.05);
+    transform: scale(1.1);
 }
-.icon-btn:hover img {
-    filter: brightness(0) saturate(100%) invert(60%) sepia(30%) saturate(600%) hue-rotate(10deg);
-}
+
+
 /* MENU HAMBURGER */
 .hamburger {
     display: none;
@@ -327,19 +326,20 @@ body {
     z-index: 5;
     overflow: hidden;
 }
+/* Classe pour ton texte */
 .Bienvenue {
     color: #ffffff;
     font-size: clamp(18px, 4vw, 32px);
     font-style: normal;
-    font-weight: 300;
+    font-weight: 300; /* doit correspondre à @font-face */
     letter-spacing: 0.1em;
-    font-family: 'Ortica_300', Arial, sans-serif;
+    font-family: 'Libre Baskerville';
     margin: 0;
     text-align: center;
     display: block;
     white-space: normal;
     word-wrap: break-word;
-    margin-bottom: 0px;
+    margin-bottom: 0;
 }
 .location {
     display: flex;
@@ -355,9 +355,9 @@ body {
 .location span {
     color: #ffffff;
     font-size: clamp(14px, 3vw, 18px);
-    font-family: 'Ortica_300', sans-serif;
+    font-family: 'Libre Baskerville';
     font-weight: 200;
-    letter-spacing: 1px;
+    letter-spacing: 3px;
     text-align: left;
     max-width: 100%;
     word-wrap: break-word;
@@ -366,8 +366,8 @@ body {
 /* LOGO */
 .logopetit {
     position: absolute;
-    top: 15px;
-    left: 15px;
+    top: 25px;
+    left: 20px;
     width:fit-content;
     z-index: 1100;
 }
@@ -379,7 +379,7 @@ body {
     cursor: pointer;
 }
 .logopetit img {
-    max-height: 80px;
+    max-height: 50px;
     display: block;
     height: auto;
 }
@@ -391,8 +391,8 @@ body {
 }
 
 .logo2 img {
-    max-width: 100px;
-    height: auto;
+    max-width: auto;
+    height: 60px;
     border-radius: 8px;
 }
 
@@ -403,7 +403,14 @@ body {
     font-style: normal;
     font-display: swap;
 }
-
+@font-face {
+    font-family: 'Libre Baskerville';
+    src: url('fonts/LibreBaskerville-Medium.woff2') format('woff2'),
+         url('fonts/LibreBaskerville-Medium.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
 /* ARROW FLECHE SCROLL ACCUEIL */
 .scroll-arrow {
     position: absolute;
@@ -487,7 +494,7 @@ article p {
     font-size: clamp(0.85rem, 1vw, 0.95rem);
 } 
 .contact-info a { 
-    color: rgb(186, 151, 71);
+    color: #e88932;
     text-decoration: none; 
     font-weight: bold; 
 } 
@@ -497,16 +504,34 @@ article p {
     gap: 25px; 
     margin-bottom: 35px; 
 } 
-.social-icon img { 
-    width: clamp(28px, 4vw, 35px);
-    transition: transform 0.3s ease; 
-} 
-.social-icon img:hover { 
-    transform: scale(1.05); 
-} 
+
+.social-icon img {
+  width: clamp(28px, 4vw, 35px);
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.social-icon img:hover {
+  transform: scale(1.05);
+}
+/* Chaque réseau a sa propre image hover */
+.social-icon.instagram:hover img {
+  content: url('image/instagram_jaune.png');
+}
+
+.social-icon.facebook:hover img {
+  content: url('image/facebook_jaune.png');
+}
+
+.social-icon.pinterest:hover img {
+  content: url('image/pinterest_jaune.png');
+}
+
+.social-icon.etsy:hover img {
+  content: url('image/etsy_jaune.png');
+}
 .contact-button { 
     display: inline-block; 
-    background: rgb(186, 151, 71); 
+    background: #e88932; 
     color: white; 
     padding: 8px 16px; 
     border-radius: 8px; 
@@ -515,7 +540,7 @@ article p {
     transition: background 0.3s ease;
 } 
 .contact-button:hover { 
-    background-color: rgb(186, 151, 71);
+    background-color: #e88932;
     transform: scale(1.05);
 } 
 /* PAGE MENTIONS LEGALES */
@@ -545,7 +570,7 @@ article p {
     margin-top: 25px;
     margin-bottom: 12px;
     padding-left: 10px;
-    border-left: 4px solid rgb(186, 151, 71);
+    border-left: 4px solid #e88932;
 }
 .mention_txt p {
     font-size: 14px;
@@ -555,13 +580,13 @@ article p {
     text-align: justify;
 }
 .mention_txt strong {
-    color: rgb(186, 151, 71);
+    color: #e88932;
 }
 .mention_txt {
     margin-top: 25px;
 }
 .mention_txt a {
-    color: rgb(186, 151, 71);
+    color: #e88932;
     text-decoration: none;
     transition: color 0.3s;
 }
@@ -617,7 +642,7 @@ article p {
     margin-top: 25px;
     margin-bottom: 12px;
     padding-left: 10px;
-    border-left: 4px solid rgb(186, 151, 71);
+    border-left: 4px solid #e88932;
 }
 .cgv_txt p {
     font-size: 14px;
@@ -627,13 +652,13 @@ article p {
     text-align: justify;
 }
 .cgv_txt strong {
-    color: rgb(186, 151, 71);
+    color: #e88932;
 }
 .cgv_txt {
     margin-top: 25px;
 }
 .cgv_txt a {
-    color: rgb(186, 151, 71);
+    color: #e88932;
     text-decoration: none;
     transition: color 0.3s;
 }
@@ -742,8 +767,8 @@ article p {
 .footer-section h4 {
     font-size: 1.2em;
     margin-bottom: 15px;
-    color: rgb(186, 151, 71);
-    border-bottom: 2px solid rgb(186, 151, 71);
+    color: #e88932;
+    border-bottom: 2px solid #e88932;
     display: inline-block;
     padding-bottom: 5px;
     text-align: center;
@@ -762,7 +787,7 @@ article p {
     transition: color 0.3s ease, transform 0.3s ease;
 }
 .footer-section ul li a:hover {
-    color: rgb(186, 151, 71);
+    color: #f9cb2e;
     transform: translateX(5px);
 }
 .footer-section a {
@@ -775,7 +800,7 @@ article p {
     margin-bottom: 25px;
 }
 .footer-section a:hover {
-    color: rgb(186, 151, 71);
+    color: #f9cb2e;
 }
 .footer-bottom {
     text-align: center;
@@ -790,7 +815,7 @@ article p {
     font-size: clamp(0.65rem, 1vw, 0.7rem);
 }
 .footer-bottom a {
-    color: rgb(186, 151, 71);
+    color: #ffffff;
     text-decoration: none;
     margin: 0 10px;
     font-size: clamp(0.7rem, 1.1vw, 0.8rem);
@@ -1016,10 +1041,10 @@ section#Contact .container form .form-row.two-columns > div label {
 .right-section .contact_gras a {
     color: inherit;
     text-decoration: none;
-    color: rgb(186, 151, 71);
+    color: #e88932;
 }
 .right-section .contact_gras:hover {
-    color: rgb(186, 151, 71);
+    color: #e88932;
     text-decoration: underline;
 }
 .right-section .contact_gras:nth-of-type(2) {
@@ -1111,7 +1136,7 @@ section#Contact .container form .form-row.two-columns > div label {
 .blog-button {
     display: inline-block;
     padding: 10px 24px;          
-    background: linear-gradient(135deg, #C49A6C, #B28554);
+    background: linear-gradient(135deg, #e88932, #B28554);
     color: white;
     text-decoration: none;
     border-radius: 25px;
@@ -1213,7 +1238,7 @@ section#Contact .container form .form-row.two-columns > div label {
 .article-back-button {
     display: inline-block;
     padding: 10px 24px;
-    background: linear-gradient(135deg, #C49A6C, #B28554);
+    background: linear-gradient(135deg, #e88932, #B28554);
     color: white;
     text-decoration: none;
     border-radius: 25px;
@@ -1312,7 +1337,7 @@ section#Contact .container form .form-row.two-columns > div label {
     justify-content: space-between;
     align-items: center;
     padding: 20px;
-    background-color: #C49A6C;
+    background: linear-gradient(135deg, #e88932, #B28554);
     color: #fff;
     font-weight: 600;
     box-shadow: 0 2px 6px rgba(0,0,0,0.1);
@@ -1391,7 +1416,8 @@ section#Contact .container form .form-row.two-columns > div label {
 
 /* Logo centré au-dessus du formulaire */
 .auth-logo img {
-    width: 140px;
+    width: auto;
+    height:80px;
     margin-bottom: 25px;
     display: block;
     filter: drop-shadow(0 2px 4px rgba(0,0,0,0.15));
@@ -1434,7 +1460,7 @@ section#Contact .container form .form-row.two-columns > div label {
 .auth-container button {
     width: 100%;
     padding: 12px;
-    background: #C49A6C;
+    background: linear-gradient(135deg, #e88932, #B28554);
     border: none;
     color: white;
     font-size: 1.15rem;
@@ -1454,7 +1480,7 @@ section#Contact .container form .form-row.two-columns > div label {
 }
 
 .auth-link a {
-    color: #C49A6C;
+    color: #E78832;
     font-weight: 600;
 }
 
@@ -1532,7 +1558,7 @@ section#Contact .container form .form-row.two-columns > div label {
 
 .hero-text h1 {
   font-size: 30px;
-  color: #c66a3f;
+  color: #000000;
   margin-bottom: 16px;
   font-family: 'Ortica_300', sans-serif;
   font-weight: 700;
