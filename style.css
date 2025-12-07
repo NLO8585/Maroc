@@ -2252,3 +2252,198 @@ footer.footer{
 }
 
 
+
+
+/* === CONTAINERS PRINCIPAUX === */
+.checkout-container {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1100px;
+    margin: 40px auto;
+    gap: 25px;
+    padding: 0 15px;
+}
+/* === CHECKOUT STEPS === */
+.checkout-steps {
+    flex: 2;
+    background-color: #fff;
+    padding: 25px 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+    transition: transform 0.2s ease;
+}
+.checkout-steps:hover {
+    transform: translateY(-2px);
+}
+.step {
+    margin-bottom: 30px;
+}
+.step h2 {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    color: #555;
+    font-weight: 500;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 6px;
+}
+.step.disabled h2 {
+    color: #ccc;
+}
+.step.disabled {
+    display: none;
+}
+.step.active {
+    display: block;
+}
+/* === FORMULAIRES === */
+.checkout-form .form-group {
+    margin-bottom: 15px;
+}
+.checkout-form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 500;
+    font-size: 0.85rem;
+    color: #666;
+}
+.checkout-form input[type="text"],
+.checkout-form input[type="email"],
+.checkout-form input[type="password"],
+.checkout-form select {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    background-color: #fff;
+    transition: all 0.2s ease;
+}
+.checkout-form input:focus,
+.checkout-form select:focus {
+    border-color: #b28554;
+    box-shadow: 0 0 4px rgba(178,133,84,0.2);
+    outline: none;
+}
+
+/* Radio & checkbox */
+.radio-group label,
+.checkbox-group label {
+    margin-right: 15px;
+    font-weight: 400;
+    cursor: pointer;
+    font-size: 0.85rem;
+    display: inline-flex;
+    align-items: center;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+    margin-right: 6px;
+    accent-color: #b28554;
+}
+
+/* === BOUTONS === */
+.btn-step {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #b28554;
+    color: #fff;
+    font-weight: 500;
+    font-size: 0.9rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn-step:hover {
+    background: #a17443;
+    transform: translateY(-1px);
+    box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+}
+
+/* === ASIDE RECAPITULATIF === */
+.checkout-summary {
+    flex: 1;
+    background-color: #fff;
+    padding: 20px 18px;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+    font-size: 0.85rem;
+    color: #444;
+    transition: transform 0.2s ease;
+}
+.checkout-summary:hover {
+    transform: translateY(-2px);
+}
+.checkout-summary h3 {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #222;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 6px;
+}
+.summary-items {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 15px;
+}
+.summary-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 0;
+    border-bottom: 1px solid #eee; /* fine ligne entre chaque élément */
+    font-size: 0.85rem;
+    color: #555;
+}
+.summary-item-info h4,
+.summary-item-info p {
+    margin: 0;
+    font-size: 0.8rem;
+    font-weight: 400;
+    color: #666;
+}
+
+.summary-line,
+.summary-total {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 6px 0;
+    font-weight: 400;
+    color: #555;
+    border-bottom: 1px solid #f5f5f5;
+}
+.summary-total {
+    font-weight: 600;
+    font-size: 0.95rem;
+    border-top: 1px solid #eee;
+    padding-top: 6px;
+}
+.summary-line span,
+.summary-total span {
+    display: inline-block;
+}
+/* === ERREUR FORMULAIRE === */
+input.error {
+    border-color: #e74c3c;
+    background-color: #fdecea;
+}
+
+.checkbox-group.error label {
+    color: #e74c3c;
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 900px) {
+    .checkout-container {
+        flex-direction: column;
+    }
+    .checkout-steps,
+    .checkout-summary {
+        width: 100%;
+    }
+}

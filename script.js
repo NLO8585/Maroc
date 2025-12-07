@@ -168,6 +168,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const cartSidebar = document.getElementById('cart-sidebar');
     const closeCart = document.getElementById('close-cart');
     const cartOverlay = document.getElementById('cart-overlay');
+    const stepButtons = document.querySelectorAll('.btn-step');
+    const steps = document.querySelectorAll('.checkout-steps .step');
 
     if (!cartIcon || !cartSidebar || !closeCart || !cartOverlay) return;
 
@@ -184,6 +186,22 @@ document.addEventListener('DOMContentLoaded', () => {
     cartOverlay.addEventListener('click', () => {
       cartSidebar.classList.remove('active');
       cartOverlay.classList.remove('active');
+    });
+    stepButtons.forEach((btn, index) => {
+      btn.addEventListener('click', () => {
+        const currentStep = steps[index];
+        const nextStep = steps[index + 1];
+
+        // Désactive l'étape actuelle
+        currentStep.classList.remove('active');
+        currentStep.classList.add('disabled');
+
+        // Active la prochaine étape
+        if (nextStep) {
+          nextStep.classList.remove('disabled');
+          nextStep.classList.add('active');
+        }
+      });
     });
   })();
 
@@ -859,7 +877,7 @@ function renderOrderPage() {
   });
 
   summaryItems.textContent = `${totalQty} article${totalQty > 1 ? 's' : ''}`;
-  summaryTotal.textContent = total.toFixed(2);
+  summaryTotal.textContent = total.toFixed(2) + ' €';
   // Gestion suppression
   cartItemsContainer.querySelectorAll('.remove-item').forEach((btn) => {
     btn.addEventListener('click', () => {
@@ -885,5 +903,74 @@ function renderOrderPage() {
 document.addEventListener('DOMContentLoaded', () => {
   if (window.location.pathname.includes('panier.html')) {
     renderOrderPage();
+  }
+});
+function renderCheckoutSummary() {
+  const summaryItems = document.getElementById('summary-items');
+  const subtotalEl = document.getElementById('summary-subtotal');
+  const shippingEl = document.getElementById('summary-shipping');
+  const totalEl = document.getElementById('summary-total');
+
+  if (!summaryItems || !subtotalEl || !shippingEl || !totalEl) return;
+
+  const cart = getCart();
+  summaryItems.innerHTML = '';
+
+  if (cart.length === 0) {
+    summaryItems.innerHTML = '<p>Votre panier est vide.</p>';
+    subtotalEl.textContent = '0,00 €';
+    shippingEl.textContent = '0,00 €';
+    totalEl.textContent = '0,00 €';
+    return;
+  }
+
+  let subtotal = 0;
+
+  cart.forEach((item) => {
+    const numericPrice =
+      parseFloat(
+        String(item.price)
+          .replace(/[^\d.,]/g, '')
+          .replace(',', '.')
+      ) || 0;
+
+    subtotal += numericPrice * item.quantity;
+
+    const itemEl = document.createElement('div');
+    itemEl.className = 'summary-item';
+    itemEl.innerHTML = `
+  <div class="summary-item-info">
+    <h4>${item.title}</h4>
+    <p>${item.dimensions}</p>
+    <p>Qté : ${item.quantity}</p>
+    <p>${item.price}</p>
+  </div>
+  <button class="remove-item" data-id="${item.id}">✖</button>
+`;
+    summaryItems.appendChild(itemEl);
+  });
+
+  // Livraison : par exemple 5 € si <50 €, sinon gratuite
+  const shipping = subtotal < 50 && subtotal > 0 ? 5 : 0;
+  const total = subtotal + shipping;
+
+  subtotalEl.textContent = subtotal.toFixed(2) + ' €';
+  shippingEl.textContent = shipping.toFixed(2) + ' €';
+  totalEl.textContent = total.toFixed(2) + ' €';
+
+  // Supprimer un article
+  summaryItems.querySelectorAll('.remove-item').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      removeFromCart(btn.dataset.id);
+      renderCheckoutSummary(); // réactualise le récapitulatif
+      updateCartCount(); // met à jour le compteur panier
+    });
+  });
+}
+
+// Appel automatique sur commande.html
+document.addEventListener('DOMContentLoaded', () => {
+  if (window.location.pathname.includes('commande.html')) {
+    renderCheckoutSummary();
   }
 });
