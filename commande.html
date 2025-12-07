@@ -15,15 +15,15 @@
     <meta property="og:type" content="website">
     <meta property="og:locale" content="fr_FR">
 
-    <link rel="icon" href="/image/icon.png">
+    <link rel="icon" href="image/icon.png">
 
     <link rel="preload" href="fonts/ORTICA/Ortica_300.woff2" as="font" type="font/woff2" crossorigin>
-    <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
-    <link rel="stylesheet" href="style.css">
 
-    <title>Maison Saoussen | Miroirs Marocains</title>
+    <link rel="stylesheet" href="./style.css">
 
-    <script src="script.js" defer></script>
+    <title>Maison Saoussen | Commande</title>
+
+    <script src="./script.js" defer></script>
 </head>
 
 <body>
@@ -66,6 +66,7 @@
                 </li>
                 <li><a href="blog.html">Blog</a></li>
                 <li><a href="contact.html">Contact</a></li>
+
             </ul>
         </nav>
         <div class="header-container2">
@@ -103,43 +104,14 @@
     </div>
 </div>
 
-  <main>
-  <!-- Hero Banner simplifié et plus élégant -->
-  <div class="boutique-hero">
-    <div class="hero-text">
-      <h1>Miroirs Marocains</h1>
-<p class="lead">Les miroirs marocains sont fabriqués à la main avec des matériaux traditionnels, reflétant l'artisanat et la culture du Maroc.</p>
-<p class="lead">Chaque miroir est unique, avec des motifs et des couleurs qui apportent une touche d'authenticité et d'élégance à votre intérieur.</p>
-    </div>
-  </div>
+    <main class="order-page">
+        <h1>Résumé de votre commande</h1>
+        <div id="order-summary">
+            <!-- Le résumé de la commande sera généré ici -->
+        </div>
+    </main>
 
-  <!-- Filter / Sort -->
-  <div class="top-controls">
-    <div class="count">Produits : <strong id="product-count">24</strong></div>
-    <div class="filter-sort">
-      <select class="select" id="sort-select" aria-label="Trier par">
-        <option value="default">Trier par : Pertinence</option>
-        <option value="price-asc">Prix croissant</option>
-        <option value="price-desc">Prix décroissant</option>
-        <option value="size-asc">Taille (longueur croissante)</option>
-        <option value="size-desc">Taille (longueur décroissante)</option>
-      </select>
-    </div>
-  </div>
-
-  <!-- Product Grid -->
-  <section class="products-grid" id="products-grid" aria-live="polite">
-
-          <!-- Product Grid -->
-<section class="products-grid" id="products-grid" aria-live="polite">
-  <!-- Les produits seront générés ici par JS -->
-</section>
-  <!-- Pagination -->
-<div class="pagination" id="pagination" aria-label="Pagination produits"></div>
-</main>
-
-
-<footer class="footer">
+    <footer class="footer">
     <!-- Vague décorative -->
     <div class="wave-divider-index">
         <svg viewBox="0 0 1200 100" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
@@ -234,8 +206,7 @@
         </p>
         <p>&copy;2025 Maison Saoussen. Tous droits réservés.</p>
     </div>
-</footer>
-
+    </footer>
 <script src="script.js" defer></script>
-</body>
 </html>
+</body>
